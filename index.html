@@ -134,7 +134,7 @@
 
         /* === HERO === */
         .hero {
-            background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
+            background: linear-gradient(135deg, rgba(15,27,45,0.92) 0%, rgba(30,58,95,0.88) 100%), url('img/hero-plumber.jpg') center/cover no-repeat;
             color: var(--white);
             padding: 5rem 1.5rem;
             position: relative;
@@ -342,15 +342,23 @@
         }
         .service-card {
             background: var(--white);
-            padding: 2rem;
             border-radius: var(--radius);
             border: 1px solid var(--grey-200);
             transition: all 0.25s;
+            overflow: hidden;
         }
         .service-card:hover {
             border-color: var(--blue);
             box-shadow: var(--shadow-md);
             transform: translateY(-3px);
+        }
+        .service-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .service-card-body {
+            padding: 1.5rem;
         }
         .service-card-icon {
             width: 48px;
@@ -395,6 +403,24 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
+        }
+        .reviews-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .reviews-header-text { flex: 1; }
+        .reviews-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: var(--radius);
+            object-fit: cover;
+            box-shadow: var(--shadow-md);
+            display: none;
+        }
+        @media (min-width: 769px) {
+            .reviews-photo { display: block; }
         }
         .review-card {
             background: var(--grey-50);
@@ -650,32 +676,32 @@
             <p class="section-sub">From emergency repairs to full installations — we handle it all with care and expertise.</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    <img src="img/tools.jpg" alt="Emergency plumbing tools" class="service-card-img">
+                    <div class="service-card-body">
+                        <h3>Emergency Plumbing</h3>
+                        <p>Burst pipes, leaks, blocked drains — we're available 24/7 with fast response times across Bristol.</p>
                     </div>
-                    <h3>Emergency Plumbing</h3>
-                    <p>Burst pipes, leaks, blocked drains — we're available 24/7 with fast response times across Bristol.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 00-4 4v2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V10a2 2 0 00-2-2h-2V6a4 4 0 00-4-4z"/></svg>
+                    <img src="img/boiler.jpg" alt="Boiler installation" class="service-card-img">
+                    <div class="service-card-body">
+                        <h3>Boiler Installation & Repair</h3>
+                        <p>New boiler installations, annual servicing, and repairs. Gas Safe registered for complete peace of mind.</p>
                     </div>
-                    <h3>Boiler Installation & Repair</h3>
-                    <p>New boiler installations, annual servicing, and repairs. Gas Safe registered for complete peace of mind.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3zM12 8v8M8 12h8"/></svg>
+                    <img src="img/bathroom.jpg" alt="Modern bathroom installation" class="service-card-img">
+                    <div class="service-card-body">
+                        <h3>Bathroom Installations</h3>
+                        <p>Full bathroom design and installation. Wet rooms, ensuites, and complete renovations to your spec.</p>
                     </div>
-                    <h3>Bathroom Installations</h3>
-                    <p>Full bathroom design and installation. Wet rooms, ensuites, and complete renovations to your spec.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-card-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2v8m0 0l4-4m-4 4L8 6M2 12h8m0 0L6 8m4 4l-4 4m14-4h-8m0 0l4 4m-4-4l4-4"/></svg>
+                    <img src="img/heating.jpg" alt="Central heating radiator" class="service-card-img">
+                    <div class="service-card-body">
+                        <h3>Central Heating</h3>
+                        <p>Radiator installation, power flushing, underfloor heating, and full central heating systems.</p>
                     </div>
-                    <h3>Central Heating</h3>
-                    <p>Radiator installation, power flushing, underfloor heating, and full central heating systems.</p>
                 </div>
             </div>
         </div>
@@ -684,9 +710,14 @@
     <!-- REVIEWS -->
     <section class="reviews">
         <div class="reviews-inner">
-            <span class="section-label">What Our Customers Say</span>
-            <h2 class="section-heading">Trusted by Bristol Homeowners</h2>
-            <p class="section-sub">Don't just take our word for it.</p>
+            <div class="reviews-header">
+                <div class="reviews-header-text">
+                    <span class="section-label">What Our Customers Say</span>
+                    <h2 class="section-heading">Trusted by Bristol Homeowners</h2>
+                    <p class="section-sub">Don't just take our word for it.</p>
+                </div>
+                <img src="img/tradesperson.jpg" alt="Our team" class="reviews-photo">
+            </div>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
