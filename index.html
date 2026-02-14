@@ -3,789 +3,764 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Williams Plumbing & Heating — trusted plumber in Bristol. Emergency callouts, boiler repairs, bathroom installations. Call today for a free quote.">
-    <title>Williams Plumbing & Heating | Trusted Plumber in Bristol</title>
+    <title>TradeBoost — More Local Customers, Less Hassle | Powered by ChopChop</title>
+    <meta name="description" content="Digital presence service for UK trade businesses. Get more local customers with our audit-first approach. Website, SEO, and ongoing management for plumbers, electricians, builders, roofers, and cleaners.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --navy: #0f1b2d;
-            --blue: #1a56db;
-            --blue-light: #e8effc;
-            --green: #059669;
-            --green-light: #ecfdf5;
-            --orange: #ea580c;
-            --orange-light: #fff7ed;
-            --grey-50: #f9fafb;
-            --grey-100: #f3f4f6;
-            --grey-200: #e5e7eb;
-            --grey-500: #6b7280;
-            --grey-700: #374151;
-            --grey-900: #111827;
-            --white: #ffffff;
-            --radius: 12px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary-blue: #2563eb;
+            --primary-orange: #ea580c;
+            --dark-blue: #1e40af;
+            --light-blue: #dbeafe;
+            --light-orange: #fed7aa;
+            --text-dark: #1f2937;
+            --text-gray: #6b7280;
+            --text-light: #9ca3af;
+            --background: #ffffff;
+            --surface: #f9fafb;
+            --border: #e5e7eb;
+            --success: #10b981;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--grey-900);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            color: var(--text-dark);
+            background: var(--background);
         }
-
-        /* === TOP BAR === */
-        .topbar {
-            background: var(--navy);
-            color: var(--white);
-            font-size: 0.85rem;
-            padding: 0.5rem 0;
-        }
-        .topbar-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-        .topbar a { color: var(--white); text-decoration: none; }
-        .topbar-badges {
-            display: flex;
-            gap: 1.25rem;
-            align-items: center;
-            font-weight: 500;
-        }
-        .topbar-badges span {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        /* === HEADER === */
+        
+        /* Header */
         .header {
-            background: var(--white);
-            padding: 1rem 0;
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--grey-200);
-            box-shadow: var(--shadow-sm);
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
         }
-        .header-inner {
-            max-width: 1120px;
+        
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
+        }
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .brand-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--blue);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .brand-icon svg { width: 24px; height: 24px; fill: white; }
-        .brand-name {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.25rem;
+        
+        .logo {
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--grey-900);
-            line-height: 1.2;
+            color: var(--primary-blue);
+            text-decoration: none;
         }
-        .brand-sub {
-            font-size: 0.8rem;
-            color: var(--grey-500);
-            font-weight: 400;
+        
+        .nav {
+            display: none;
+            gap: 2rem;
         }
-        .header-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--green);
+        
+        .nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .cta-button {
+            background: var(--primary-orange);
             color: white;
             padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
+            border: none;
+            border-radius: 8px;
             font-weight: 600;
-            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
             transition: all 0.2s;
-            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+            cursor: pointer;
         }
-        .header-cta:hover {
-            background: #047857;
+        
+        .cta-button:hover {
+            background: #dc2626;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
         }
-
-        /* === HERO === */
+        
+        .cta-button-large {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+        
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(15,27,45,0.92) 0%, rgba(30,58,95,0.88) 100%), url('https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;
-            color: var(--white);
-            padding: 5rem 1.5rem;
-            position: relative;
-            overflow: hidden;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--surface) 100%);
+            text-align: center;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(26,86,219,0.15) 0%, transparent 70%);
-            border-radius: 50%;
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.1;
         }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(5,150,105,0.1) 0%, transparent 70%);
-            border-radius: 50%;
+        
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .hero-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+        
+        .hero .tagline {
+            font-size: 1.125rem;
+            color: var(--primary-orange);
+            font-weight: 600;
+            margin-bottom: 3rem;
         }
-        .hero-badge {
-            display: inline-flex;
+        
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section-alt {
+            background: var(--surface);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
             align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            margin-top: 2rem;
+        }
+        
+        .problem-text h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .problem-text p {
+            font-size: 1.125rem;
+            color: var(--text-gray);
             margin-bottom: 1.5rem;
         }
-        .hero-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: #34d399;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
+        
+        .pain-points {
+            list-style: none;
+            padding: 0;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
+        
+        .pain-points li {
+            padding: 0.75rem 0;
+            color: var(--text-gray);
+            border-bottom: 1px solid var(--border);
         }
-        .hero h1 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-            max-width: 650px;
+        
+        .pain-points li:before {
+            content: "❌";
+            margin-right: 0.75rem;
         }
-        .hero h1 span {
-            color: #60a5fa;
-        }
-        .hero-sub {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 520px;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--green);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.2s;
-            box-shadow: 0 4px 14px rgba(5,150,105,0.4);
-        }
-        .btn-primary:hover {
-            background: #047857;
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            transition: all 0.2s;
-        }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.15);
-        }
-        .hero-stats {
-            display: flex;
-            gap: 2.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .stat-item strong {
-            display: block;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
-        .stat-item span {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-        }
-
-        /* === TRUST BAR === */
-        .trust-bar {
-            background: var(--white);
-            border-bottom: 1px solid var(--grey-200);
-            padding: 1.5rem;
-        }
-        .trust-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--grey-700);
-        }
-        .trust-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--blue-light);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-        .trust-icon.green { background: var(--green-light); }
-        .trust-icon.orange { background: var(--orange-light); }
-
-        /* === SERVICES === */
-        .services {
-            padding: 5rem 1.5rem;
-            background: var(--grey-50);
-        }
-        .services-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-        .section-label {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--blue);
-            background: var(--blue-light);
-            padding: 0.35rem 0.75rem;
-            border-radius: 50px;
-            margin-bottom: 0.75rem;
-        }
-        .section-heading {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(1.75rem, 3vw, 2.25rem);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--grey-900);
-        }
-        .section-sub {
-            font-size: 1.05rem;
-            color: var(--grey-500);
-            max-width: 550px;
-            margin-bottom: 3rem;
-        }
-        .services-grid {
+        
+        /* How It Works */
+        .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .service-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            border: 1px solid var(--grey-200);
-            transition: all 0.25s;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            border-color: var(--blue);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
-        }
-        .service-card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .service-card-body {
-            padding: 1.5rem;
-        }
-        .service-card-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--blue-light);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-        }
-        .service-card-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--blue);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .service-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--grey-500);
-            line-height: 1.6;
-        }
-
-        /* === REVIEWS === */
-        .reviews {
-            padding: 5rem 1.5rem;
-            background: var(--white);
-        }
-        .reviews-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .reviews-header {
-            display: flex;
-            align-items: center;
+            grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-top: 3rem;
         }
-        .reviews-header-text { flex: 1; }
-        .reviews-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: var(--radius);
-            object-fit: cover;
-            box-shadow: var(--shadow-md);
-            display: none;
-        }
-        @media (min-width: 769px) {
-            .reviews-photo { display: block; }
-        }
-        .review-card {
-            background: var(--grey-50);
-            border: 1px solid var(--grey-200);
-            padding: 2rem;
-            border-radius: var(--radius);
-        }
-        .review-stars {
-            color: #f59e0b;
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            letter-spacing: 2px;
-        }
-        .review-text {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--grey-700);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-        .review-author {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--grey-900);
-        }
-        .review-source {
-            font-size: 0.8rem;
-            color: var(--grey-500);
-        }
-
-        /* === AREAS === */
-        .areas {
-            padding: 4rem 1.5rem;
-            background: var(--grey-50);
-        }
-        .areas-inner {
-            max-width: 1120px;
-            margin: 0 auto;
+        
+        .step {
             text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border);
         }
-        .areas-list {
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
         }
-        .area-tag {
-            background: var(--white);
-            border: 1px solid var(--grey-200);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--grey-700);
+        
+        .step h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
         }
-
-        /* === CTA === */
-        .cta {
-            background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
-            color: var(--white);
-            padding: 5rem 1.5rem;
+        
+        .step p {
+            color: var(--text-gray);
+        }
+        
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+        }
+        
+        .feature-list li:before {
+            content: "✅";
+            margin-right: 0.75rem;
+        }
+        
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            transition: all 0.2s;
         }
-        .cta::before {
-            content: '';
+        
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary-orange);
+            transform: scale(1.02);
+        }
+        
+        .popular-badge {
             position: absolute;
-            top: -50%;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(5,150,105,0.1) 0%, transparent 60%);
-            border-radius: 50%;
+            background: var(--primary-orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
         }
-        .cta-inner {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.25rem;
+        }
+        
+        .plan-setup {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+        }
+        
+        .plan-features li:before {
+            content: "✅";
+            margin-right: 0.75rem;
+        }
+        
+        /* FAQ Section */
+        .faq-list {
+            max-width: 800px;
             margin: 0 auto;
         }
-        .cta h2 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            font-weight: 700;
+        
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
             margin-bottom: 1rem;
+            padding: 1.5rem;
         }
-        .cta p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
+        
+        .faq-question {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        
+        .faq-answer {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
             margin-bottom: 2rem;
         }
-        .cta-phone {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--white);
+        
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: var(--text-light);
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--green);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            transition: all 0.2s;
-            box-shadow: 0 4px 20px rgba(5,150,105,0.4);
+            margin-bottom: 0.5rem;
+            display: block;
         }
-        .cta-phone:hover {
-            background: #047857;
-            transform: translateY(-2px);
+        
+        .footer-section a:hover {
+            color: white;
         }
-        .cta-note {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-light);
         }
-
-        /* === FOOTER === */
-        .footer {
-            background: var(--navy);
-            color: rgba(255,255,255,0.6);
-            padding: 2.5rem 1.5rem;
+        
+        .chopchop-branding {
+            color: var(--primary-orange);
+            font-weight: 600;
         }
-        .footer-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+        
+        /* Responsive Design */
+        @media (min-width: 640px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .nav {
+                display: flex;
+            }
+            
+            .steps-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .problem-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
-        .footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-        .footer a:hover { color: white; }
-        .footer-links { display: flex; gap: 1.5rem; font-size: 0.85rem; }
-
-        @media (max-width: 768px) {
-            .topbar-inner { flex-direction: column; text-align: center; }
-            .topbar-badges { flex-wrap: wrap; justify-content: center; }
-            .header-inner { flex-direction: column; gap: 0.75rem; }
-            .hero { padding: 3.5rem 1.5rem; }
-            .hero-stats { flex-direction: column; gap: 1.25rem; }
-            .hero-actions { flex-direction: column; }
-            .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
-            .trust-inner { gap: 1.5rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .reviews-grid { grid-template-columns: 1fr; }
-            .footer-inner { flex-direction: column; text-align: center; }
-            .cta-phone { font-size: 1.4rem; padding: 0.85rem 2rem; }
+        
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+            .container {
+                padding: 0 2rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- TOP BAR -->
-    <div class="topbar">
-        <div class="topbar-inner">
-            <a href="tel:01234567890">📞 01onal XXX XXXX — Available 24/7</a>
-            <div class="topbar-badges">
-                <span>🛡️ Gas Safe Registered</span>
-                <span>✓ Fully Insured</span>
-                <span>⭐ 4.8 on Google</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- HEADER -->
+    <!-- Header -->
     <header class="header">
-        <div class="header-inner">
-            <div class="brand">
-                <div class="brand-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h-1v-4h1v4zm3 0h-1v-6h1v6zm3 0h-1v-2h1v2z"/></svg>
-                </div>
-                <div>
-                    <div class="brand-name">Williams Plumbing & Heating</div>
-                    <div class="brand-sub">Bristol's Trusted Local Plumber</div>
-                </div>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">TradeBoost</a>
+                <nav class="nav">
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#features">What You Get</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+                <a href="#pricing" class="cta-button">Get Your Free Audit</a>
             </div>
-            <a href="tel:01234567890" class="header-cta">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                Get a Free Quote
-            </a>
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Accepting new customers in Bristol
-            </div>
-            <h1>Professional Plumbing & Heating You Can <span>Actually Trust</span></h1>
-            <p class="hero-sub">Emergency callouts, boiler repairs, bathroom installations and central heating — serving Bristol and surrounding areas for over 15 years.</p>
-            <div class="hero-actions">
-                <a href="tel:01234567890" class="btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    Call Now — Free Quote
-                </a>
-                <a href="#services" class="btn-secondary">
-                    View Our Services ↓
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <strong>15+</strong>
-                    <span>Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <strong>4.8★</strong>
-                    <span>Google Rating</span>
-                </div>
-                <div class="stat-item">
-                    <strong>2,500+</strong>
-                    <span>Jobs Completed</span>
-                </div>
-                <div class="stat-item">
-                    <strong>24/7</strong>
-                    <span>Emergency Callouts</span>
-                </div>
-            </div>
+        <div class="container">
+            <div class="tagline">More Local Customers, Less Hassle</div>
+            <h1>Your Trade Business<br>Deserves to Be Found</h1>
+            <p class="subtitle">Stop losing customers to competitors with better websites. We build your digital presence while you focus on what you do best — your trade.</p>
+            <a href="#pricing" class="cta-button cta-button-large">Get Your Free Audit</a>
         </div>
     </section>
 
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <div class="trust-inner">
-            <div class="trust-item">
-                <div class="trust-icon">🛡️</div>
-                Gas Safe Registered
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon green">✓</div>
-                Fully Insured
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon orange">⚡</div>
-                Same-Day Service
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">💷</div>
-                No Hidden Fees
-            </div>
-        </div>
-    </div>
-
-    <!-- SERVICES -->
-    <section id="services" class="services">
-        <div class="services-inner">
-            <span class="section-label">What We Do</span>
-            <h2 class="section-heading">Plumbing & Heating Services</h2>
-            <p class="section-sub">From emergency repairs to full installations — we handle it all with care and expertise.</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Emergency plumbing repair" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>Emergency Plumbing</h3>
-                        <p>Burst pipes, leaks, blocked drains — we're available 24/7 with fast response times across Bristol.</p>
-                    </div>
+    <!-- Problem Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Great at Your Trade, Invisible Online?</h2>
+            <p class="section-subtitle">You're skilled, reliable, and deliver quality work. But when customers search online, they can't find you.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-text">
+                    <h3>The Reality for Most Trade Businesses</h3>
+                    <p>You've built your reputation through word-of-mouth and repeat customers. But in 2026, that's not enough. Local customers are searching online first, and if you're not there, you're losing business.</p>
+                    
+                    <ul class="pain-points">
+                        <li>No website, or one that looks like it's from 2010</li>
+                        <li>Not showing up when locals search for your services</li>
+                        <li>Competitors with flashy websites getting your calls</li>
+                        <li>No time to learn digital marketing while running your business</li>
+                        <li>Expensive agencies that disappear after building your site</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Boiler installation" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>Boiler Installation & Repair</h3>
-                        <p>New boiler installations, annual servicing, and repairs. Gas Safe registered for complete peace of mind.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/6920614/pexels-photo-6920614.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern bathroom" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>Bathroom Installations</h3>
-                        <p>Full bathroom design and installation. Wet rooms, ensuites, and complete renovations to your spec.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/35290675/pexels-photo-35290675.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Central heating work" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>Central Heating</h3>
-                        <p>Radiator installation, power flushing, underfloor heating, and full central heating systems.</p>
+                <div>
+                    <div style="background: var(--light-blue); padding: 3rem; border-radius: 12px; text-align: center;">
+                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Sound Familiar?</h3>
+                        <p style="color: var(--text-gray);">"I'm booked solid through referrals, but I know I'm missing out on new local customers who are searching online. I just don't have time to figure out all this digital stuff."</p>
+                        <p style="font-style: italic; color: var(--text-light); margin-top: 1rem;">— [Customer testimonial will go here]</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- REVIEWS -->
-    <section class="reviews">
-        <div class="reviews-inner">
-            <div class="reviews-header">
-                <div class="reviews-header-text">
-                    <span class="section-label">What Our Customers Say</span>
-                    <h2 class="section-heading">Trusted by Bristol Homeowners</h2>
-                    <p class="section-sub">Don't just take our word for it.</p>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">How TradeBoost Works</h2>
+            <p class="section-subtitle">Our audit-first approach means we show you exactly what we'll build before you commit to anything.</p>
+            
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>We Audit</h3>
+                    <p>Free analysis of your current online presence. We show you exactly what local customers see when they search for your services — and what you're missing.</p>
                 </div>
-                <img src="https://images.pexels.com/photos/32588548/pexels-photo-32588548.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Our team" class="reviews-photo">
-            </div>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Called at 8pm with a burst pipe. They were here within the hour and had it sorted before bedtime. Absolute lifesaver. Can't recommend enough."</p>
-                    <div class="review-author">Sarah M.</div>
-                    <div class="review-source">Google Review — Bishopston</div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Build</h3>
+                    <p>We create your professional website mockup first, then get your approval before going live. No surprises, no generic templates — just clean, professional sites that convert.</p>
                 </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Fitted a new bathroom for us — start to finish in 5 days and it looks incredible. Tidy, professional, and the price was exactly what they quoted."</p>
-                    <div class="review-author">James T.</div>
-                    <div class="review-source">Google Review — Redland</div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Been using Williams for years. They service our boiler every autumn and have replaced a few radiators. Always on time, always fair on price."</p>
-                    <div class="review-author">Helen & Dave K.</div>
-                    <div class="review-source">Google Review — Clifton</div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>We Manage</h3>
+                    <p>Ongoing maintenance, SEO updates, and customer support. We don't just build and disappear — we're your long-term digital partner.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AREAS SERVED -->
-    <section class="areas">
-        <div class="areas-inner">
-            <span class="section-label">Coverage</span>
-            <h2 class="section-heading">Areas We Serve</h2>
-            <div class="areas-list">
-                <span class="area-tag">Bristol City Centre</span>
-                <span class="area-tag">Clifton</span>
-                <span class="area-tag">Redland</span>
-                <span class="area-tag">Bishopston</span>
-                <span class="area-tag">Southville</span>
-                <span class="area-tag">Bedminster</span>
-                <span class="area-tag">Henleaze</span>
-                <span class="area-tag">Horfield</span>
-                <span class="area-tag">Fishponds</span>
-                <span class="area-tag">Kingswood</span>
-                <span class="area-tag">Bradley Stoke</span>
-                <span class="area-tag">Filton</span>
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">What You Get</h2>
+            <p class="section-subtitle">Everything a trade business needs to be found online, without the complexity.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Starter Package</h3>
+                    <ul class="feature-list">
+                        <li>Professional responsive website</li>
+                        <li>Local SEO optimisation</li>
+                        <li>Google Business Profile setup</li>
+                        <li>Contact forms and phone integration</li>
+                        <li>Mobile-optimised design</li>
+                        <li>Basic analytics and reporting</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Growth Package</h3>
+                    <ul class="feature-list">
+                        <li>Everything in Starter, plus:</li>
+                        <li>Online booking widget</li>
+                        <li>WhatsApp Business integration</li>
+                        <li>Customer review widget</li>
+                        <li>Social media setup (Facebook, Instagram)</li>
+                        <li>Advanced SEO and content updates</li>
+                        <li>Quote request forms</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Pro Package</h3>
+                    <ul class="feature-list">
+                        <li>Everything in Growth, plus:</li>
+                        <li>Customer CRM system</li>
+                        <li>Invoice and quote generation</li>
+                        <li>Advanced analytics and insights</li>
+                        <li>Dedicated account manager</li>
+                        <li>Priority support and updates</li>
+                        <li>Custom integrations as needed</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta">
-        <div class="cta-inner">
-            <h2>Need a Plumber in Bristol?</h2>
-            <p>Whether it's an emergency or a planned job, give us a call. No obligation, no hidden fees — just honest, reliable plumbing.</p>
-            <a href="tel:01234567890" class="cta-phone">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                01onal XXX XXXX
-            </a>
-            <p class="cta-note">Free quotes • No call-out charge • Available 24/7</p>
+    <!-- Pricing Section -->
+    <section id="pricing" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">No hidden fees, no long-term contracts, no surprises. Just straightforward pricing that works for trade businesses.</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="plan-name">Starter</h3>
+                    <div class="plan-price">£49<span style="font-size: 1rem; color: var(--text-gray);">/month</span></div>
+                    <div class="plan-setup">£199 setup fee</div>
+                    <ul class="plan-features">
+                        <li>Professional responsive website</li>
+                        <li>Local SEO optimisation</li>
+                        <li>Google Business Profile</li>
+                        <li>Contact forms & phone integration</li>
+                        <li>Mobile-optimised design</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3 class="plan-name">Growth</h3>
+                    <div class="plan-price">£79<span style="font-size: 1rem; color: var(--text-gray);">/month</span></div>
+                    <div class="plan-setup">£299 setup fee</div>
+                    <ul class="plan-features">
+                        <li>Everything in Starter</li>
+                        <li>Online booking widget</li>
+                        <li>WhatsApp Business integration</li>
+                        <li>Customer review widget</li>
+                        <li>Social media setup</li>
+                        <li>Advanced SEO & content</li>
+                        <li>Quote request forms</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="plan-name">Pro</h3>
+                    <div class="plan-price">£99<span style="font-size: 1rem; color: var(--text-gray);">/month</span></div>
+                    <div class="plan-setup">£499 setup fee</div>
+                    <ul class="plan-features">
+                        <li>Everything in Growth</li>
+                        <li>Customer CRM system</li>
+                        <li>Invoice & quote generation</li>
+                        <li>Advanced analytics</li>
+                        <li>Dedicated account manager</li>
+                        <li>Priority support</li>
+                        <li>Custom integrations</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 12px;">
+                <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Ready to Get Started?</h3>
+                <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Start with our free audit. We'll show you exactly what we'll build before you spend a penny.</p>
+                <a href="#" class="cta-button cta-button-large">Get Your Free Audit</a>
+                <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">No obligation. Takes 2 minutes to request.</p>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">Common Questions</h2>
+            <p class="section-subtitle">Straight answers to the questions we hear most from trade business owners.</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I need to sign a long-term contract?</h3>
+                    <p class="faq-answer">No contracts. Pay monthly and cancel anytime with 30 days notice. We believe in earning your business every month, not trapping you in lengthy agreements.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">I'm not tech-savvy. Will this be complicated for me?</h3>
+                    <p class="faq-answer">Not at all. We handle everything technical. You focus on your trade, we handle your online presence. You'll get simple updates and reports, nothing complicated.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What makes TradeBoost different from other web design companies?</h3>
+                    <p class="faq-answer">We specialise in trade businesses and use an audit-first approach. We show you exactly what we'll build before you commit. Plus, we provide ongoing management — we don't just build and disappear.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">How quickly will I see results?</h3>
+                    <p class="faq-answer">Your website goes live within [X] days of approval. Local SEO improvements typically show results in [X-X] weeks. We'll track and report your progress monthly.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I upgrade or downgrade my plan later?</h3>
+                    <p class="faq-answer">Absolutely. Change plans anytime with just 30 days notice. Most of our customers start with Growth and many upgrade to Pro as their business grows.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you work with all types of trade businesses?</h3>
+                    <p class="faq-answer">We specialise in plumbers, electricians, builders, roofers, cleaners, and similar service-based trade businesses across the UK. If you serve local customers, we can help.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What's included in the free audit?</h3>
+                    <p class="faq-answer">We analyse your current online presence (or lack thereof), check how you rank for local searches, review your Google Business Profile, and show you exactly what potential customers see. Takes about [X] business days.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-inner">
-            <div>© 2026 Williams Plumbing & Heating. All rights reserved.</div>
-            <div class="footer-links">
-                <span>Gas Safe Reg: XXXXXX</span>
-                <span>Bristol, UK</span>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TradeBoost</h3>
+                    <p>Digital presence service for UK trade businesses. More local customers, less hassle.</p>
+                    <p><strong>Email:</strong> support@chopchop.bot</p>
+                    <p><strong>Phone:</strong> [Phone number will go here]</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#features">Website Design</a>
+                    <a href="#features">Local SEO</a>
+                    <a href="#features">Google Business</a>
+                    <a href="#features">Online Booking</a>
+                    <a href="#features">Digital Marketing</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Trade Specialties</h3>
+                    <a href="#">Plumbers</a>
+                    <a href="#">Electricians</a>
+                    <a href="#">Builders</a>
+                    <a href="#">Roofers</a>
+                    <a href="#">Cleaners</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 TradeBoost. All rights reserved.</p>
+                <p>Proudly <span class="chopchop-branding">powered by ChopChop</span></p>
             </div>
         </div>
     </footer>
-
 </body>
 </html>
