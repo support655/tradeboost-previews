@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TradeBoost — More Local Customers, Less Hassle | Powered by ChopChop</title>
+    <title>TradeBoost — Built for Trades. Nothing Else.</title>
     <meta name="description" content="Digital presence service for UK trade businesses. Get more local customers with our audit-first approach. Website, SEO, and ongoing management for plumbers, electricians, builders, roofers, and cleaners.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,6 +90,91 @@
             color: var(--primary-blue);
         }
         
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .header-phone {
+            color: var(--text-dark);
+            font-weight: 600;
+            text-decoration: none;
+            display: none;
+        }
+        
+        .header-phone:hover {
+            color: var(--primary-blue);
+        }
+        
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.3s;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 65px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+        
+        .mobile-nav.active {
+            display: block;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+        
+        .mobile-nav .mobile-phone {
+            display: block;
+            padding: 0.75rem 0;
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
         .cta-button {
             background: var(--primary-orange);
             color: white;
@@ -113,6 +198,40 @@
             font-size: 1.125rem;
         }
         
+        .cta-button-outline {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .cta-button-outline:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        .whatsapp-button {
+            background: #25D366;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .whatsapp-button:hover {
+            background: #1da851;
+            transform: translateY(-1px);
+        }
+        
         /* Hero Section */
         .hero {
             padding: 8rem 0 4rem;
@@ -120,28 +239,47 @@
             text-align: center;
         }
         
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            line-height: 1.1;
-        }
-        
-        .hero .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
         .hero .tagline {
             font-size: 1.125rem;
             color: var(--primary-orange);
             font-weight: 600;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.15;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-phone {
+            color: var(--text-dark);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.125rem;
+        }
+        
+        .hero-phone:hover {
+            color: var(--primary-blue);
         }
         
         /* Section Styles */
@@ -155,7 +293,7 @@
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-dark);
@@ -207,6 +345,31 @@
         .pain-points li:before {
             content: "❌";
             margin-right: 0.75rem;
+        }
+        
+        /* Niche Positioning Block */
+        .niche-block {
+            background: var(--light-blue);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .niche-block h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .niche-block .trades-list {
+            font-size: 1.125rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .niche-block p {
+            color: var(--text-gray);
         }
         
         /* How It Works */
@@ -392,6 +555,83 @@
             line-height: 1.6;
         }
         
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 0;
+            background: var(--light-blue);
+            text-align: center;
+        }
+        
+        .contact-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .contact-option {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            min-width: 250px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        
+        .contact-option h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .contact-option a {
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.25rem;
+        }
+        
+        .contact-option a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-option p {
+            color: var(--text-gray);
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Who We Are */
+        .who-we-are {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .who-we-are p {
+            color: var(--text-gray);
+            font-size: 1.125rem;
+        }
+        
+        /* Referral */
+        .referral-block {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .referral-block h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .referral-block p {
+            color: var(--text-gray);
+        }
+        
         /* Footer */
         .footer {
             background: var(--text-dark);
@@ -430,6 +670,15 @@
             color: var(--text-light);
         }
         
+        .footer-bottom a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .footer-bottom a:hover {
+            color: white;
+        }
+        
         .chopchop-branding {
             color: var(--primary-orange);
             font-weight: 600;
@@ -438,11 +687,23 @@
         /* Responsive Design */
         @media (min-width: 640px) {
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
             }
             
             .nav {
                 display: flex;
+            }
+            
+            .hamburger {
+                display: none;
+            }
+            
+            .header-phone {
+                display: inline;
             }
             
             .steps-grid {
@@ -456,7 +717,7 @@
         
         @media (min-width: 768px) {
             .hero h1 {
-                font-size: 4rem;
+                font-size: 3.5rem;
             }
             
             .pricing-grid {
@@ -474,7 +735,7 @@
         
         @media (min-width: 1024px) {
             .hero h1 {
-                font-size: 4.5rem;
+                font-size: 4rem;
             }
             
             .container {
@@ -494,19 +755,40 @@
                     <a href="#features">What You Get</a>
                     <a href="#pricing">Pricing</a>
                     <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
                 </nav>
-                <a href="#pricing" class="cta-button">Get Your Free Audit</a>
+                <div class="header-right">
+                    <a href="tel:07356169993" class="header-phone">📞 07356 169993</a>
+                    <a href="#contact" class="cta-button">Get Your Free Audit</a>
+                    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
+            <a href="#features" onclick="closeMobileNav()">What You Get</a>
+            <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+            <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+            <a href="#contact" onclick="closeMobileNav()">Contact</a>
+            <a href="tel:07356169993" class="mobile-phone" onclick="closeMobileNav()">📞 07356 169993</a>
+            <a href="https://wa.me/447356169993" class="mobile-phone" onclick="closeMobileNav()">💬 WhatsApp Us</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="tagline">More Local Customers, Less Hassle</div>
-            <h1>Your Trade Business<br>Deserves to Be Found</h1>
-            <p class="subtitle">Stop losing customers to competitors with better websites. We build your digital presence while you focus on what you do best — your trade.</p>
-            <a href="#pricing" class="cta-button cta-button-large">Get Your Free Audit</a>
+            <div class="tagline">Built for Trades. Nothing Else.</div>
+            <h1>Customers Are Searching for You Right Now.<br>Can They Find You?</h1>
+            <p class="subtitle">We build and run your website so local customers call you instead of your competitors. No tech skills needed. No long contracts. From £49/month.</p>
+            <div class="hero-ctas">
+                <a href="#contact" class="cta-button cta-button-large">Get Your Free Audit</a>
+                <a href="tel:07356169993" class="hero-phone">Or call us: 07356 169993</a>
+            </div>
         </div>
     </section>
 
@@ -519,7 +801,7 @@
             <div class="problem-grid">
                 <div class="problem-text">
                     <h3>The Reality for Most Trade Businesses</h3>
-                    <p>You've built your reputation through word-of-mouth and repeat customers. But in 2026, that's not enough. Local customers are searching online first, and if you're not there, you're losing business.</p>
+                    <p>You've built your reputation through word-of-mouth and repeat customers. But local customers are searching online first, and if you're not there, your competitors are getting those calls instead.</p>
                     
                     <ul class="pain-points">
                         <li>No website, or one that looks like it's from 2010</li>
@@ -530,10 +812,11 @@
                     </ul>
                 </div>
                 <div>
-                    <div style="background: var(--light-blue); padding: 3rem; border-radius: 12px; text-align: center;">
-                        <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Sound Familiar?</h3>
-                        <p style="color: var(--text-gray);">"I'm booked solid through referrals, but I know I'm missing out on new local customers who are searching online. I just don't have time to figure out all this digital stuff."</p>
-                        <p style="font-style: italic; color: var(--text-light); margin-top: 1rem;">— [Customer testimonial will go here]</p>
+                    <div class="niche-block">
+                        <h3>We Only Work With Trades</h3>
+                        <p class="trades-list">Plumbers. Electricians. Builders. Roofers. Cleaners.</p>
+                        <p>No restaurants. No salons. No "one-size-fits-all."</p>
+                        <p style="margin-top: 1rem;">Every site we build is designed to get local customers calling tradespeople — because that's all we do.</p>
                     </div>
                 </div>
             </div>
@@ -635,7 +918,7 @@
                         <li>Mobile-optimised design</li>
                         <li>Basic analytics</li>
                     </ul>
-                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                    <a href="#contact" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
                 </div>
                 
                 <div class="pricing-card featured">
@@ -652,7 +935,7 @@
                         <li>Advanced SEO & content</li>
                         <li>Quote request forms</li>
                     </ul>
-                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                    <a href="#contact" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
                 </div>
                 
                 <div class="pricing-card">
@@ -668,21 +951,38 @@
                         <li>Priority support</li>
                         <li>Custom integrations</li>
                     </ul>
-                    <a href="#" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
+                    <a href="#contact" class="cta-button" style="width: 100%; text-align: center;">Get Started</a>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 12px;">
                 <h3 style="color: var(--primary-blue); margin-bottom: 1rem;">Ready to Get Started?</h3>
                 <p style="color: var(--text-gray); margin-bottom: 1.5rem;">Start with our free audit. We'll show you exactly what we'll build before you spend a penny.</p>
-                <a href="#" class="cta-button cta-button-large">Get Your Free Audit</a>
+                <a href="#contact" class="cta-button cta-button-large">Get Your Free Audit</a>
                 <p style="color: var(--text-light); font-size: 0.875rem; margin-top: 1rem;">No obligation. Takes 2 minutes to request.</p>
             </div>
         </div>
     </section>
 
+    <!-- Who We Are Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="who-we-are">
+                <p>Founded by a team that got tired of watching good tradespeople lose work to competitors with flashy websites. We built TradeBoost because trade businesses deserve a proper online presence without the agency price tag or the tech headaches.</p>
+                <p style="margin-top: 1rem;">We only work with trades — that's what makes us different.</p>
+            </div>
+
+            <div class="referral-block">
+                <h3>Know Another Tradesperson?</h3>
+                <p>Send them our way. Good work deserves to be found — and we'd love to help.</p>
+                <p style="margin-top: 0.5rem;"><a href="#contact" style="color: var(--primary-blue); font-weight: 600;">Get in touch</a> and let us know who to call.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
-    <section id="faq" class="section">
+    <section id="faq" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Common Questions</h2>
             <p class="section-subtitle">Straight answers to the questions we hear most from trade business owners.</p>
@@ -705,12 +1005,17 @@
                 
                 <div class="faq-item">
                     <h3 class="faq-question">How quickly will I see results?</h3>
-                    <p class="faq-answer">Your website goes live within [X] days of approval. Local SEO improvements typically show results in [X-X] weeks. We'll track and report your progress monthly.</p>
+                    <p class="faq-answer">Your website goes live within 48 hours of approval. Local SEO improvements typically show results in 4–8 weeks. We'll track and report your progress monthly.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">What happens if I cancel?</h3>
+                    <p class="faq-answer">You keep everything — your website, your domain, all your content. No lock-in, no penalties. We think that's only fair.</p>
                 </div>
                 
                 <div class="faq-item">
                     <h3 class="faq-question">Can I upgrade or downgrade my plan later?</h3>
-                    <p class="faq-answer">Absolutely. Change plans anytime with just 30 days notice. Most of our customers start with Growth and many upgrade to Pro as their business grows.</p>
+                    <p class="faq-answer">Absolutely. Change plans anytime with just 30 days notice. Most of our customers start with Starter or Growth and upgrade as their business grows.</p>
                 </div>
                 
                 <div class="faq-item">
@@ -720,7 +1025,35 @@
                 
                 <div class="faq-item">
                     <h3 class="faq-question">What's included in the free audit?</h3>
-                    <p class="faq-answer">We analyse your current online presence (or lack thereof), check how you rank for local searches, review your Google Business Profile, and show you exactly what potential customers see. Takes about [X] business days.</p>
+                    <p class="faq-answer">We analyse your current online presence (or lack thereof), check how you rank for local searches, review your Google Business Profile, and show you exactly what potential customers see. Usually ready within 48 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready for your free audit? Or just want to ask a question? We're here.</p>
+            
+            <div class="contact-options">
+                <div class="contact-option">
+                    <h3>📞 Call Us</h3>
+                    <a href="tel:07356169993">07356 169993</a>
+                    <p>Mon–Fri, 8am–6pm</p>
+                </div>
+                
+                <div class="contact-option">
+                    <h3>💬 WhatsApp</h3>
+                    <a href="https://wa.me/447356169993">Message us on WhatsApp</a>
+                    <p>Usually reply within the hour</p>
+                </div>
+                
+                <div class="contact-option">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:support@tradeboost.co.uk">support@tradeboost.co.uk</a>
+                    <p>We'll get back to you within 24 hours</p>
                 </div>
             </div>
         </div>
@@ -732,9 +1065,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>TradeBoost</h3>
-                    <p>Digital presence service for UK trade businesses. More local customers, less hassle.</p>
-                    <p><strong>Email:</strong> support@chopchop.bot</p>
-                    <p><strong>Phone:</strong> [Phone number will go here]</p>
+                    <p>Digital presence service for UK trade businesses. Built for trades. Nothing else.</p>
+                    <p><strong>Phone:</strong> <a href="tel:07356169993">07356 169993</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/447356169993">Message us</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:support@tradeboost.co.uk">support@tradeboost.co.uk</a></p>
                 </div>
                 
                 <div class="footer-section">
@@ -757,10 +1091,22 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 TradeBoost. All rights reserved.</p>
-                <p>Proudly <span class="chopchop-branding">powered by ChopChop</span></p>
+                <p>&copy; 2026 TradeBoost. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Powered by <span class="chopchop-branding">ChopChop</span></p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileNav() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.querySelector('.hamburger').classList.toggle('active');
+        }
+        
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('active');
+            document.querySelector('.hamburger').classList.remove('active');
+        }
+    </script>
 </body>
 </html>
