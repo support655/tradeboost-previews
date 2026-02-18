@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J Sage Plumbing & Heating — 5.0★ Google Rating</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1a7f4b;
+      --green-light: #e8f5ee;
+      --amber: #f59e0b;
+      --dark: #111827;
+      --grey-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: #fff;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--green) !important;
+      color: #fff !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 80px;
+      padding: 80px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-left {
+      text-align: center;
+    }
+
+    .hero-score {
+      font-size: clamp(7rem, 14vw, 11rem);
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-stars {
+      font-size: 2rem;
+      color: var(--amber);
+      margin: 8px 0 10px;
+      letter-spacing: 4px;
+    }
+
+    .hero-reviews-count {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .hero-reviews-count strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      background: var(--grey-bg);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .google-g {
+      width: 18px;
+      height: 18px;
+      background: #4285f4;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 0.7rem;
+    }
+
+    .hero-right h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero-right p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: #166040;
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* REVIEWS SECTION */
+    .reviews-section {
+      background: var(--grey-bg);
+      padding: 80px 60px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .review-stars {
+      color: var(--amber);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .review-text {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+
+    .review-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .reviewer {
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .review-source-tag {
+      font-size: 0.75rem;
+      background: var(--green-light);
+      color: var(--green);
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    /* SERVICES */
+    .services-section {
+      padding: 80px 60px;
+    }
+
+    .services-list {
+      margin-top: 0;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 56px 1fr 1fr;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-row:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .service-icon-wrap {
+      width: 44px;
+      height: 44px;
+      background: var(--green-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .service-name {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* AREAS */
+    .areas-section {
+      background: var(--grey-bg);
+      padding: 56px 60px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .areas-label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .areas-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .area-tag {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--dark);
+      color: #fff;
+      padding: 90px 60px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: #9ca3af;
+      margin-bottom: 36px;
+      font-size: 1rem;
+    }
+
+    .cta-phone {
+      display: block;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+      transition: color 0.2s;
+    }
+
+    .cta-phone:hover { color: #4ade80; }
+
+    .cta-meta {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 60px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav, .hero, .reviews-section, .services-section, .areas-section, .cta-section, footer {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .hero { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero-meta { justify-content: center; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .service-row { grid-template-columns: 56px 1fr; }
+      .service-desc { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 52px 20px; gap: 36px; }
+      .reviews-section, .services-section, .cta-section { padding-left: 20px; padding-right: 20px; }
+      .areas-section { padding: 40px 20px; }
+      footer { padding: 20px; flex-direction: column; gap: 6px; }
+      .section-header { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand">J Sage Plumbing &amp; Heating</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="tel:07714340551" class="nav-cta">07714 340 551</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-score">5.0</div>
+      <div class="hero-stars">★★★★★</div>
+      <p class="hero-reviews-count"><strong>44 verified</strong> Google reviews</p>
+      <div class="google-badge">
+        <span class="google-g">G</span>
+        Verified on Google Maps
+      </div>
+    </div>
+    <div class="hero-right">
+      <h1>Colchester's plumber since 2004.</h1>
+      <p>Gas Safe registered, fully insured, and trusted by Colchester homeowners for over 20 years. Bathroom fitting, boiler servicing, and central heating — done properly.</p>
+      <a href="tel:07714340551" class="hero-cta">📞 Call for a free quote</a>
+      <div class="hero-meta">
+        <span>✓ Gas Safe Registered</span>
+        <span>✓ Mon–Sat 8am–8pm</span>
+        <span>✓ No call centres</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-section" id="reviews">
+    <div class="section-header">
+      <h2>What customers say</h2>
+      <p>44 five-star reviews on Google</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Justin was recommended to me and I can see why. Very efficient, good communicator and high quality work. He has now done several jobs on our property over the last six years and all have been done with care and professionalism."</p>
+        <div class="review-footer">
+          <span class="reviewer">Colchester resident</span>
+          <span class="review-source-tag">Google</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Very impressed with how thorough and professional Justin was even though it was 'just' a boiler service. He explained everything very clearly and the price was very fair."</p>
+        <div class="review-footer">
+          <span class="reviewer">Verified customer</span>
+          <span class="review-source-tag">Google</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Justin fitted my bathroom and has done a great job. Communication was clear and he explained things in a way even I could understand."</p>
+        <div class="review-footer">
+          <span class="reviewer">Verified customer</span>
+          <span class="review-source-tag">Google</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <h2>Services</h2>
+      <p>Colchester &amp; surrounding Essex</p>
+    </div>
+    <div class="services-list">
+      <div class="service-row">
+        <div class="service-icon-wrap">🛁</div>
+        <div class="service-name">Bathroom Fitting</div>
+        <div class="service-desc">Complete bathroom installations — from suite supply to final tile. Managed start to finish.</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon-wrap">🔥</div>
+        <div class="service-name">Boiler Servicing</div>
+        <div class="service-desc">Annual safety checks and servicing by a Gas Safe registered engineer. Thorough, clearly explained.</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon-wrap">♨️</div>
+        <div class="service-name">Central Heating</div>
+        <div class="service-desc">Installations and repairs. Radiators, pipework, and controls fitted to a high standard.</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon-wrap">🍽️</div>
+        <div class="service-name">Kitchen Plumbing</div>
+        <div class="service-desc">Appliance connections, new pipework, taps and sink fitting for kitchen renovations.</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon-wrap">🔧</div>
+        <div class="service-name">General Repairs</div>
+        <div class="service-desc">Drips, leaks, running toilets, and persistent plumbing problems. Sorted properly.</div>
+      </div>
+      <div class="service-row">
+        <div class="service-icon-wrap">💧</div>
+        <div class="service-name">Power Flushing</div>
+        <div class="service-desc">Remove sludge and scale from your heating system and restore efficiency quickly.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <div class="areas-section">
+    <span class="areas-label">Coverage</span>
+    <div class="areas-tags">
+      <span class="area-tag">Colchester</span>
+      <span class="area-tag">Eight Ash Green</span>
+      <span class="area-tag">West Bergholt</span>
+      <span class="area-tag">Surrounding Essex</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Free quote. No faff.</h2>
+    <p>Call Justin directly — no call centres, no waiting lists.</p>
+    <a href="tel:07714340551" class="cta-phone">07714 340 551</a>
+    <p class="cta-meta">Mon–Sat, 8am–8pm &nbsp;·&nbsp; Gas Safe Registered &nbsp;·&nbsp; Colchester &amp; Essex</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2024 J Sage Plumbing &amp; Heating</span>
+    <span>Gas Safe Registered &nbsp;·&nbsp; Colchester, Essex</span>
+  </footer>
+
+</body>
+</html>
