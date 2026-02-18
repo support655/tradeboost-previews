@@ -82,8 +82,6 @@
       padding: 80px 60px;
     }
 
-    .hero-left {}
-
     .hero-greeting {
       font-family: 'Playfair Display', serif;
       font-style: italic;
@@ -190,15 +188,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: sepia(20%) saturate(1.2) brightness(0.92);
+      object-position: center 25%;
+      filter: sepia(15%) saturate(1.15) brightness(0.92);
+      display: block;
     }
 
     .hero-image-wrap::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(194,97,42,0.12) 0%, rgba(0,0,0,0) 60%);
+      background: linear-gradient(135deg, rgba(194,97,42,0.10) 0%, rgba(0,0,0,0) 60%);
       border-radius: 20px;
+      pointer-events: none;
     }
 
     /* TRUST BADGES */
@@ -298,6 +299,68 @@
       font-size: 0.87rem;
       color: var(--warm-muted);
       line-height: 1.6;
+    }
+
+    /* BATHROOM SHOWCASE */
+    .bathroom-showcase {
+      padding: 80px 60px;
+      background: var(--cream-dark);
+      border-top: 1px solid var(--warm-border);
+      border-bottom: 1px solid var(--warm-border);
+    }
+
+    .showcase-header {
+      margin-bottom: 36px;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .showcase-img-wrap {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .showcase-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Warm tone to match cream/terracotta palette */
+      filter: sepia(28%) saturate(1.25) brightness(0.92) hue-rotate(-8deg);
+      transition: filter 0.4s ease, transform 0.5s ease;
+      display: block;
+    }
+
+    .showcase-img-wrap:hover img {
+      filter: sepia(15%) saturate(1.4) brightness(1.0) hue-rotate(-5deg);
+      transform: scale(1.04);
+    }
+
+    .showcase-label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      background: rgba(45,33,24,0.72);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 6px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .showcase-img-wrap:hover .showcase-label {
+      opacity: 1;
     }
 
     /* REVIEWS */
@@ -426,7 +489,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav, .hero, .services-section, .reviews-section, .cta-section, footer {
+      nav, .hero, .services-section, .bathroom-showcase, .reviews-section, .cta-section, footer {
         padding-left: 28px;
         padding-right: 28px;
       }
@@ -435,15 +498,17 @@
       .hero { grid-template-columns: 1fr; gap: 40px; }
       .hero-right { order: -1; }
       .services-grid { grid-template-columns: 1fr 1fr; }
+      .showcase-grid { grid-template-columns: 1fr 1fr; }
       .reviews-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
       nav { padding: 16px 20px; }
       .hero { padding: 52px 20px; }
-      .services-section, .reviews-section, .cta-section { padding: 60px 20px; }
+      .services-section, .bathroom-showcase, .reviews-section, .cta-section { padding: 60px 20px; }
       .trust-bar { padding: 16px 20px; }
       .services-grid { grid-template-columns: 1fr; }
+      .showcase-grid { grid-template-columns: 1fr 1fr; }
       footer { padding: 20px; flex-direction: column; gap: 6px; text-align: center; }
       .hero-image-wrap { aspect-ratio: 16/9; }
     }
@@ -479,7 +544,10 @@
     </div>
     <div class="hero-right">
       <div class="hero-image-wrap">
-        <img src="https://images.pexels.com/photos/6195276/pexels-photo-6195276.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Justin Sage at work" loading="lazy">
+        <img
+          src="https://images.pexels.com/photos/8486978/pexels-photo-8486978.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Justin Sage — professional plumber at work with wrench and safety gear"
+          loading="lazy">
       </div>
     </div>
   </section>
@@ -528,6 +596,44 @@
         <div class="service-icon-bg">💧</div>
         <div class="service-name">Power Flushing</div>
         <p class="service-desc">Clears sludge from your heating system, improves efficiency, and extends the life of your boiler.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BATHROOM SHOWCASE — warm-filtered gallery -->
+  <section class="bathroom-showcase">
+    <div class="showcase-header">
+      <h2 class="section-title">A look at the work</h2>
+      <p class="section-sub">Bathroom installations completed across Colchester</p>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/7534571/pexels-photo-7534571.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Modern luxury bathroom installation"
+          loading="lazy">
+        <span class="showcase-label">Modern bathroom</span>
+      </div>
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/16249146/pexels-photo-16249146.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Freestanding bath — premium bathroom suite"
+          loading="lazy">
+        <span class="showcase-label">Freestanding bath</span>
+      </div>
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/6934184/pexels-photo-6934184.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Walk-in shower cabin installation"
+          loading="lazy">
+        <span class="showcase-label">Shower room</span>
+      </div>
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Classic white bathroom suite"
+          loading="lazy">
+        <span class="showcase-label">Classic suite</span>
       </div>
     </div>
   </section>

@@ -13,6 +13,7 @@
     :root {
       --green: #1a7f4b;
       --green-light: #e8f5ee;
+      --green-dark: #166040;
       --amber: #f59e0b;
       --dark: #111827;
       --grey-bg: #f3f4f6;
@@ -70,14 +71,43 @@
       font-weight: 600 !important;
     }
 
-    /* HERO */
+    /* HERO — dark background with overlay image */
     .hero {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 80px;
       padding: 80px 60px;
       border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--dark);
+    }
+
+    /* Background image layer */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.pexels.com/photos/8486978/pexels-photo-8486978.jpeg?auto=compress&cs=tinysrgb&w=1200');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    /* Dark gradient overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(17,24,39,0.92) 35%, rgba(17,24,39,0.72) 100%);
+      z-index: 1;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 2;
     }
 
     .hero-left {
@@ -101,12 +131,12 @@
 
     .hero-reviews-count {
       font-size: 0.95rem;
-      color: var(--muted);
+      color: #d1d5db;
       font-weight: 400;
     }
 
     .hero-reviews-count strong {
-      color: var(--text);
+      color: #fff;
       font-weight: 700;
     }
 
@@ -115,11 +145,11 @@
       align-items: center;
       gap: 8px;
       margin-top: 14px;
-      background: var(--grey-bg);
+      background: rgba(255,255,255,0.1);
       padding: 8px 16px;
       border-radius: 100px;
       font-size: 0.8rem;
-      color: var(--muted);
+      color: #9ca3af;
     }
 
     .google-g {
@@ -140,10 +170,11 @@
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 16px;
+      color: #fff;
     }
 
     .hero-right p {
-      color: var(--muted);
+      color: #9ca3af;
       font-size: 1.05rem;
       line-height: 1.7;
       margin-bottom: 32px;
@@ -164,14 +195,14 @@
     }
 
     .hero-cta:hover {
-      background: #166040;
+      background: var(--green-dark);
       transform: translateY(-1px);
     }
 
     .hero-meta {
       margin-top: 20px;
       font-size: 0.82rem;
-      color: var(--muted);
+      color: #6b7280;
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
@@ -182,6 +213,75 @@
       align-items: center;
       gap: 6px;
     }
+
+    /* ABOUT — 2-col image/text */
+    .about-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 440px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-image-col {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .about-text-col {
+      padding: 64px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--grey-bg);
+    }
+
+    .about-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .about-text-col h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .about-text-col p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .about-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 2px solid var(--green-light);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+      align-self: flex-start;
+    }
+
+    .about-cta:hover { border-color: var(--green); }
 
     /* REVIEWS SECTION */
     .reviews-section {
@@ -253,48 +353,73 @@
       font-weight: 500;
     }
 
-    /* SERVICES */
+    /* SERVICES — card grid with images */
     .services-section {
       padding: 80px 60px;
     }
 
-    .services-list {
-      margin-top: 0;
-    }
-
-    .service-row {
+    .services-cards-grid {
       display: grid;
-      grid-template-columns: 56px 1fr 1fr;
-      align-items: center;
-      gap: 24px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .service-row:first-child {
-      border-top: 1px solid var(--border);
+    .service-img-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .service-img-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .service-img-wrap {
+      height: 170px;
+      overflow: hidden;
+    }
+
+    .service-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .service-img-card:hover .service-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .service-img-body {
+      padding: 20px 22px 24px;
     }
 
     .service-icon-wrap {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       background: var(--green-light);
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
     }
 
     .service-name {
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--text);
     }
 
     .service-desc {
-      font-size: 0.9rem;
+      font-size: 0.87rem;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     /* AREAS */
@@ -381,26 +506,30 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav, .hero, .reviews-section, .services-section, .areas-section, .cta-section, footer {
+      nav, .reviews-section, .services-section, .areas-section, .cta-section, footer {
         padding-left: 28px;
         padding-right: 28px;
       }
 
-      .hero { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+      .hero { grid-template-columns: 1fr; gap: 48px; text-align: center; padding: 60px 28px; }
       .hero-meta { justify-content: center; }
+      .about-section { grid-template-columns: 1fr; }
+      .about-image-col { height: 320px; }
+      .about-text-col { padding: 48px 28px; }
       .reviews-grid { grid-template-columns: 1fr; }
-      .service-row { grid-template-columns: 56px 1fr; }
-      .service-desc { display: none; }
+      .services-cards-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 600px) {
       nav { padding: 16px 20px; }
       .nav-links { display: none; }
-      .hero { padding: 52px 20px; gap: 36px; }
+      .hero { padding: 48px 20px; gap: 32px; }
+      .about-text-col { padding: 40px 20px; }
       .reviews-section, .services-section, .cta-section { padding-left: 20px; padding-right: 20px; }
       .areas-section { padding: 40px 20px; }
       footer { padding: 20px; flex-direction: column; gap: 6px; }
       .section-header { flex-direction: column; gap: 4px; }
+      .services-cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -416,7 +545,7 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO — dark background image with overlay -->
   <section class="hero">
     <div class="hero-left">
       <div class="hero-score">5.0</div>
@@ -436,6 +565,23 @@
         <span>✓ Mon–Sat 8am–8pm</span>
         <span>✓ No call centres</span>
       </div>
+    </div>
+  </section>
+
+  <!-- ABOUT — 2-col image / text -->
+  <section class="about-section">
+    <div class="about-image-col">
+      <img
+        src="https://images.pexels.com/photos/6195276/pexels-photo-6195276.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Experienced plumber carrying out professional plumbing work"
+        loading="lazy">
+    </div>
+    <div class="about-text-col">
+      <p class="about-eyebrow">About Justin</p>
+      <h2>Colchester's trusted plumber since 2004</h2>
+      <p>Justin Sage is a Gas Safe registered plumber based in Colchester. He's been the first call for local homeowners for over 20 years — fully insured, fairly priced, and known for exceptional communication.</p>
+      <p>No call centres. No subcontractors. Just one reliable person who turns up on time and leaves your home exactly as he found it.</p>
+      <a href="tel:07714340551" class="about-cta">📞 Call 07714 340 551 →</a>
     </div>
   </section>
 
@@ -473,43 +619,98 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- SERVICES — card grid with images -->
   <section class="services-section" id="services">
     <div class="section-header">
       <h2>Services</h2>
       <p>Colchester &amp; surrounding Essex</p>
     </div>
-    <div class="services-list">
-      <div class="service-row">
-        <div class="service-icon-wrap">🛁</div>
-        <div class="service-name">Bathroom Fitting</div>
-        <div class="service-desc">Complete bathroom installations — from suite supply to final tile. Managed start to finish.</div>
+    <div class="services-cards-grid">
+
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/7534571/pexels-photo-7534571.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Modern luxury bathroom installation"
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">🛁</div>
+          <div class="service-name">Bathroom Fitting</div>
+          <div class="service-desc">Complete installations from suite supply to final tile. Managed start to finish.</div>
+        </div>
       </div>
-      <div class="service-row">
-        <div class="service-icon-wrap">🔥</div>
-        <div class="service-name">Boiler Servicing</div>
-        <div class="service-desc">Annual safety checks and servicing by a Gas Safe registered engineer. Thorough, clearly explained.</div>
+
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Boiler servicing and safety check"
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">🔥</div>
+          <div class="service-name">Boiler Servicing</div>
+          <div class="service-desc">Annual safety checks by a Gas Safe registered engineer. Thorough, clearly explained.</div>
+        </div>
       </div>
-      <div class="service-row">
-        <div class="service-icon-wrap">♨️</div>
-        <div class="service-name">Central Heating</div>
-        <div class="service-desc">Installations and repairs. Radiators, pipework, and controls fitted to a high standard.</div>
+
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Central heating pipework and installation"
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">♨️</div>
+          <div class="service-name">Central Heating</div>
+          <div class="service-desc">Installations and repairs. Radiators, pipework, and controls fitted to a high standard.</div>
+        </div>
       </div>
-      <div class="service-row">
-        <div class="service-icon-wrap">🍽️</div>
-        <div class="service-name">Kitchen Plumbing</div>
-        <div class="service-desc">Appliance connections, new pipework, taps and sink fitting for kitchen renovations.</div>
+
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/6934184/pexels-photo-6934184.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Kitchen and bathroom plumbing work"
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">🍽️</div>
+          <div class="service-name">Kitchen Plumbing</div>
+          <div class="service-desc">Appliance connections, new pipework, taps and sink fitting for kitchen renovations.</div>
+        </div>
       </div>
-      <div class="service-row">
-        <div class="service-icon-wrap">🔧</div>
-        <div class="service-name">General Repairs</div>
-        <div class="service-desc">Drips, leaks, running toilets, and persistent plumbing problems. Sorted properly.</div>
+
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/8486978/pexels-photo-8486978.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Professional plumber carrying out general repairs"
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">🔧</div>
+          <div class="service-name">General Repairs</div>
+          <div class="service-desc">Drips, leaks, running toilets, and persistent plumbing problems. Sorted properly.</div>
+        </div>
       </div>
-      <div class="service-row">
-        <div class="service-icon-wrap">💧</div>
-        <div class="service-name">Power Flushing</div>
-        <div class="service-desc">Remove sludge and scale from your heating system and restore efficiency quickly.</div>
+
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Power flushing heating system restoration"
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">💧</div>
+          <div class="service-name">Power Flushing</div>
+          <div class="service-desc">Remove sludge and scale from your heating system and restore efficiency quickly.</div>
+        </div>
       </div>
+
     </div>
   </section>
 
