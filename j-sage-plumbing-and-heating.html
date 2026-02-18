@@ -134,7 +134,7 @@
 
         /* === HERO === */
         .hero {
-            background: linear-gradient(135deg, rgba(15,27,45,0.92) 0%, rgba(30,58,95,0.88) 100%), url('https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(15,27,45,0.92) 0%, rgba(30,58,95,0.88) 100%), url('https://images.pexels.com/photos/6195276/pexels-photo-6195276.jpeg') center/cover no-repeat;
             color: var(--white);
             padding: 5rem 1.5rem;
             position: relative;
@@ -361,14 +361,15 @@
             padding: 1.5rem;
         }
         .service-card-icon {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             background: var(--blue-light);
-            border-radius: 10px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.25rem;
+            margin: 1.25rem 1.5rem 0;
+            font-size: 1.75rem;
         }
         .service-card-icon svg {
             width: 24px;
@@ -464,6 +465,18 @@
         }
 
         /* === AREAS === */
+        .about { padding: 80px 24px; background: #f9fafb; }
+        .about-inner { max-width: 800px; margin: 0 auto; }
+        .about-text { font-size: 1.15rem; color: #374151; line-height: 1.8; margin-top: 16px; }
+
+        .faq { padding: 80px 24px; background: white; }
+        .faq-inner { max-width: 800px; margin: 0 auto; }
+        .faq-list { margin-top: 32px; }
+        .faq-item { border-bottom: 1px solid #e5e7eb; padding: 24px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-size: 1.1rem; font-weight: 700; color: #111827; margin-bottom: 10px; }
+        .faq-answer { font-size: 1rem; color: #6b7280; line-height: 1.7; }
+
         .areas {
             padding: 4rem 1.5rem;
             background: var(--grey-50);
@@ -611,7 +624,7 @@
                     <div class="brand-sub">Colchester, Essex's Trusted Local Plumber</div>
                 </div>
             </div>
-            <a href="tel:Essex"" class="header-cta">
+            <a href="tel:07714 340551" class="header-cta">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                 Get a Free Quote
             </a>
@@ -625,10 +638,10 @@
                 <span class="dot"></span>
                 Accepting new customers in Colchester, Essex
             </div>
-            <h1>Professional Plumbing You Can <span>Actually Trust</span></h1>
-            <p class="hero-sub">Emergency callouts, repairs, and installations — serving Colchester, Essex and surrounding areas with quality service you can rely on.</p>
+            
+            <p class="hero-sub">Justin Sage has been serving Colchester and surrounding Essex for over 20 years — Gas Safe registered, with a perfect 5.0 rating across 44 genuine reviews. Homeowners across Colchester, Eight Ash Green, and West Bergholt keep coming back, and keep recommending him.</p>
             <div class="hero-actions">
-                <a href="tel:Essex"" class="btn-primary">
+                <a href="tel:07714 340551" class="btn-primary">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
                     Call Now — Free Quote
                 </a>
@@ -637,6 +650,9 @@
                 </a>
             </div>
             <div class="hero-stats">
+                
+                
+                
                 
                 
                 
@@ -675,8 +691,62 @@
         <div class="services-inner">
             <span class="section-label">What We Do</span>
             <h2 class="section-heading">Our Services</h2>
-            <p class="section-sub">From emergency repairs to full installations — we handle it all with care and expertise.</p>
+            <p class="section-sub">From a dripping tap to a full bathroom redesign, here's what Justin covers across Colchester and the surrounding villages.</p>
             <div class="services-grid">
+                
+                <div class="service-card">
+                    <img src="" alt="Bathroom Fitting" class="service-card-img">
+                    <div class="service-card-icon">🛁</div>
+                    <div class="service-card-body">
+                        <h3>Bathroom Fitting</h3>
+                        <p>Justin designs and installs complete bathrooms from scratch — from layout planning through to the finished result. Customers consistently note his design input and the quality of the workmanship.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="" alt="Boiler Servicing" class="service-card-img">
+                    <div class="service-card-icon">🔧</div>
+                    <div class="service-card-body">
+                        <h3>Boiler Servicing</h3>
+                        <p>Even a routine boiler service gets Justin's full attention. As a Gas Safe registered engineer, he'll check everything properly and explain what he finds — no jargon, no surprises on the bill.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="" alt="Central Heating" class="service-card-img">
+                    <div class="service-card-icon">🌡️</div>
+                    <div class="service-card-body">
+                        <h3>Central Heating</h3>
+                        <p>Whether you need a new central heating system installed or your existing one brought back up to scratch, Justin covers full installations and ongoing servicing across Colchester and Essex.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="" alt="Kitchen Plumbing" class="service-card-img">
+                    <div class="service-card-icon">🍳</div>
+                    <div class="service-card-body">
+                        <h3>Kitchen Plumbing</h3>
+                        <p>From new kitchen installations to replumbing an existing one, Justin handles all the pipework, connections, and appliance hookups — either as part of a full kitchen fit or as a standalone job.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="" alt="General Repairs" class="service-card-img">
+                    <div class="service-card-icon">🔨</div>
+                    <div class="service-card-body">
+                        <h3>General Repairs</h3>
+                        <p>Leaks, drains, faulty valves, and everyday plumbing problems — Justin works across Colchester Monday to Saturday, 8am to 8pm, and gets things sorted properly first time.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <img src="" alt="Power Flushing" class="service-card-img">
+                    <div class="service-card-icon">♨️</div>
+                    <div class="service-card-body">
+                        <h3>Power Flushing</h3>
+                        <p>If your radiators are taking a long time to heat up or running cold at the bottom, a power flush could make a real difference. Justin will assess your system and advise honestly on whether it's the right solution.</p>
+                    </div>
+                </div>
                 
             </div>
         </div>
@@ -691,17 +761,55 @@
                     <h2 class="section-heading">Trusted by Colchester, Essex Customers</h2>
                     <p class="section-sub">Don't just take our word for it.</p>
                 </div>
-                <img src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Our team" class="reviews-photo">
+                <img src="https://images.pexels.com/photos/6195276/pexels-photo-6195276.jpeg" alt="Our team" class="reviews-photo">
             </div>
             
-            <div class="placeholder-section">
-                <strong>⭐ Your Google Reviews</strong><br>
-                We'll display your real customer reviews here, pulled directly from your Google Business Profile.
-            </div>
             
+            <div class="reviews-grid">
+                
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Justin was recommended to me and I can see why. Very efficient, good communicator and high quality work. Would definitely recommend. Justin has now done several jobs on our property over the last six years and all have b"</p>
+                    <div class="review-source">Google Review — Colchester, Essex</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Carried out a boiler service for both myself and my parents. We were both very impressed with how thorough and professional Justin was even though it was 'just' a boiler service. He explained everything very clearly and"</p>
+                    <div class="review-source">Google Review — Colchester, Essex</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Justin fitted my bathroom and has done a great job. Communication was clear and he explained things in a way even I could understand!"</p>
+                    <div class="review-source">Google Review — Colchester, Essex</div>
+                </div>
+                
+            </div>
             
         </div>
     </section>
+
+    <!-- ABOUT -->
+    
+
+    <!-- FAQ -->
+    
+    <section class="faq">
+        <div class="faq-inner">
+            <span class="section-label">FAQs</span>
+            <h2 class="section-heading">Common Questions</h2>
+            <div class="faq-list">
+                
+                <div class="faq-item">
+                    <div class="faq-question"></div>
+                    <div class="faq-answer"></div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
 
     <!-- AREAS SERVED -->
     <section class="areas">
@@ -712,6 +820,12 @@
                 
                 <span class="area-tag">Colchester</span>
                 
+                <span class="area-tag">Surrounding area (unspecified — 'Colchester and surrounding area' per business description)</span>
+                
+                <span class="area-tag">Eight Ash Green (mentioned in community referral Jan 2015)</span>
+                
+                <span class="area-tag">West Bergholt (mentioned in community referral Jan 2015)</span>
+                
             </div>
         </div>
     </section>
@@ -719,11 +833,11 @@
     <!-- CTA -->
     <section class="cta">
         <div class="cta-inner">
-            <h2>Need a Plumber in Colchester, Essex?</h2>
+            
             <p>Whether it's an emergency or a planned job, give us a call. No obligation, no hidden fees — just honest, reliable service.</p>
-            <a href="tel:Essex"" class="cta-phone">
+            <a href="tel:07714 340551" class="cta-phone">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                Essex"
+                07714 340551
             </a>
             <p class="cta-note">Free quotes • No call-out charge • Available 24/7</p>
         </div>
