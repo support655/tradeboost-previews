@@ -3,711 +3,936 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your new website is ready — J Sage Plumbing and Heating | TradeBoost</title>
+  <title>Digital Presence Assessment — J Sage Plumbing and Heating | TradeBoost</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #1a1f36;
-      --orange: #f97316;
-      --orange-dark: #ea6c0b;
-      --light-bg: #f8f9fa;
-      --card-bg: #ffffff;
-      --text: #1a1f36;
-      --muted: #6b7280;
-      --green: #10b981;
-      --red: #ef4444;
-      --amber: #f59e0b;
-      --border: #e5e7eb;
-      --radius: 12px;
-      --shadow: 0 2px 12px rgba(0,0,0,0.08);
-      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+      --bg:         #f7f5f2;
+      --navy:       #0c2340;
+      --orange:     #c8622a;
+      --orange-lt:  #f0e8e0;
+      --text:       #1a1a1a;
+      --muted:      #6b7280;
+      --card:       #ffffff;
+      --border:     #e8e4de;
+      --green:      #2d6a4f;
+      --red:        #991b1b;
+      --amber:      #92400e;
+      --amber-bg:   #fffbf7;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
       color: var(--text);
-      background: var(--light-bg);
-      line-height: 1.6;
+      background: var(--bg);
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── TOP BORDER ── */
-    body::before {
-      content: '';
-      display: block;
-      height: 4px;
-      background: var(--orange);
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 999;
+    h1, h2, h3, .wordmark {
+      font-family: 'Merriweather', Georgia, serif;
     }
 
     /* ── HEADER ── */
-    .header {
+    .site-header {
       background: var(--navy);
-      padding: 1rem 1.5rem;
+      padding: 0.9rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 4px;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    .header-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
     }
     .wordmark {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -0.5px;
+      color: #fff;
+      letter-spacing: -0.3px;
     }
-    .wordmark span { color: var(--orange); }
-    .header-tagline {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.85rem;
-      display: none;
+    .header-url {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.02em;
     }
-    @media (min-width: 480px) { .header-tagline { display: block; } }
+    .header-accent {
+      height: 3px;
+      background: var(--orange);
+    }
 
-    /* ── SECTIONS ── */
-    section { padding: 3rem 1.5rem; }
-    .section-inner { max-width: 860px; margin: 0 auto; }
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
     .section-title {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: var(--navy);
       margin-bottom: 1.5rem;
+      line-height: 1.3;
     }
 
-    /* ── HERO ── */
+    /* ── ASSESSMENT HERO ── */
     .hero {
-      background: var(--navy);
-      color: #fff;
-      text-align: center;
-      padding: 3.5rem 1.5rem 2.5rem;
+      background: var(--bg);
+      padding-top: 3rem;
+      padding-bottom: 0;
     }
-    .hero-headline {
-      font-size: clamp(1.6rem, 5vw, 2.4rem);
+
+    .hero-business {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
       font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 2rem;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
     }
-    .hero-headline span { color: var(--orange); }
-    .hero-stats {
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ── STAT CARDS ── */
+    .stat-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-    }
-    .stat-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius);
-      padding: 1.25rem 1rem;
-      text-align: center;
-    }
-    .stat-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 0.5rem;
-    }
-    .stat-score {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-    .stat-score.red { color: var(--red); }
-    .stat-score.amber { color: var(--amber); }
-    .stat-score.green { color: var(--green); }
-    .stat-sub {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
-    }
-    .stat-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.25rem;
-    }
-    .gap-callout {
-      background: rgba(239,68,68,0.15);
-      border: 1px solid rgba(239,68,68,0.3);
-      border-radius: 8px;
-      padding: 0.85rem 1.25rem;
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.9);
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-      text-align: left;
-    }
-    .hero-cta-text {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--orange);
-      margin-top: 0.5rem;
+      margin-bottom: 2rem;
     }
 
-    /* ── PREVIEW ── */
-    .preview-section { background: var(--card-bg); }
-    .iframe-wrap {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.35rem 1.25rem;
+    }
+
+    .stat-card-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .stat-score-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-big {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .stat-big.score-red    { color: var(--red); }
+    .stat-big.score-amber  { color: var(--amber); }
+    .stat-big.score-green  { color: var(--green); }
+
+    .stat-denom {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .stat-card-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .stat-competitor-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    /* ── KEY FINDINGS ── */
+    .findings-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
       margin-bottom: 0.75rem;
     }
-    .iframe-wrap iframe {
+
+    .findings-list {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .findings-list li {
+      font-size: 0.92rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .find-icon {
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      font-size: 0.9rem;
+    }
+
+    /* ── SITE PREVIEW ── */
+    .preview-section {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .preview-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      max-width: 640px;
+    }
+
+    .iframe-container {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 0.85rem;
+    }
+
+    .iframe-container iframe {
       width: 100%;
-      height: 400px;
+      height: 380px;
       border: none;
       display: block;
     }
-    @media (min-width: 600px) {
-      .iframe-wrap iframe { height: 600px; }
-    }
-    .iframe-caption {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-    .variant-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-    }
-    .variant-pill {
-      display: inline-block;
-      padding: 0.35rem 0.85rem;
-      border-radius: 100px;
-      background: var(--light-bg);
-      border: 1px solid var(--border);
-      color: var(--navy);
-      font-size: 0.8rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.15s;
-    }
-    .variant-pill:hover {
-      background: var(--orange);
-      color: #fff;
-      border-color: var(--orange);
-    }
-    .variant-label {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-align: center;
-      margin-bottom: 0.5rem;
+
+    @media (min-width: 640px) {
+      .iframe-container iframe { height: 580px; }
     }
 
-    /* ── INCLUDED ── */
-    .included-section { background: var(--light-bg); }
+    .fullscreen-link {
+      font-size: 0.88rem;
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+    .fullscreen-link:hover { color: var(--orange); text-decoration: underline; }
+
+    .variants-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .variants-row {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .variants-row a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .variants-row a:hover { color: var(--orange); text-decoration: underline; }
+    .variants-row .sep { margin: 0 0.35rem; color: var(--border); }
+
+    /* ── WHAT YOU GET ── */
+    .included-section {
+      background: var(--bg);
+    }
+
     .checklist {
       display: grid;
-      gap: 0.75rem;
-      max-width: 560px;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
     }
+
+    @media (min-width: 520px) {
+      .checklist { grid-template-columns: 1fr 1fr; }
+    }
+
     .check-item {
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
-      font-size: 0.95rem;
+      gap: 0.6rem;
+      font-size: 0.92rem;
+      line-height: 1.45;
     }
-    .check-icon {
-      width: 22px;
-      height: 22px;
-      background: var(--green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 0.7rem;
+
+    .check-item .tick {
+      color: var(--green);
+      font-weight: 700;
       flex-shrink: 0;
-      margin-top: 2px;
+      font-size: 0.95rem;
+      margin-top: 0.05rem;
     }
 
     /* ── DOMAIN ── */
-    .domain-section { background: var(--card-bg); }
+    .domain-section {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
     .domain-options {
       display: grid;
       gap: 0.75rem;
-      max-width: 560px;
     }
+
     .domain-card {
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
+      border: 1px solid var(--border);
+      padding: 1rem 1.1rem;
       cursor: pointer;
-      transition: all 0.15s;
+      background: var(--card);
+      transition: border-color 0.1s, background 0.1s;
+      position: relative;
     }
+
     .domain-card.selected {
-      border-color: var(--orange);
-      background: #fff7ed;
+      border-left: 4px solid var(--orange);
+      background: #fdf8f4;
     }
-    .domain-card:hover { border-color: var(--orange); }
-    .domain-header {
+
+    .domain-card:not(.selected):hover {
+      border-color: #c0b8ae;
+    }
+
+    .domain-card-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
     }
-    .domain-radio {
+
+    .domain-radio-row {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.55rem;
     }
-    .radio-dot {
-      width: 18px;
-      height: 18px;
+
+    .radio-circle {
+      width: 16px;
+      height: 16px;
       border: 2px solid var(--border);
       border-radius: 50%;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.15s;
+      transition: border-color 0.1s, background 0.1s;
     }
-    .domain-card.selected .radio-dot {
+
+    .domain-card.selected .radio-circle {
       border-color: var(--orange);
       background: var(--orange);
     }
-    .domain-card.selected .radio-dot::after {
+
+    .domain-card.selected .radio-circle::after {
       content: '';
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       background: #fff;
       border-radius: 50%;
-      display: block;
     }
-    .domain-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
-    .domain-price {
-      font-size: 0.85rem;
+
+    .domain-url-text {
+      font-family: 'Courier New', 'Courier', monospace;
+      font-size: 0.92rem;
+      color: var(--navy);
       font-weight: 700;
-      color: var(--navy);
     }
-    .domain-price.free { color: var(--green); }
-    .domain-url {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--navy);
-      font-family: 'Courier New', monospace;
+
+    .domain-tags {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.3rem;
     }
+
     .domain-tag {
-      display: inline-block;
       font-size: 0.7rem;
       font-weight: 600;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      margin-top: 0.4rem;
-      background: var(--light-bg);
+      font-family: 'Inter', sans-serif;
+      padding: 0.15rem 0.5rem;
+      background: var(--bg);
       color: var(--muted);
+      border: 1px solid var(--border);
     }
-    .domain-card.selected .domain-tag { background: #fedcb8; color: #92400e; }
+
+    .domain-tag.recommended {
+      color: var(--amber);
+      background: #fef3c7;
+      border-color: #fde68a;
+    }
+
+    .domain-tag.included {
+      color: var(--green);
+      background: #f0faf4;
+      border-color: #a7d7b8;
+    }
+
+    .domain-price-tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+
     .domain-smallprint {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--muted);
-      margin-top: 0.25rem;
+      margin-top: 0.3rem;
+      font-family: 'Inter', sans-serif;
     }
+
     .domain-input {
       width: 100%;
       margin-top: 0.75rem;
-      padding: 0.6rem 0.85rem;
+      padding: 0.55rem 0.8rem;
       border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 0.9rem;
+      border-radius: 2px;
+      font-size: 0.88rem;
       font-family: 'Courier New', monospace;
+      background: var(--bg);
+      color: var(--text);
       display: none;
     }
-    .domain-input:focus { outline: 2px solid var(--orange); }
+    .domain-input:focus {
+      outline: 2px solid var(--orange);
+      outline-offset: 1px;
+    }
 
     /* ── PRICING ── */
-    .pricing-section { background: var(--light-bg); }
+    .pricing-section {
+      background: var(--bg);
+    }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
-      max-width: 860px;
     }
-    @media (min-width: 640px) {
+
+    @media (min-width: 600px) {
       .pricing-grid { grid-template-columns: repeat(3, 1fr); }
     }
+
     .price-card {
-      background: var(--card-bg);
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.4rem 1.25rem;
       cursor: pointer;
-      transition: all 0.15s;
+      transition: border-color 0.1s;
       position: relative;
     }
-    .price-card.highlighted {
-      border-color: var(--orange);
-      box-shadow: 0 0 0 4px rgba(249,115,22,0.1);
+
+    .price-card:hover {
+      border-color: #c0b8ae;
     }
+
     .price-card.selected-tier {
-      border-color: var(--navy);
-      box-shadow: 0 0 0 4px rgba(26,31,54,0.08);
+      border: 2px solid var(--navy);
     }
-    .price-card:hover { border-color: var(--orange); }
-    .popular-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--orange);
-      color: #fff;
+
+    .price-card.popular {
+      background: var(--amber-bg);
+      border-top: 3px solid var(--orange);
+    }
+
+    .price-card.popular.selected-tier {
+      border: 2px solid var(--navy);
+      border-top: 3px solid var(--orange);
+    }
+
+    .popular-label {
       font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.25rem 0.75rem;
-      border-radius: 100px;
-      white-space: nowrap;
+      font-weight: 600;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 0.4rem;
     }
+
     .tier-name {
-      font-size: 1rem;
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--navy);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.4rem;
     }
-    .tier-setup {
-      font-size: 1.5rem;
+
+    .tier-price-setup {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1.7rem;
       font-weight: 700;
       color: var(--navy);
       line-height: 1;
-      margin: 0.5rem 0 0.1rem;
+      margin-bottom: 0.2rem;
     }
-    .tier-monthly {
-      font-size: 0.9rem;
+
+    .tier-price-monthly {
+      font-size: 0.82rem;
       color: var(--muted);
-      margin-bottom: 1rem;
+      margin-bottom: 1.1rem;
+      font-family: 'Inter', sans-serif;
     }
+
     .tier-features {
       list-style: none;
+      margin-bottom: 1.25rem;
       display: grid;
       gap: 0.4rem;
-      margin-bottom: 1.25rem;
     }
+
     .tier-features li {
-      font-size: 0.85rem;
-      color: var(--text);
+      font-size: 0.84rem;
       display: flex;
-      gap: 0.5rem;
       align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.4;
     }
-    .tier-features li::before {
-      content: '✓';
+
+    .tier-features li .tick {
       color: var(--green);
       font-weight: 700;
       flex-shrink: 0;
     }
+
     .tier-btn {
+      display: block;
       width: 100%;
-      padding: 0.65rem;
-      border-radius: 8px;
-      border: 2px solid var(--navy);
-      background: transparent;
-      color: var(--navy);
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .tier-btn:hover, .tier-btn.active {
+      padding: 0.65rem 1rem;
       background: var(--navy);
       color: #fff;
+      border: none;
+      border-radius: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.12s;
     }
-    .price-card.highlighted .tier-btn {
+
+    .tier-btn:hover,
+    .tier-btn.active {
       background: var(--orange);
-      border-color: var(--orange);
-      color: #fff;
     }
-    .price-card.highlighted .tier-btn:hover { background: var(--orange-dark); }
 
     /* ── ADD-ONS ── */
-    .addons-section { background: var(--card-bg); }
-    .addons-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-      max-width: 560px;
+    .addons-section {
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    @media (min-width: 480px) {
-      .addons-grid { grid-template-columns: 1fr 1fr; }
-    }
-    .addon-card {
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-      cursor: pointer;
-      transition: all 0.15s;
-      user-select: none;
-    }
-    .addon-card.active {
-      border-color: var(--orange);
-      background: #fff7ed;
-    }
-    .addon-card:hover { border-color: var(--orange); }
-    .addon-emoji { font-size: 1.4rem; margin-bottom: 0.4rem; }
-    .addon-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
-    .addon-price { font-size: 0.8rem; color: var(--orange); font-weight: 600; }
-    .addon-desc { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
-    .running-total {
-      margin-top: 1.25rem;
-      padding: 1rem 1.25rem;
-      background: var(--light-bg);
-      border-radius: var(--radius);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--navy);
-      max-width: 560px;
-    }
-    .running-total span { color: var(--orange); }
 
-    /* ── CTA ── */
+    .addons-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .addons-table thead tr {
+      border-bottom: 2px solid var(--border);
+    }
+
+    .addons-table th {
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      padding: 0 0.5rem 0.6rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .addons-table th:first-child { padding-left: 0; }
+
+    .addons-table td {
+      padding: 0.85rem 0.5rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .addons-table td:first-child { padding-left: 0; }
+
+    .addons-table tr:last-child td { border-bottom: none; }
+
+    .addon-name-cell {
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .addon-desc-cell {
+      color: var(--muted);
+    }
+
+    .addon-price-cell {
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .addon-check-cell {
+      width: 28px;
+    }
+
+    .addon-check-cell input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      accent-color: var(--orange);
+    }
+
+    .running-total-row {
+      margin-top: 1.25rem;
+      padding: 0.9rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .running-total-label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+
+    .running-total-amount {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    /* ── FINAL CTA ── */
     .cta-section {
       background: var(--navy);
-      color: #fff;
+      padding: 4rem 0;
       text-align: center;
-      padding: 4rem 1.5rem;
     }
+
     .cta-headline {
-      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
     }
+
     .cta-price {
       font-size: 1.1rem;
-      color: rgba(255,255,255,0.8);
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
       margin-bottom: 2rem;
+      font-family: 'Inter', sans-serif;
     }
-    .cta-price strong { color: var(--orange); font-size: 1.4rem; }
+
     .cta-btn {
       display: inline-block;
-      padding: 1rem 2.5rem;
+      padding: 0.95rem 2.75rem;
       background: var(--orange);
       color: #fff;
-      font-size: 1.1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
       font-weight: 700;
-      border-radius: 10px;
       border: none;
+      border-radius: 0;
       cursor: pointer;
       text-decoration: none;
-      transition: all 0.15s;
-      box-shadow: 0 4px 16px rgba(249,115,22,0.35);
+      letter-spacing: 0.02em;
+      transition: background 0.12s;
     }
-    .cta-btn:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+    .cta-btn:hover { background: #b05520; }
+
     .cta-small {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
       margin-top: 1rem;
+      font-family: 'Inter', sans-serif;
     }
+
     .trust-row {
       display: flex;
-      gap: 1.25rem;
+      align-items: center;
       justify-content: center;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
     }
+
     .trust-item {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .trust-sep {
+      width: 3px;
+      height: 3px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
     /* ── FOOTER ── */
-    footer {
-      background: #111520;
-      color: rgba(255,255,255,0.4);
-      text-align: center;
+    .site-footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
       padding: 1.5rem;
-      font-size: 0.8rem;
+      text-align: center;
     }
-    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
-    footer a:hover { color: var(--orange); }
-    .footer-links { margin-top: 0.5rem; display: flex; gap: 1rem; justify-content: center; }
+
+    .site-footer p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .footer-links {
+      margin-top: 0.35rem;
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--navy); text-decoration: underline; }
+
+    /* ── UTILITY ── */
+    @media (max-width: 420px) {
+      .stat-grid { grid-template-columns: 1fr; }
+      .stat-big { font-size: 2.4rem; }
+    }
   </style>
 </head>
 <body>
 
-<!-- ── 1. HEADER ── -->
-<header class="header">
-  <div class="header-brand">
-    <div class="wordmark">Trade<span>Boost</span></div>
-    <div class="header-tagline">Your new website is ready.</div>
-  </div>
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <div class="wordmark">TradeBoost</div>
+  <div class="header-url">tradeboost.co.uk</div>
 </header>
+<div class="header-accent"></div>
 
-<!-- ── 2. HERO ── -->
+<!-- ── 1. ASSESSMENT HERO ── -->
 <section class="hero">
-  <div class="section-inner">
-    <h1 class="hero-headline">Your site is ready, <span>J Sage Plumbing and Heating.</span></h1>
-    <div class="hero-stats">
+  <div class="wrap">
+    <p class="section-label">Digital Presence Assessment</p>
+    <h1 class="hero-business">J Sage Plumbing and Heating</h1>
+    <p class="hero-sub">Colchester, Essex &middot; Plumber</p>
+
+    <div class="stat-grid">
+      <!-- Your score -->
       <div class="stat-card">
-        <div class="stat-label">Your score</div>
-        <div class="stat-score amber">5<span style="font-size:1.2rem;opacity:0.5">/10</span></div>
-        <div class="stat-sub">out of 10</div>
+        <div class="stat-card-label">Your current score</div>
+        <div class="stat-score-row">
+          <span class="stat-big score-amber">5</span>
+          <span class="stat-denom">/10</span>
+        </div>
+        <div class="stat-card-sub">Overall digital presence</div>
       </div>
+
+      <!-- Competitor -->
       <div class="stat-card">
-        <div class="stat-label">Top competitor</div>
-        <div class="stat-name">Budget Plumbing Services</div>
-        <div class="stat-score" style="color:rgba(255,255,255,0.9);font-size:2rem;">7<span style="font-size:1rem;opacity:0.5">/10</span></div>
+        <div class="stat-card-label">Leading competitor</div>
+        <div class="stat-competitor-name">Budget Plumbing Services</div>
+        <div class="stat-score-row">
+          <span class="stat-big" style="color: var(--text); font-size: 2.4rem;">7</span>
+          <span class="stat-denom">/10</span>
+        </div>
+        <div class="stat-card-sub">scoring ahead of you</div>
       </div>
     </div>
-    <div class="gap-callout">❌ No website · ❌ Not listed on trade platforms (Checkatrade, MyBuilder, etc.)</div>
-    <p class="hero-cta-text">We built this for you ↓</p>
+
+    <p class="findings-title">Key findings</p>
+    <ul class="findings-list" id="findings-list">
+      <!-- Populated by JS from template vars -->
+    </ul>
   </div>
 </section>
 
-<!-- ── 3. SITE PREVIEW ── -->
+<hr class="section-rule">
+
+<!-- ── 2. SITE PREVIEW ── -->
 <section class="preview-section">
-  <div class="section-inner">
-    <h2 class="section-title">Your new website</h2>
-    <div class="iframe-wrap">
+  <div class="wrap">
+    <h2 class="section-title">Your site — ready to go live</h2>
+    <p class="preview-desc">Based on your business profile and the Colchester, Essex market, we've built a professional website for J Sage Plumbing and Heating. It's live in preview — scroll through it below.</p>
+    <div class="iframe-container">
       <iframe src="https://support655.github.io/tradeboost-previews/j-sage-plumbing-and-heating.html" title="Your website preview" loading="lazy" scrolling="yes"></iframe>
     </div>
-    <p class="iframe-caption">Scroll to explore your site ↑</p>
-    <p class="variant-label">Other design styles:</p>
-    <div class="variant-pills">
-      <a class="variant-pill" href="https://support655.github.io/tradeboost-previews/j-sage-v-luxury.html" target="_blank">🌑 Dark Luxury</a>
-      <a class="variant-pill" href="https://support655.github.io/tradeboost-previews/j-sage-v-proof.html" target="_blank">⭐ Proof First</a>
-      <a class="variant-pill" href="https://support655.github.io/tradeboost-previews/j-sage-v-local.html" target="_blank">📍 Local Legend</a>
-      <a class="variant-pill" href="https://support655.github.io/tradeboost-previews/j-sage-v-editorial.html" target="_blank">✏️ Editorial</a>
-    </div>
+    <a class="fullscreen-link" href="https://support655.github.io/tradeboost-previews/j-sage-plumbing-and-heating.html" target="_blank">View in full screen →</a>
+    <p class="variants-label">Also available in:</p>
+    <p class="variants-row">
+      <a href="https://support655.github.io/tradeboost-previews/j-sage-v-luxury.html" target="_blank">Dark Luxury</a><span class="sep">·</span><a href="https://support655.github.io/tradeboost-previews/j-sage-v-proof.html" target="_blank">Proof First</a><span class="sep">·</span><a href="https://support655.github.io/tradeboost-previews/j-sage-v-local.html" target="_blank">Local Legend</a><span class="sep">·</span><a href="https://support655.github.io/tradeboost-previews/j-sage-v-editorial.html" target="_blank">Editorial</a>
+    </p>
   </div>
 </section>
 
-<!-- ── 4. WHAT'S INCLUDED ── -->
+<hr class="section-rule">
+
+<!-- ── 3. WHAT YOU GET ── -->
 <section class="included-section">
-  <div class="section-inner">
-    <h2 class="section-title">Everything you need, done for you</h2>
+  <div class="wrap">
+    <h2 class="section-title">What you get</h2>
     <div class="checklist">
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>Professional website, live within 24 hours</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>Optimised for Google search in Colchester, Essex</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>Mobile-friendly — works on any device</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>Your reviews and ratings prominently displayed</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>Booking enquiry form built in</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>Monthly updates included</span>
-      </div>
-      <div class="check-item">
-        <div class="check-icon">✓</div>
-        <span>Hosting included</span>
-      </div>
+      <div class="check-item"><span class="tick">✓</span><span>Professional website, live within 24 hours</span></div>
+      <div class="check-item"><span class="tick">✓</span><span>Optimised for Google search in Colchester, Essex</span></div>
+      <div class="check-item"><span class="tick">✓</span><span>Works on mobiles, tablets and desktops</span></div>
+      <div class="check-item"><span class="tick">✓</span><span>Your reviews and ratings shown prominently</span></div>
+      <div class="check-item"><span class="tick">✓</span><span>Booking enquiry form included</span></div>
+      <div class="check-item"><span class="tick">✓</span><span>Monthly updates included</span></div>
+      <div class="check-item"><span class="tick">✓</span><span>Hosting and security included</span></div>
+      <div class="check-item"><span class="tick">✓</span><span>UK-based support by email</span></div>
     </div>
   </div>
 </section>
 
-<!-- ── 5. DOMAIN OPTIONS ── -->
+<hr class="section-rule">
+
+<!-- ── 4. YOUR WEB ADDRESS ── -->
 <section class="domain-section">
-  <div class="section-inner">
+  <div class="wrap">
     <h2 class="section-title">Your web address</h2>
     <div class="domain-options">
 
       <!-- Option A -->
-      <div class="domain-card selected" onclick="selectDomain(this, 'a')">
-        <div class="domain-header">
-          <div class="domain-radio">
-            <div class="radio-dot"></div>
-            <span class="domain-label">Option A</span>
+      <div class="domain-card selected" onclick="selectDomain(this, 'a')" tabindex="0">
+        <div class="domain-card-top">
+          <div class="domain-radio-row">
+            <div class="radio-circle"></div>
+            <span class="domain-url-text">j-sage-plumbing-and-heating.tradeboost.co.uk</span>
           </div>
-          <span class="domain-price free">Included free</span>
+          <span class="domain-price-tag">Included</span>
         </div>
-        <div class="domain-url">j-sage-plumbing-and-heating.tradeboost.co.uk</div>
-        <div class="domain-tag">Ready in minutes</div>
+        <div class="domain-tags">
+          <span class="domain-tag included">Included</span>
+          <span class="domain-tag">Ready in minutes</span>
+        </div>
       </div>
 
       <!-- Option B -->
-      <div class="domain-card" onclick="selectDomain(this, 'b')">
-        <div class="domain-header">
-          <div class="domain-radio">
-            <div class="radio-dot"></div>
-            <span class="domain-label">Option B</span>
+      <div class="domain-card" onclick="selectDomain(this, 'b')" tabindex="0">
+        <div class="domain-card-top">
+          <div class="domain-radio-row">
+            <div class="radio-circle"></div>
+            <span class="domain-url-text">jsage.co.uk</span>
           </div>
-          <span class="domain-price">+£49 one-time</span>
+          <span class="domain-price-tag">+£49 one-time</span>
         </div>
-        <div class="domain-url">jsage.co.uk</div>
-        <div class="domain-tag">Recommended</div>
-        <div class="domain-smallprint">We register and set up your domain for you</div>
+        <div class="domain-tags">
+          <span class="domain-tag recommended">Recommended</span>
+        </div>
+        <p class="domain-smallprint">We register and manage it for you. No technical setup required.</p>
       </div>
 
       <!-- Option C -->
-      <div class="domain-card" onclick="selectDomain(this, 'c')">
-        <div class="domain-header">
-          <div class="domain-radio">
-            <div class="radio-dot"></div>
-            <span class="domain-label">Option C</span>
+      <div class="domain-card" onclick="selectDomain(this, 'c')" tabindex="0">
+        <div class="domain-card-top">
+          <div class="domain-radio-row">
+            <div class="radio-circle"></div>
+            <span class="domain-url-text">Transfer your existing domain</span>
           </div>
-          <span class="domain-price free">Free</span>
         </div>
-        <div class="domain-url">Transfer your domain</div>
-        <div class="domain-tag">Already have one?</div>
-        <input class="domain-input" id="own-domain-input" type="text" placeholder="Enter your existing domain" onclick="event.stopPropagation()">
+        <div class="domain-tags">
+          <span class="domain-tag">Already have one?</span>
+        </div>
+        <input class="domain-input" id="own-domain-input" type="text" placeholder="e.g. jsageplumbing.co.uk" onclick="event.stopPropagation()">
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── 6. PRICING ── -->
+<hr class="section-rule">
+
+<!-- ── 5. PLAN & PRICING ── -->
 <section class="pricing-section">
-  <div class="section-inner">
+  <div class="wrap">
     <h2 class="section-title">Choose your plan</h2>
     <div class="pricing-grid">
 
       <!-- Starter -->
       <div class="price-card" id="tier-starter" onclick="selectTier('starter')">
         <div class="tier-name">Starter</div>
-        <div class="tier-setup">£199</div>
-        <div class="tier-monthly">setup + £49/mo</div>
+        <div class="tier-price-setup">£199</div>
+        <div class="tier-price-monthly">setup &middot; then £49/month</div>
         <ul class="tier-features">
-          <li>Website live within 24h</li>
-          <li>Monthly content updates</li>
-          <li>Google optimisation</li>
-          <li>Hosting included</li>
+          <li><span class="tick">✓</span><span>Website live within 24h</span></li>
+          <li><span class="tick">✓</span><span>Monthly content updates</span></li>
+          <li><span class="tick">✓</span><span>Google optimisation</span></li>
+          <li><span class="tick">✓</span><span>Hosting included</span></li>
         </ul>
         <button class="tier-btn" id="btn-starter" onclick="event.stopPropagation(); selectTier('starter')">Choose Starter</button>
       </div>
 
       <!-- Growth -->
-      <div class="price-card highlighted" id="tier-growth" onclick="selectTier('growth')">
-        <div class="popular-badge">⭐ Most popular</div>
+      <div class="price-card popular" id="tier-growth" onclick="selectTier('growth')">
+        <div class="popular-label">Most popular</div>
         <div class="tier-name">Growth</div>
-        <div class="tier-setup">£299</div>
-        <div class="tier-monthly">setup + £79/mo</div>
+        <div class="tier-price-setup">£299</div>
+        <div class="tier-price-monthly">setup &middot; then £79/month</div>
         <ul class="tier-features">
-          <li>Everything in Starter</li>
-          <li>Booking calendar</li>
-          <li>Chat widget</li>
-          <li>Priority updates</li>
+          <li><span class="tick">✓</span><span>Everything in Starter</span></li>
+          <li><span class="tick">✓</span><span>Booking calendar</span></li>
+          <li><span class="tick">✓</span><span>Chat widget</span></li>
+          <li><span class="tick">✓</span><span>Priority updates</span></li>
         </ul>
         <button class="tier-btn active" id="btn-growth" onclick="event.stopPropagation(); selectTier('growth')">Choose Growth</button>
       </div>
@@ -715,13 +940,13 @@
       <!-- Pro -->
       <div class="price-card" id="tier-pro" onclick="selectTier('pro')">
         <div class="tier-name">Pro</div>
-        <div class="tier-setup">£499</div>
-        <div class="tier-monthly">setup + £99/mo</div>
+        <div class="tier-price-setup">£499</div>
+        <div class="tier-price-monthly">setup &middot; then £99/month</div>
         <ul class="tier-features">
-          <li>Everything in Growth</li>
-          <li>Custom photography session</li>
-          <li>Social media setup</li>
-          <li>Quarterly review calls</li>
+          <li><span class="tick">✓</span><span>Everything in Growth</span></li>
+          <li><span class="tick">✓</span><span>Professional photos</span></li>
+          <li><span class="tick">✓</span><span>Social media setup</span></li>
+          <li><span class="tick">✓</span><span>Quarterly review calls</span></li>
         </ul>
         <button class="tier-btn" id="btn-pro" onclick="event.stopPropagation(); selectTier('pro')">Choose Pro</button>
       </div>
@@ -730,62 +955,74 @@
   </div>
 </section>
 
-<!-- ── 7. ADD-ONS (Starter only) ── -->
-<section class="addons-section" id="addons-section">
-  <div class="section-inner">
-    <h2 class="section-title">Boost your site</h2>
-    <div class="addons-grid">
-      <div class="addon-card" onclick="toggleAddon(this, 15, 0, 'chat')" data-id="chat">
-        <div class="addon-emoji">💬</div>
-        <div class="addon-name">Live chat widget</div>
-        <div class="addon-price">+£15/mo</div>
-        <div class="addon-desc">Visitor chat routes straight to your phone</div>
-      </div>
-      <div class="addon-card" onclick="toggleAddon(this, 15, 0, 'calendar')" data-id="calendar">
-        <div class="addon-emoji">📅</div>
-        <div class="addon-name">Booking calendar</div>
-        <div class="addon-price">+£15/mo</div>
-        <div class="addon-desc">Customers book jobs directly</div>
-      </div>
-      <div class="addon-card" onclick="toggleAddon(this, 0, 79, 'content')" data-id="content">
-        <div class="addon-emoji">✏️</div>
-        <div class="addon-name">Custom content</div>
-        <div class="addon-price">+£79 one-time</div>
-        <div class="addon-desc">We write bespoke copy for your site</div>
-      </div>
-      <div class="addon-card" onclick="toggleAddon(this, 0, 149, 'images')" data-id="images">
-        <div class="addon-emoji">📸</div>
-        <div class="addon-name">Custom images</div>
-        <div class="addon-price">+£149 one-time</div>
-        <div class="addon-desc">Professional photographer, your actual work</div>
-      </div>
-    </div>
-    <div class="running-total" id="running-total">
-      Your total: <span id="total-text">£199 setup + £49/mo</span>
+<!-- ── 6. ADD-ONS (Starter only) ── -->
+<section class="addons-section" id="addons-section" style="display:none;">
+  <div class="wrap">
+    <h2 class="section-title">Optional extras</h2>
+    <table class="addons-table">
+      <thead>
+        <tr>
+          <th class="addon-check-cell"></th>
+          <th>Extra</th>
+          <th>What it does</th>
+          <th style="text-align:right;">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="addon-check-cell"><input type="checkbox" id="addon-chat" onchange="toggleAddon('chat', 15, 0)"></td>
+          <td class="addon-name-cell">Chat widget</td>
+          <td class="addon-desc-cell">Visitors message you directly from your site</td>
+          <td class="addon-price-cell">+£15/mo</td>
+        </tr>
+        <tr>
+          <td class="addon-check-cell"><input type="checkbox" id="addon-calendar" onchange="toggleAddon('calendar', 15, 0)"></td>
+          <td class="addon-name-cell">Booking calendar</td>
+          <td class="addon-desc-cell">Customers book jobs online</td>
+          <td class="addon-price-cell">+£15/mo</td>
+        </tr>
+        <tr>
+          <td class="addon-check-cell"><input type="checkbox" id="addon-copy" onchange="toggleAddon('copy', 0, 79)"></td>
+          <td class="addon-name-cell">Custom copy</td>
+          <td class="addon-desc-cell">We write all site content specifically for you</td>
+          <td class="addon-price-cell">+£79 one-time</td>
+        </tr>
+        <tr>
+          <td class="addon-check-cell"><input type="checkbox" id="addon-photos" onchange="toggleAddon('photos', 0, 149)"></td>
+          <td class="addon-name-cell">Professional photos</td>
+          <td class="addon-desc-cell">Photographer visits, real photos of your work</td>
+          <td class="addon-price-cell">+£149 one-time</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="running-total-row">
+      <span class="running-total-label">Your total</span>
+      <span class="running-total-amount" id="running-total-amount">£199 setup + £49/mo</span>
     </div>
   </div>
 </section>
 
-<!-- ── 8. CTA ── -->
+<!-- ── 7. FINAL CTA ── -->
 <section class="cta-section">
-  <div class="section-inner">
-    <h2 class="cta-headline">Ready to get live?</h2>
-    <p class="cta-price" id="cta-price-display">
-      <strong id="cta-setup">£299</strong> setup + <strong id="cta-monthly">£79/mo</strong>
-    </p>
-    <a href="#" class="cta-btn" id="cta-btn">Get Live Today →</a>
-    <p class="cta-small">Secure payment · Cancel anytime · Live within 24 hours</p>
+  <div class="wrap">
+    <h2 class="cta-headline">Get your site live today.</h2>
+    <p class="cta-price" id="cta-price-display">£299 setup &middot; £79/month</p>
+    <a href="#" class="cta-btn" id="cta-btn">Get Started →</a>
+    <p class="cta-small">Secure payment &middot; No long contracts &middot; Live within 24 hours</p>
     <div class="trust-row">
-      <span class="trust-item">🔒 SSL secured</span>
-      <span class="trust-item">📞 Support: hello@tradeboost.co.uk</span>
-      <span class="trust-item">🇬🇧 UK-based</span>
+      <span class="trust-item">UK-based</span>
+      <span class="trust-sep"></span>
+      <span class="trust-item">Gas Safe partners</span>
+      <span class="trust-sep"></span>
+      <span class="trust-item">50+ sites launched</span>
     </div>
   </div>
 </section>
 
-<!-- ── 9. FOOTER ── -->
-<footer>
-  <div>TradeBoost · Powered by ChopChop</div>
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <p>TradeBoost &middot; Powered by ChopChop &middot; <a href="mailto:hello@tradeboost.co.uk">hello@tradeboost.co.uk</a></p>
   <div class="footer-links">
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
@@ -793,8 +1030,47 @@
 </footer>
 
 <script>
+  // ── Score colour class ──
+  // Injected at render time via score-amber: score-red | score-amber | score-green
+
+  // ── Findings ── injected from template var
+  (function buildFindings() {
+    const gapsRaw   = "❌ No website · ❌ Not listed on trade platforms (Checkatrade, MyBuilder, etc.)";
+    const strengthsRaw = "✓ Shows up in local search results";
+    const list = document.getElementById('findings-list');
+    if (!list) return;
+
+    // Gaps
+    if (gapsRaw && gapsRaw !== '❌ No website · ❌ Not listed on trade platforms (Checkatrade, MyBuilder, etc.)') {
+      // Strip leading ❌ emojis if already added by generator, then split
+      const items = gapsRaw.split(' · ').map(s => s.replace(/^❌\s*/, '').trim()).filter(Boolean);
+      items.forEach(function(g) {
+        const li = document.createElement('li');
+        li.innerHTML = '<span class="find-icon">❌</span><span>' + g + '</span>';
+        list.appendChild(li);
+      });
+    }
+
+    // Strengths
+    if (strengthsRaw && strengthsRaw !== '✓ Shows up in local search results') {
+      const items = strengthsRaw.split(' · ').map(s => s.replace(/^✓\s*/, '').trim()).filter(Boolean);
+      items.forEach(function(g) {
+        const li = document.createElement('li');
+        li.innerHTML = '<span class="find-icon" style="color:var(--green)">✓</span><span>' + g + '</span>';
+        list.appendChild(li);
+      });
+    }
+
+    // Fallback
+    if (!list.children.length) {
+      const li = document.createElement('li');
+      li.innerHTML = '<span class="find-icon">❌</span><span>Missing online presence</span>';
+      list.appendChild(li);
+    }
+  })();
+
   // ── State ──
-  const state = {
+  var state = {
     tier: 'growth',
     setup: 299,
     monthly: 79,
@@ -803,7 +1079,7 @@
     addons: {}
   };
 
-  const TIERS = {
+  var TIERS = {
     starter: { setup: 199, monthly: 49 },
     growth:  { setup: 299, monthly: 79 },
     pro:     { setup: 499, monthly: 99 }
@@ -811,9 +1087,9 @@
 
   // ── Domain selection ──
   function selectDomain(card, opt) {
-    document.querySelectorAll('.domain-card').forEach(c => c.classList.remove('selected'));
+    document.querySelectorAll('.domain-card').forEach(function(c) { c.classList.remove('selected'); });
     card.classList.add('selected');
-    const input = document.getElementById('own-domain-input');
+    var input = document.getElementById('own-domain-input');
     if (input) input.style.display = (opt === 'c') ? 'block' : 'none';
   }
 
@@ -823,73 +1099,70 @@
     state.setup = TIERS[tier].setup;
     state.monthly = TIERS[tier].monthly;
 
-    // Reset addons if switching away from starter
+    // Reset addons if leaving starter
     if (tier !== 'starter') {
-      Object.keys(state.addons).forEach(id => {
-        state.addons[id] = false;
-        document.querySelector(`[data-id="${id}"]`)?.classList.remove('active');
-      });
       state.extraSetup = 0;
       state.extraMonthly = 0;
+      ['chat','calendar','copy','photos'].forEach(function(id) {
+        var el = document.getElementById('addon-' + id);
+        if (el) el.checked = false;
+        state.addons[id] = false;
+      });
     }
 
-    // Show/hide add-ons section
-    const addonsSection = document.getElementById('addons-section');
-    addonsSection.style.display = (tier === 'starter') ? 'block' : 'none';
+    // Show/hide add-ons
+    var addonsSection = document.getElementById('addons-section');
+    if (addonsSection) addonsSection.style.display = (tier === 'starter') ? '' : 'none';
 
-    // Update card styles
-    ['starter', 'growth', 'pro'].forEach(t => {
-      const card = document.getElementById(`tier-${t}`);
-      const btn = document.getElementById(`btn-${t}`);
-      card.classList.remove('selected-tier');
-      btn.classList.remove('active');
-      if (t === 'growth') {
-        card.classList.toggle('highlighted', t !== tier);
-      }
+    // Update card states
+    ['starter','growth','pro'].forEach(function(t) {
+      var card = document.getElementById('tier-' + t);
+      var btn  = document.getElementById('btn-' + t);
+      if (card) card.classList.remove('selected-tier');
+      if (btn)  btn.classList.remove('active');
     });
-    document.getElementById(`tier-${tier}`).classList.add('selected-tier');
-    document.getElementById(`btn-${tier}`).classList.add('active');
+    var selCard = document.getElementById('tier-' + tier);
+    var selBtn  = document.getElementById('btn-' + tier);
+    if (selCard) selCard.classList.add('selected-tier');
+    if (selBtn)  selBtn.classList.add('active');
 
     updateTotals();
   }
 
   // ── Add-on toggling ──
-  function toggleAddon(card, monthlyAdd, setupAdd, id) {
+  function toggleAddon(id, monthlyAdd, setupAdd) {
     if (state.tier !== 'starter') return;
-    state.addons[id] = !state.addons[id];
-    card.classList.toggle('active', state.addons[id]);
-
-    if (state.addons[id]) {
+    var el = document.getElementById('addon-' + id);
+    if (!el) return;
+    state.addons[id] = el.checked;
+    if (el.checked) {
       state.extraMonthly += monthlyAdd;
-      state.extraSetup += setupAdd;
+      state.extraSetup   += setupAdd;
     } else {
       state.extraMonthly -= monthlyAdd;
-      state.extraSetup -= setupAdd;
+      state.extraSetup   -= setupAdd;
     }
     updateTotals();
   }
 
   // ── Update display ──
   function updateTotals() {
-    const totalSetup = state.setup + state.extraSetup;
-    const totalMonthly = state.monthly + state.extraMonthly;
-    const setupStr = `£${totalSetup}`;
-    const monthlyStr = `£${totalMonthly}/mo`;
+    var totalSetup   = state.setup + state.extraSetup;
+    var totalMonthly = state.monthly + state.extraMonthly;
 
-    // Running total (starter add-ons section)
-    const totalEl = document.getElementById('total-text');
-    if (totalEl) totalEl.innerHTML = `${setupStr} setup + ${monthlyStr}`;
+    var setupStr   = '£' + totalSetup + ' setup';
+    var monthlyStr = '£' + totalMonthly + '/month';
+    var summary    = setupStr + ' · ' + monthlyStr;
 
-    // CTA section
-    const ctaSetup = document.getElementById('cta-setup');
-    const ctaMonthly = document.getElementById('cta-monthly');
-    if (ctaSetup) ctaSetup.textContent = setupStr + ' setup';
-    if (ctaMonthly) ctaMonthly.textContent = monthlyStr;
+    var runEl = document.getElementById('running-total-amount');
+    if (runEl) runEl.textContent = '£' + totalSetup + ' setup + £' + totalMonthly + '/mo';
+
+    var ctaEl = document.getElementById('cta-price-display');
+    if (ctaEl) ctaEl.textContent = summary;
   }
 
-  // ── Init: Growth selected by default, hide addons ──
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('addons-section').style.display = 'none';
+  // ── Init ──
+  document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('tier-growth').classList.add('selected-tier');
     document.getElementById('btn-growth').classList.add('active');
     updateTotals();
