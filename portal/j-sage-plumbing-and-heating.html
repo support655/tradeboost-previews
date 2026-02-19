@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your new website is ready — J Sage Plumbing and Heating | TradeBoost</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a1f36;
+      --orange: #f97316;
+      --orange-dark: #ea6c0b;
+      --light-bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #1a1f36;
+      --muted: #6b7280;
+      --green: #10b981;
+      --red: #ef4444;
+      --amber: #f59e0b;
+      --border: #e5e7eb;
+      --radius: 12px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--light-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP BORDER ── */
+    body::before {
+      content: '';
+      display: block;
+      height: 4px;
+      background: var(--orange);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: var(--navy);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 4px;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .wordmark {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+    .wordmark span { color: var(--orange); }
+    .header-tagline {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+      display: none;
+    }
+    @media (min-width: 480px) { .header-tagline { display: block; } }
+
+    /* ── SECTIONS ── */
+    section { padding: 3rem 1.5rem; }
+    .section-inner { max-width: 860px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+    .hero-headline {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+    .hero-headline span { color: var(--orange); }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 1.25rem 1rem;
+      text-align: center;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.5rem;
+    }
+    .stat-score {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .stat-score.red { color: var(--red); }
+    .stat-score.amber { color: var(--amber); }
+    .stat-score.green { color: var(--green); }
+    .stat-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .stat-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+    .gap-callout {
+      background: rgba(239,68,68,0.15);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 8px;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.9);
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+      text-align: left;
+    }
+    .hero-cta-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--orange);
+      margin-top: 0.5rem;
+    }
+
+    /* ── PREVIEW ── */
+    .preview-section { background: var(--card-bg); }
+    .iframe-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 0.75rem;
+    }
+    .iframe-wrap iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      display: block;
+    }
+    @media (min-width: 600px) {
+      .iframe-wrap iframe { height: 600px; }
+    }
+    .iframe-caption {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .variant-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .variant-pill {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .variant-pill:hover {
+      background: var(--orange);
+      color: #fff;
+      border-color: var(--orange);
+    }
+    .variant-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── INCLUDED ── */
+    .included-section { background: var(--light-bg); }
+    .checklist {
+      display: grid;
+      gap: 0.75rem;
+      max-width: 560px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+    .check-icon {
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── DOMAIN ── */
+    .domain-section { background: var(--card-bg); }
+    .domain-options {
+      display: grid;
+      gap: 0.75rem;
+      max-width: 560px;
+    }
+    .domain-card {
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .domain-card.selected {
+      border-color: var(--orange);
+      background: #fff7ed;
+    }
+    .domain-card:hover { border-color: var(--orange); }
+    .domain-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+    .domain-radio {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .radio-dot {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+    .domain-card.selected .radio-dot {
+      border-color: var(--orange);
+      background: var(--orange);
+    }
+    .domain-card.selected .radio-dot::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      display: block;
+    }
+    .domain-label { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+    .domain-price {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .domain-price.free { color: var(--green); }
+    .domain-url {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      font-family: 'Courier New', monospace;
+    }
+    .domain-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-top: 0.4rem;
+      background: var(--light-bg);
+      color: var(--muted);
+    }
+    .domain-card.selected .domain-tag { background: #fedcb8; color: #92400e; }
+    .domain-smallprint {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .domain-input {
+      width: 100%;
+      margin-top: 0.75rem;
+      padding: 0.6rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
+      display: none;
+    }
+    .domain-input:focus { outline: 2px solid var(--orange); }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--light-bg); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-width: 860px;
+    }
+    @media (min-width: 640px) {
+      .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .price-card {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      position: relative;
+    }
+    .price-card.highlighted {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 4px rgba(249,115,22,0.1);
+    }
+    .price-card.selected-tier {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(26,31,54,0.08);
+    }
+    .price-card:hover { border-color: var(--orange); }
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .tier-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .tier-setup {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin: 0.5rem 0 0.1rem;
+    }
+    .tier-monthly {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .tier-features {
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .tier-features li {
+      font-size: 0.85rem;
+      color: var(--text);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .tier-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .tier-btn {
+      width: 100%;
+      padding: 0.65rem;
+      border-radius: 8px;
+      border: 2px solid var(--navy);
+      background: transparent;
+      color: var(--navy);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tier-btn:hover, .tier-btn.active {
+      background: var(--navy);
+      color: #fff;
+    }
+    .price-card.highlighted .tier-btn {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+    }
+    .price-card.highlighted .tier-btn:hover { background: var(--orange-dark); }
+
+    /* ── ADD-ONS ── */
+    .addons-section { background: var(--card-bg); }
+    .addons-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      max-width: 560px;
+    }
+    @media (min-width: 480px) {
+      .addons-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .addon-card {
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      user-select: none;
+    }
+    .addon-card.active {
+      border-color: var(--orange);
+      background: #fff7ed;
+    }
+    .addon-card:hover { border-color: var(--orange); }
+    .addon-emoji { font-size: 1.4rem; margin-bottom: 0.4rem; }
+    .addon-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+    .addon-price { font-size: 0.8rem; color: var(--orange); font-weight: 600; }
+    .addon-desc { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+    .running-total {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: var(--light-bg);
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      max-width: 560px;
+    }
+    .running-total span { color: var(--orange); }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+    .cta-headline {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .cta-price {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
+    }
+    .cta-price strong { color: var(--orange); font-size: 1.4rem; }
+    .cta-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--orange);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+      box-shadow: 0 4px 16px rgba(249,115,22,0.35);
+    }
+    .cta-btn:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .cta-small {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 1rem;
+    }
+    .trust-row {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .trust-item {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111520;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+    }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: var(--orange); }
+    .footer-links { margin-top: 0.5rem; display: flex; gap: 1rem; justify-content: center; }
+  </style>
+</head>
+<body>
+
+<!-- ── 1. HEADER ── -->
+<header class="header">
+  <div class="header-brand">
+    <div class="wordmark">Trade<span>Boost</span></div>
+    <div class="header-tagline">Your new website is ready.</div>
+  </div>
+</header>
+
+<!-- ── 2. HERO ── -->
+<section class="hero">
+  <div class="section-inner">
+    <h1 class="hero-headline">Your site is ready, <span>J Sage Plumbing and Heating.</span></h1>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-label">Your score</div>
+        <div class="stat-score amber">5<span style="font-size:1.2rem;opacity:0.5">/10</span></div>
+        <div class="stat-sub">out of 10</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Top competitor</div>
+        <div class="stat-name">Budget Plumbing Services</div>
+        <div class="stat-score" style="color:rgba(255,255,255,0.9);font-size:2rem;">7<span style="font-size:1rem;opacity:0.5">/10</span></div>
+      </div>
+    </div>
+    <div class="gap-callout">❌ No website · ❌ Not listed on trade platforms (Checkatrade, MyBuilder, etc.)</div>
+    <p class="hero-cta-text">We built this for you ↓</p>
+  </div>
+</section>
+
+<!-- ── 3. SITE PREVIEW ── -->
+<section class="preview-section">
+  <div class="section-inner">
+    <h2 class="section-title">Your new website</h2>
+    <div class="iframe-wrap">
+      <iframe src="https://support655.github.io/tradeboost-previews/j-sage-plumbing-and-heating.html" title="Your website preview" loading="lazy" scrolling="yes"></iframe>
+    </div>
+    <p class="iframe-caption">Scroll to explore your site ↑</p>
+    <p class="variant-label">Other design styles:</p>
+    <div class="variant-pills">
+      <a class="variant-pill" href="https://support655.github.io/tradeboost-previews/j-sage-v-luxury.html" target="_blank">🌑 Dark Luxury</a>
+      <a class="variant-pill" href="https://support655.github.io/tradeboost-previews/j-sage-v-proof.html" target="_blank">⭐ Proof First</a>
+      <a class="variant-pill" href="https://support655.github.io/tradeboost-previews/j-sage-v-local.html" target="_blank">📍 Local Legend</a>
+      <a class="variant-pill" href="https://support655.github.io/tradeboost-previews/j-sage-v-editorial.html" target="_blank">✏️ Editorial</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 4. WHAT'S INCLUDED ── -->
+<section class="included-section">
+  <div class="section-inner">
+    <h2 class="section-title">Everything you need, done for you</h2>
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>Professional website, live within 24 hours</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>Optimised for Google search in Colchester, Essex</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>Mobile-friendly — works on any device</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>Your reviews and ratings prominently displayed</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>Booking enquiry form built in</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>Monthly updates included</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon">✓</div>
+        <span>Hosting included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5. DOMAIN OPTIONS ── -->
+<section class="domain-section">
+  <div class="section-inner">
+    <h2 class="section-title">Your web address</h2>
+    <div class="domain-options">
+
+      <!-- Option A -->
+      <div class="domain-card selected" onclick="selectDomain(this, 'a')">
+        <div class="domain-header">
+          <div class="domain-radio">
+            <div class="radio-dot"></div>
+            <span class="domain-label">Option A</span>
+          </div>
+          <span class="domain-price free">Included free</span>
+        </div>
+        <div class="domain-url">j-sage-plumbing-and-heating.tradeboost.co.uk</div>
+        <div class="domain-tag">Ready in minutes</div>
+      </div>
+
+      <!-- Option B -->
+      <div class="domain-card" onclick="selectDomain(this, 'b')">
+        <div class="domain-header">
+          <div class="domain-radio">
+            <div class="radio-dot"></div>
+            <span class="domain-label">Option B</span>
+          </div>
+          <span class="domain-price">+£49 one-time</span>
+        </div>
+        <div class="domain-url">jsage.co.uk</div>
+        <div class="domain-tag">Recommended</div>
+        <div class="domain-smallprint">We register and set up your domain for you</div>
+      </div>
+
+      <!-- Option C -->
+      <div class="domain-card" onclick="selectDomain(this, 'c')">
+        <div class="domain-header">
+          <div class="domain-radio">
+            <div class="radio-dot"></div>
+            <span class="domain-label">Option C</span>
+          </div>
+          <span class="domain-price free">Free</span>
+        </div>
+        <div class="domain-url">Transfer your domain</div>
+        <div class="domain-tag">Already have one?</div>
+        <input class="domain-input" id="own-domain-input" type="text" placeholder="Enter your existing domain" onclick="event.stopPropagation()">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 6. PRICING ── -->
+<section class="pricing-section">
+  <div class="section-inner">
+    <h2 class="section-title">Choose your plan</h2>
+    <div class="pricing-grid">
+
+      <!-- Starter -->
+      <div class="price-card" id="tier-starter" onclick="selectTier('starter')">
+        <div class="tier-name">Starter</div>
+        <div class="tier-setup">£199</div>
+        <div class="tier-monthly">setup + £49/mo</div>
+        <ul class="tier-features">
+          <li>Website live within 24h</li>
+          <li>Monthly content updates</li>
+          <li>Google optimisation</li>
+          <li>Hosting included</li>
+        </ul>
+        <button class="tier-btn" id="btn-starter" onclick="event.stopPropagation(); selectTier('starter')">Choose Starter</button>
+      </div>
+
+      <!-- Growth -->
+      <div class="price-card highlighted" id="tier-growth" onclick="selectTier('growth')">
+        <div class="popular-badge">⭐ Most popular</div>
+        <div class="tier-name">Growth</div>
+        <div class="tier-setup">£299</div>
+        <div class="tier-monthly">setup + £79/mo</div>
+        <ul class="tier-features">
+          <li>Everything in Starter</li>
+          <li>Booking calendar</li>
+          <li>Chat widget</li>
+          <li>Priority updates</li>
+        </ul>
+        <button class="tier-btn active" id="btn-growth" onclick="event.stopPropagation(); selectTier('growth')">Choose Growth</button>
+      </div>
+
+      <!-- Pro -->
+      <div class="price-card" id="tier-pro" onclick="selectTier('pro')">
+        <div class="tier-name">Pro</div>
+        <div class="tier-setup">£499</div>
+        <div class="tier-monthly">setup + £99/mo</div>
+        <ul class="tier-features">
+          <li>Everything in Growth</li>
+          <li>Custom photography session</li>
+          <li>Social media setup</li>
+          <li>Quarterly review calls</li>
+        </ul>
+        <button class="tier-btn" id="btn-pro" onclick="event.stopPropagation(); selectTier('pro')">Choose Pro</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── 7. ADD-ONS (Starter only) ── -->
+<section class="addons-section" id="addons-section">
+  <div class="section-inner">
+    <h2 class="section-title">Boost your site</h2>
+    <div class="addons-grid">
+      <div class="addon-card" onclick="toggleAddon(this, 15, 0, 'chat')" data-id="chat">
+        <div class="addon-emoji">💬</div>
+        <div class="addon-name">Live chat widget</div>
+        <div class="addon-price">+£15/mo</div>
+        <div class="addon-desc">Visitor chat routes straight to your phone</div>
+      </div>
+      <div class="addon-card" onclick="toggleAddon(this, 15, 0, 'calendar')" data-id="calendar">
+        <div class="addon-emoji">📅</div>
+        <div class="addon-name">Booking calendar</div>
+        <div class="addon-price">+£15/mo</div>
+        <div class="addon-desc">Customers book jobs directly</div>
+      </div>
+      <div class="addon-card" onclick="toggleAddon(this, 0, 79, 'content')" data-id="content">
+        <div class="addon-emoji">✏️</div>
+        <div class="addon-name">Custom content</div>
+        <div class="addon-price">+£79 one-time</div>
+        <div class="addon-desc">We write bespoke copy for your site</div>
+      </div>
+      <div class="addon-card" onclick="toggleAddon(this, 0, 149, 'images')" data-id="images">
+        <div class="addon-emoji">📸</div>
+        <div class="addon-name">Custom images</div>
+        <div class="addon-price">+£149 one-time</div>
+        <div class="addon-desc">Professional photographer, your actual work</div>
+      </div>
+    </div>
+    <div class="running-total" id="running-total">
+      Your total: <span id="total-text">£199 setup + £49/mo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── 8. CTA ── -->
+<section class="cta-section">
+  <div class="section-inner">
+    <h2 class="cta-headline">Ready to get live?</h2>
+    <p class="cta-price" id="cta-price-display">
+      <strong id="cta-setup">£299</strong> setup + <strong id="cta-monthly">£79/mo</strong>
+    </p>
+    <a href="#" class="cta-btn" id="cta-btn">Get Live Today →</a>
+    <p class="cta-small">Secure payment · Cancel anytime · Live within 24 hours</p>
+    <div class="trust-row">
+      <span class="trust-item">🔒 SSL secured</span>
+      <span class="trust-item">📞 Support: hello@tradeboost.co.uk</span>
+      <span class="trust-item">🇬🇧 UK-based</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── 9. FOOTER ── -->
+<footer>
+  <div>TradeBoost · Powered by ChopChop</div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+</footer>
+
+<script>
+  // ── State ──
+  const state = {
+    tier: 'growth',
+    setup: 299,
+    monthly: 79,
+    extraSetup: 0,
+    extraMonthly: 0,
+    addons: {}
+  };
+
+  const TIERS = {
+    starter: { setup: 199, monthly: 49 },
+    growth:  { setup: 299, monthly: 79 },
+    pro:     { setup: 499, monthly: 99 }
+  };
+
+  // ── Domain selection ──
+  function selectDomain(card, opt) {
+    document.querySelectorAll('.domain-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    const input = document.getElementById('own-domain-input');
+    if (input) input.style.display = (opt === 'c') ? 'block' : 'none';
+  }
+
+  // ── Tier selection ──
+  function selectTier(tier) {
+    state.tier = tier;
+    state.setup = TIERS[tier].setup;
+    state.monthly = TIERS[tier].monthly;
+
+    // Reset addons if switching away from starter
+    if (tier !== 'starter') {
+      Object.keys(state.addons).forEach(id => {
+        state.addons[id] = false;
+        document.querySelector(`[data-id="${id}"]`)?.classList.remove('active');
+      });
+      state.extraSetup = 0;
+      state.extraMonthly = 0;
+    }
+
+    // Show/hide add-ons section
+    const addonsSection = document.getElementById('addons-section');
+    addonsSection.style.display = (tier === 'starter') ? 'block' : 'none';
+
+    // Update card styles
+    ['starter', 'growth', 'pro'].forEach(t => {
+      const card = document.getElementById(`tier-${t}`);
+      const btn = document.getElementById(`btn-${t}`);
+      card.classList.remove('selected-tier');
+      btn.classList.remove('active');
+      if (t === 'growth') {
+        card.classList.toggle('highlighted', t !== tier);
+      }
+    });
+    document.getElementById(`tier-${tier}`).classList.add('selected-tier');
+    document.getElementById(`btn-${tier}`).classList.add('active');
+
+    updateTotals();
+  }
+
+  // ── Add-on toggling ──
+  function toggleAddon(card, monthlyAdd, setupAdd, id) {
+    if (state.tier !== 'starter') return;
+    state.addons[id] = !state.addons[id];
+    card.classList.toggle('active', state.addons[id]);
+
+    if (state.addons[id]) {
+      state.extraMonthly += monthlyAdd;
+      state.extraSetup += setupAdd;
+    } else {
+      state.extraMonthly -= monthlyAdd;
+      state.extraSetup -= setupAdd;
+    }
+    updateTotals();
+  }
+
+  // ── Update display ──
+  function updateTotals() {
+    const totalSetup = state.setup + state.extraSetup;
+    const totalMonthly = state.monthly + state.extraMonthly;
+    const setupStr = `£${totalSetup}`;
+    const monthlyStr = `£${totalMonthly}/mo`;
+
+    // Running total (starter add-ons section)
+    const totalEl = document.getElementById('total-text');
+    if (totalEl) totalEl.innerHTML = `${setupStr} setup + ${monthlyStr}`;
+
+    // CTA section
+    const ctaSetup = document.getElementById('cta-setup');
+    const ctaMonthly = document.getElementById('cta-monthly');
+    if (ctaSetup) ctaSetup.textContent = setupStr + ' setup';
+    if (ctaMonthly) ctaMonthly.textContent = monthlyStr;
+  }
+
+  // ── Init: Growth selected by default, hide addons ──
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('addons-section').style.display = 'none';
+    document.getElementById('tier-growth').classList.add('selected-tier');
+    document.getElementById('btn-growth').classList.add('active');
+    updateTotals();
+  });
+</script>
+
+</body>
+</html>
