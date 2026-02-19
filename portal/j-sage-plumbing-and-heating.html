@@ -6,7 +6,7 @@
   <title>Digital Presence Assessment — J Sage Plumbing and Heating | TradeBoost</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg:         #f7f5f2;
@@ -34,9 +34,18 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, .wordmark {
+    h1, h2, h3 {
       font-family: 'Merriweather', Georgia, serif;
     }
+
+    /* ── TB WORDMARK ── */
+    .tb-wordmark {
+      font-family: 'Merriweather', Georgia, serif;
+      line-height: 1;
+      display: inline;
+    }
+    .tb-trade { font-weight: 400; color: inherit; }
+    .tb-boost { font-weight: 700; color: #c8622a; }
 
     /* ── HEADER ── */
     .site-header {
@@ -46,7 +55,13 @@
       align-items: center;
       justify-content: space-between;
     }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
     .wordmark {
+      font-family: 'Merriweather', Georgia, serif;
       font-size: 1.3rem;
       font-weight: 700;
       color: #fff;
@@ -61,6 +76,61 @@
     .header-accent {
       height: 3px;
       background: var(--orange);
+    }
+
+    /* ── BRAND HERO ── */
+    .brand-hero {
+      background: var(--navy);
+      padding: 2.75rem 0 0;
+    }
+
+    .brand-hero-lockup {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .brand-hero-lockup .tb-wordmark {
+      font-size: 2.1rem;
+      color: #ffffff;
+    }
+    /* On dark bg, "Boost" uses lighter orange */
+    .brand-hero-lockup .tb-boost {
+      color: #f4a261;
+    }
+
+    .brand-tagline {
+      font-family: 'Merriweather', Georgia, serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 0.9rem;
+    }
+
+    .brand-copy {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.97rem;
+      color: rgba(255, 255, 255, 0.68);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+    }
+
+    .brand-hero-rule {
+      border: none;
+      border-top: 2px solid #c8622a;
+      margin: 0;
+      opacity: 0.85;
+    }
+
+    .brand-assessment-intro {
+      padding: 0.85rem 0;
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.65);
+      letter-spacing: 0.01em;
     }
 
     /* ── LAYOUT ── */
@@ -116,8 +186,29 @@
     .hero-sub {
       font-size: 1rem;
       color: var(--muted);
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
       font-family: 'Inter', sans-serif;
+    }
+
+    /* ── VOICE ELEMENTS ── */
+    .voice-intro {
+      font-family: 'Merriweather', Georgia, serif;
+      font-style: italic;
+      font-size: 0.97rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .voice-bridge {
+      border-left: 3px solid var(--orange);
+      background: var(--amber-bg);
+      padding: 1rem 1.25rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.65;
+      margin-top: 1.75rem;
     }
 
     /* ── STAT CARDS ── */
@@ -197,7 +288,7 @@
       list-style: none;
       display: grid;
       gap: 0.5rem;
-      margin-bottom: 3rem;
+      margin-bottom: 0;
     }
 
     .findings-list li {
@@ -660,6 +751,15 @@
       text-align: center;
     }
 
+    .cta-tagline {
+      font-family: 'Merriweather', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.01em;
+    }
+
     .cta-headline {
       font-family: 'Merriweather', Georgia, serif;
       font-size: clamp(1.5rem, 4vw, 2.1rem);
@@ -733,6 +833,24 @@
       text-align: center;
     }
 
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand-name {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .footer-brand-name .tb-boost {
+      color: var(--orange);
+    }
+
     .site-footer p {
       font-size: 0.78rem;
       color: var(--muted);
@@ -765,10 +883,50 @@
 
 <!-- ── HEADER ── -->
 <header class="site-header">
-  <div class="wordmark">TradeBoost</div>
+  <div class="header-brand">
+    <!-- Logo mark: 22px, transparent bg (white arrow + orange bar on dark header) -->
+    <svg width="22" height="22" viewBox="0 0 40 40" aria-hidden="true" style="flex-shrink:0;display:block;">
+      <path d="M20 6 L30 19 L24 19 L24 33 L16 33 L16 19 L10 19 Z" fill="#ffffff"/>
+      <rect x="0" y="36" width="40" height="4" fill="#c8622a"/>
+    </svg>
+    <span class="wordmark tb-wordmark" style="font-size:1.3rem;color:#fff;letter-spacing:-0.3px;">
+      <span class="tb-trade">Trade</span><span class="tb-boost" style="color:#f4a261;">Boost</span>
+    </span>
+  </div>
   <div class="header-url">tradeboost.co.uk</div>
 </header>
 <div class="header-accent"></div>
+
+<!-- ── BRAND HERO ── -->
+<section class="brand-hero">
+  <div class="wrap">
+    <!-- Logo lockup -->
+    <div class="brand-hero-lockup">
+      <!-- Logo mark: 52px, transparent background version for dark section -->
+      <svg width="52" height="52" viewBox="0 0 40 40" aria-hidden="true" style="flex-shrink:0;display:block;">
+        <path d="M20 6 L30 19 L24 19 L24 33 L16 33 L16 19 L10 19 Z" fill="#ffffff"/>
+        <rect x="0" y="36" width="40" height="4" fill="#f4a261"/>
+      </svg>
+      <span class="tb-wordmark">
+        <span class="tb-trade">Trade</span><span class="tb-boost">Boost</span>
+      </span>
+    </div>
+
+    <!-- Tagline -->
+    <p class="brand-tagline">Get found. Get hired.</p>
+
+    <!-- One-line brand copy -->
+    <p class="brand-copy">We build professional websites for UK trade businesses — and show you what yours looks like before you spend a penny.</p>
+  </div>
+
+  <!-- Amber rule -->
+  <hr class="brand-hero-rule">
+
+  <!-- Assessment transition label -->
+  <div class="wrap">
+    <p class="brand-assessment-intro">J Sage Plumbing and Heating — Your Digital Assessment</p>
+  </div>
+</section>
 
 <!-- ── 1. ASSESSMENT HERO ── -->
 <section class="hero">
@@ -776,6 +934,9 @@
     <p class="section-label">Digital Presence Assessment</p>
     <h1 class="hero-business">J Sage Plumbing and Heating</h1>
     <p class="hero-sub">Colchester, Essex &middot; Plumber</p>
+
+    <!-- TradeBoost voice: intro above score cards -->
+    <p class="voice-intro">Here's what we found when we audited J Sage Plumbing and Heating's online presence.</p>
 
     <div class="stat-grid">
       <!-- Your score -->
@@ -804,6 +965,9 @@
     <ul class="findings-list" id="findings-list">
       <!-- Populated by JS from template vars -->
     </ul>
+
+    <!-- TradeBoost voice: bridge before site preview -->
+    <p class="voice-bridge">Most tradespeople in Colchester, Essex are losing jobs to competitors who simply show up in search results first. A professional website changes that — and we've already built one for you.</p>
   </div>
 </section>
 
@@ -1006,6 +1170,7 @@
 <!-- ── 7. FINAL CTA ── -->
 <section class="cta-section">
   <div class="wrap">
+    <p class="cta-tagline">Get found. Get hired.</p>
     <h2 class="cta-headline">Get your site live today.</h2>
     <p class="cta-price" id="cta-price-display">£299 setup &middot; £79/month</p>
     <a href="#" class="cta-btn" id="cta-btn">Get Started →</a>
@@ -1022,7 +1187,18 @@
 
 <!-- ── FOOTER ── -->
 <footer class="site-footer">
-  <p>TradeBoost &middot; Powered by ChopChop &middot; <a href="mailto:hello@tradeboost.co.uk">hello@tradeboost.co.uk</a></p>
+  <!-- Logo mark + wordmark -->
+  <div class="footer-brand">
+    <svg width="24" height="24" viewBox="0 0 40 40" aria-hidden="true" style="display:block;flex-shrink:0;">
+      <rect width="40" height="40" rx="6" ry="6" fill="#0c2340"/>
+      <path d="M20 6 L30 19 L24 19 L24 33 L16 33 L16 19 L10 19 Z" fill="#ffffff"/>
+      <rect x="0" y="36" width="40" height="4" fill="#c8622a"/>
+    </svg>
+    <span class="footer-brand-name tb-wordmark">
+      <span class="tb-trade">Trade</span><span class="tb-boost">Boost</span>
+    </span>
+  </div>
+  <p>Powered by ChopChop &middot; <a href="mailto:hello@tradeboost.co.uk">hello@tradeboost.co.uk</a></p>
   <div class="footer-links">
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
@@ -1035,17 +1211,16 @@
 
   // ── Findings ── injected from template var
   (function buildFindings() {
-    const gapsRaw   = "❌ No website · ❌ Not listed on trade platforms (Checkatrade, MyBuilder, etc.)";
-    const strengthsRaw = "✓ Shows up in local search results";
-    const list = document.getElementById('findings-list');
+    var gapsRaw      = "❌ No website · ❌ Not listed on trade platforms (Checkatrade, MyBuilder, etc.)";
+    var strengthsRaw = "✓ Shows up in local search results";
+    var list = document.getElementById('findings-list');
     if (!list) return;
 
     // Gaps
     if (gapsRaw && gapsRaw !== '❌ No website · ❌ Not listed on trade platforms (Checkatrade, MyBuilder, etc.)') {
-      // Strip leading ❌ emojis if already added by generator, then split
-      const items = gapsRaw.split(' · ').map(s => s.replace(/^❌\s*/, '').trim()).filter(Boolean);
+      var items = gapsRaw.split(' · ').map(function(s) { return s.replace(/^❌\s*/, '').trim(); }).filter(Boolean);
       items.forEach(function(g) {
-        const li = document.createElement('li');
+        var li = document.createElement('li');
         li.innerHTML = '<span class="find-icon">❌</span><span>' + g + '</span>';
         list.appendChild(li);
       });
@@ -1053,9 +1228,9 @@
 
     // Strengths
     if (strengthsRaw && strengthsRaw !== '✓ Shows up in local search results') {
-      const items = strengthsRaw.split(' · ').map(s => s.replace(/^✓\s*/, '').trim()).filter(Boolean);
-      items.forEach(function(g) {
-        const li = document.createElement('li');
+      var sitems = strengthsRaw.split(' · ').map(function(s) { return s.replace(/^✓\s*/, '').trim(); }).filter(Boolean);
+      sitems.forEach(function(g) {
+        var li = document.createElement('li');
         li.innerHTML = '<span class="find-icon" style="color:var(--green)">✓</span><span>' + g + '</span>';
         list.appendChild(li);
       });
@@ -1063,7 +1238,7 @@
 
     // Fallback
     if (!list.children.length) {
-      const li = document.createElement('li');
+      var li = document.createElement('li');
       li.innerHTML = '<span class="find-icon">❌</span><span>Missing online presence</span>';
       list.appendChild(li);
     }
@@ -1150,9 +1325,7 @@
     var totalSetup   = state.setup + state.extraSetup;
     var totalMonthly = state.monthly + state.extraMonthly;
 
-    var setupStr   = '£' + totalSetup + ' setup';
-    var monthlyStr = '£' + totalMonthly + '/month';
-    var summary    = setupStr + ' · ' + monthlyStr;
+    var summary = '£' + totalSetup + ' setup · £' + totalMonthly + '/month';
 
     var runEl = document.getElementById('running-total-amount');
     if (runEl) runEl.textContent = '£' + totalSetup + ' setup + £' + totalMonthly + '/mo';
