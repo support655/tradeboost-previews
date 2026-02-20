@@ -1,866 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nela Plumbing & Gas Services-247 Emergency — trusted Plumber in Reading, Berkshire. Emergency callouts, repairs, installations. Call today for a free quote.">
-    <title>Nela Plumbing & Gas Services-247 Emergency | Trusted Plumber in Reading, Berkshire</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #0f1b2d;
-            --blue: #1a56db;
-            --blue-light: #e8effc;
-            --green: #059669;
-            --green-light: #ecfdf5;
-            --orange: #ea580c;
-            --orange-light: #fff7ed;
-            --grey-50: #f9fafb;
-            --grey-100: #f3f4f6;
-            --grey-200: #e5e7eb;
-            --grey-500: #6b7280;
-            --grey-700: #374151;
-            --grey-900: #111827;
-            --white: #ffffff;
-            --radius: 12px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nela Plumbing & Gas Services-247 Emergency — 5★ Google Rating</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--grey-900);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+    :root {
+      --green: #1a7f4b;
+      --green-light: #e8f5ee;
+      --green-dark: #166040;
+      --amber: #f59e0b;
+      --dark: #111827;
+      --grey-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+    }
 
-        /* === TOP BAR === */
-        .topbar {
-            background: var(--navy);
-            color: var(--white);
-            font-size: 0.85rem;
-            padding: 0.5rem 0;
-        }
-        .topbar-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-        .topbar a { color: var(--white); text-decoration: none; }
-        .topbar-badges {
-            display: flex;
-            gap: 1.25rem;
-            align-items: center;
-            font-weight: 500;
-        }
-        .topbar-badges span {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
+    html { font-size: 16px; }
 
-        /* === HEADER === */
-        .header {
-            background: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--grey-200);
-            box-shadow: var(--shadow-sm);
-        }
-        .header-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .brand-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--blue);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .brand-icon svg { width: 24px; height: 24px; fill: white; }
-        .brand-name {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--grey-900);
-            line-height: 1.2;
-        }
-        .brand-sub {
-            font-size: 0.8rem;
-            color: var(--grey-500);
-            font-weight: 400;
-        }
-        .header-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--green);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.2s;
-            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
-        }
-        .header-cta:hover {
-            background: #047857;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
-        }
+    body {
+      background: #fff;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* === HERO === */
-        .hero {
-            background: linear-gradient(135deg, rgba(15,27,45,0.92) 0%, rgba(30,58,95,0.88) 100%), url('https://support655.github.io/tradeboost-previews/images/heroes/plumber-hero.jpg') center/cover no-repeat;
-            color: var(--white);
-            padding: 5rem 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(26,86,219,0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(5,150,105,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        .hero-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: #34d399;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-        .hero h1 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-            max-width: 650px;
-        }
-        .hero h1 span {
-            color: #60a5fa;
-        }
-        .hero-sub {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 520px;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--green);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.2s;
-            box-shadow: 0 4px 14px rgba(5,150,105,0.4);
-        }
-        .btn-primary:hover {
-            background: #047857;
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            transition: all 0.2s;
-        }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.15);
-        }
-        .hero-stats {
-            display: flex;
-            gap: 2.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .stat-item strong {
-            display: block;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
-        .stat-item span {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-        }
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      border-bottom: 1px solid var(--border);
+    }
 
-        /* === TRUST BAR === */
-        .trust-bar {
-            background: var(--white);
-            border-bottom: 1px solid var(--grey-200);
-            padding: 1.5rem;
-        }
-        .trust-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--grey-700);
-        }
-        .trust-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--blue-light);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-        .trust-icon.green { background: var(--green-light); }
-        .trust-icon.orange { background: var(--orange-light); }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      text-decoration: none;
+    }
 
-        /* === SERVICES === */
-        .services {
-            padding: 5rem 1.5rem;
-            background: var(--grey-50);
-        }
-        .services-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-        .section-label {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--blue);
-            background: var(--blue-light);
-            padding: 0.35rem 0.75rem;
-            border-radius: 50px;
-            margin-bottom: 0.75rem;
-        }
-        .section-heading {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(1.75rem, 3vw, 2.25rem);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--grey-900);
-        }
-        .section-sub {
-            font-size: 1.05rem;
-            color: var(--grey-500);
-            max-width: 550px;
-            margin-bottom: 3rem;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .service-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            border: 1px solid var(--grey-200);
-            transition: all 0.25s;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            border-color: var(--blue);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
-        }
-        .service-card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .service-card-body {
-            padding: 1.5rem;
-        }
-        .service-card-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--blue-light);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 1.25rem 1.5rem 0;
-            font-size: 1.75rem;
-        }
-        .service-card-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--blue);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .service-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--grey-500);
-            line-height: 1.6;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
 
-        /* === REVIEWS === */
-        .reviews {
-            padding: 5rem 1.5rem;
-            background: var(--white);
-        }
-        .reviews-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .reviews-header {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        .reviews-header-text { flex: 1; }
-        .reviews-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: var(--radius);
-            object-fit: cover;
-            box-shadow: var(--shadow-md);
-            display: none;
-        }
-        @media (min-width: 769px) {
-            .reviews-photo { display: block; }
-        }
-        .review-card {
-            background: var(--grey-50);
-            border: 1px solid var(--grey-200);
-            padding: 2rem;
-            border-radius: var(--radius);
-        }
-        .review-stars {
-            color: #f59e0b;
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            letter-spacing: 2px;
-        }
-        .review-text {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--grey-700);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-        .review-author {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--grey-900);
-        }
-        .review-source {
-            font-size: 0.8rem;
-            color: var(--grey-500);
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
 
-        /* === PLACEHOLDER SECTIONS === */
-        .placeholder-section {
-            background: var(--blue-light);
-            border: 2px dashed var(--blue);
-            border-radius: var(--radius);
-            padding: 2rem;
-            text-align: center;
-            color: var(--blue);
-            font-weight: 500;
-            margin: 1rem 0;
-        }
+    .nav-links a:hover { color: var(--text); }
 
-        /* === AREAS === */
-        .about { padding: 80px 24px; background: #f9fafb; }
-        .about-inner { max-width: 800px; margin: 0 auto; }
-        .about-text { font-size: 1.15rem; color: #374151; line-height: 1.8; margin-top: 16px; }
+    .nav-cta {
+      background: var(--green) !important;
+      color: #fff !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
+    }
 
-        .faq { padding: 80px 24px; background: white; }
-        .faq-inner { max-width: 800px; margin: 0 auto; }
-        .faq-list { margin-top: 32px; }
-        .faq-item { border-bottom: 1px solid #e5e7eb; padding: 24px 0; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-question { font-size: 1.1rem; font-weight: 700; color: #111827; margin-bottom: 10px; }
-        .faq-answer { font-size: 1rem; color: #6b7280; line-height: 1.7; }
+    /* HERO — dark background with overlay image */
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 80px;
+      padding: 80px 60px;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--dark);
+    }
 
-        .areas {
-            padding: 4rem 1.5rem;
-            background: var(--grey-50);
-        }
-        .areas-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .areas-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-        .area-tag {
-            background: var(--white);
-            border: 1px solid var(--grey-200);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--grey-700);
-        }
+    /* Background image layer */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://support655.github.io/tradeboost-previews/images/heroes/plumber-hero.jpg');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.18;
+      z-index: 0;
+    }
 
-        /* === CTA === */
-        .cta {
-            background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
-            color: var(--white);
-            padding: 5rem 1.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(5,150,105,0.1) 0%, transparent 60%);
-            border-radius: 50%;
-        }
-        .cta-inner {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .cta h2 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .cta p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
-            margin-bottom: 2rem;
-        }
-        .cta-phone {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--green);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            transition: all 0.2s;
-            box-shadow: 0 4px 20px rgba(5,150,105,0.4);
-        }
-        .cta-phone:hover {
-            background: #047857;
-            transform: translateY(-2px);
-        }
-        .cta-note {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-        }
+    /* Dark gradient overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(17,24,39,0.92) 35%, rgba(17,24,39,0.72) 100%);
+      z-index: 1;
+    }
 
-        /* === FOOTER === */
-        .footer {
-            background: var(--navy);
-            color: rgba(255,255,255,0.6);
-            padding: 2.5rem 1.5rem;
-        }
-        .footer-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-        .footer a:hover { color: white; }
-        .footer-links { display: flex; gap: 1.5rem; font-size: 0.85rem; }
+    .hero > * {
+      position: relative;
+      z-index: 2;
+    }
 
-        @media (max-width: 768px) {
-            .topbar-inner { flex-direction: column; text-align: center; }
-            .topbar-badges { flex-wrap: wrap; justify-content: center; }
-            .header-inner { flex-direction: column; gap: 0.75rem; }
-            .hero { padding: 3.5rem 1.5rem; }
-            .hero-stats { flex-direction: column; gap: 1.25rem; }
-            .hero-actions { flex-direction: column; }
-            .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
-            .trust-inner { gap: 1.5rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .reviews-grid { grid-template-columns: 1fr; }
-            .footer-inner { flex-direction: column; text-align: center; }
-            .cta-phone { font-size: 1.4rem; padding: 0.85rem 2rem; }
-        }
-    </style>
+    .hero-left {
+      text-align: center;
+    }
+
+    .hero-score {
+      font-size: clamp(7rem, 14vw, 11rem);
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-stars {
+      font-size: 2rem;
+      color: var(--amber);
+      margin: 8px 0 10px;
+      letter-spacing: 4px;
+    }
+
+    .hero-reviews-count {
+      font-size: 0.95rem;
+      color: #d1d5db;
+      font-weight: 400;
+    }
+
+    .hero-reviews-count strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.1);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .google-g {
+      width: 18px;
+      height: 18px;
+      background: #4285f4;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 0.7rem;
+    }
+
+    .hero-right h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .hero-right p {
+      color: #9ca3af;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: #6b7280;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ABOUT — 2-col image/text */
+    .about-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 440px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-image-col {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-image-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .about-text-col {
+      padding: 64px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--grey-bg);
+    }
+
+    .about-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+    }
+
+    .about-text-col h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .about-text-col p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .about-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 2px solid var(--green-light);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+      align-self: flex-start;
+    }
+
+    .about-cta:hover { border-color: var(--green); }
+
+    /* REVIEWS SECTION */
+    .reviews-section {
+      background: var(--grey-bg);
+      padding: 80px 60px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .review-stars {
+      color: var(--amber);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .review-text {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+
+    .review-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .reviewer {
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .review-source-tag {
+      font-size: 0.75rem;
+      background: var(--green-light);
+      color: var(--green);
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    /* SERVICES — card grid with images */
+    .services-section {
+      padding: 80px 60px;
+    }
+
+    .services-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-img-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .service-img-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .service-img-wrap {
+      height: 170px;
+      overflow: hidden;
+    }
+
+    .service-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .service-img-card:hover .service-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .service-img-body {
+      padding: 20px 22px 24px;
+    }
+
+    .service-icon-wrap {
+      width: 40px;
+      height: 40px;
+      background: var(--green-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .service-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .service-desc {
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* AREAS */
+    .areas-section {
+      background: var(--grey-bg);
+      padding: 56px 60px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .areas-label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .areas-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .area-tag {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--dark);
+      color: #fff;
+      padding: 90px 60px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: #9ca3af;
+      margin-bottom: 36px;
+      font-size: 1rem;
+    }
+
+    .cta-phone {
+      display: block;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+      transition: color 0.2s;
+    }
+
+    .cta-phone:hover { color: #4ade80; }
+
+    .cta-meta {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 60px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav, .reviews-section, .services-section, .areas-section, .cta-section, footer {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .hero { grid-template-columns: 1fr; gap: 48px; text-align: center; padding: 60px 28px; }
+      .hero-meta { justify-content: center; }
+      .about-section { grid-template-columns: 1fr; }
+      .about-image-col { height: 320px; }
+      .about-text-col { padding: 48px 28px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .services-cards-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 48px 20px; gap: 32px; }
+      .about-text-col { padding: 40px 20px; }
+      .reviews-section, .services-section, .cta-section { padding-left: 20px; padding-right: 20px; }
+      .areas-section { padding: 40px 20px; }
+      footer { padding: 20px; flex-direction: column; gap: 6px; }
+      .section-header { flex-direction: column; gap: 4px; }
+      .services-cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="topbar">
-        <div class="topbar-inner">
-            <span style="opacity:0.4">📞 Available 24/7</span>
-            <div class="topbar-badges">
-                <span>✓ Fully Insured</span>
-                <span>⚡ Fast Response</span>
-            </div>
-        </div>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-brand">Nela Plumbing & Gas Services-247 Emergency</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="tel:" class="nav-cta"></a>
     </div>
+  </nav>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-inner">
-            <div class="brand">
-                <div class="brand-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h-1v-4h1v4zm3 0h-1v-6h1v6zm3 0h-1v-2h1v2z"/></svg>
-                </div>
-                <div>
-                    <div class="brand-name">Nela Plumbing & Gas Services-247 Emergency</div>
-                    <div class="brand-sub">Reading, Berkshire's Trusted Local Plumber</div>
-                </div>
-            </div>
-            <a href="tel:" class="header-cta">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                Get a Free Quote
-            </a>
-        </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Accepting new customers in Reading, Berkshire
-            </div>
-            <h1>Reading's 5-Star Emergency Plumber. Any Hour, Any Day.</h1>
-            <p class="hero-sub">Nela Plumbing & Gas Services is a Gas Safe registered emergency plumbing and gas service in Reading, Berkshire. 5.0 stars from 105 genuine reviews. Available 24 hours a day, 7 days a week — including Christmas.</p>
-            <div class="hero-actions">
-                <a href="tel:" class="btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    Call Now — Free Quote
-                </a>
-                <a href="#services" class="btn-secondary">
-                    View Our Services ↓
-                </a>
-            </div>
-            <div class="hero-stats">
-                
-                
-                
-                <div class="stat-item">
-                    <strong>5★</strong>
-                    <span>Google Rating</span>
-                </div>
-                <div class="stat-item">
-                    <strong>105</strong>
-                    <span>Google Reviews</span>
-                </div>
-                
-                <div class="stat-item">
-                    <strong>24/7</strong>
-                    <span>Emergency Callouts</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <div class="trust-inner">
-            <div class="trust-item">
-                <div class="trust-icon green">✓</div>
-                Fully Insured
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon orange">⚡</div>
-                Fast Response
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon green">✓</div>
-                No Hidden Fees
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">📍</div>
-                Local to Reading, Berkshire
-            </div>
-        </div>
+  <!-- HERO — dark background image with overlay -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-score">5</div>
+      <div class="hero-stars">★★★★★</div>
+      <p class="hero-reviews-count"><strong>105 verified</strong> Google reviews</p>
+      <div class="google-badge">
+        <span class="google-g">G</span>
+        Verified on Google Maps
+      </div>
     </div>
+    <div class="hero-right">
+      <h1>Reading's 5-Star Emergency Plumber. Any Hour, Any Day.</h1>
+      <p>Nela Plumbing & Gas Services is a Gas Safe registered emergency plumbing and gas service in Reading, Berkshire. 5.0 stars from 105 genuine reviews. Available 24 hours a day, 7 days a week — including Christmas.</p>
+      <a href="tel:" class="hero-cta">📞 Call for a free quote</a>
+      <div class="hero-meta">
+        <span>✓ Gas Safe Registered</span><span>✓ Gas Safe registered</span>
+        <span>✓ Mon–Sat 8am–8pm</span>
+        <span>✓ No call centres</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="services">
-        <div class="services-inner">
-            <span class="section-label">What We Do</span>
-            <h2 class="section-heading">Our Services</h2>
-            <p class="section-sub">Emergency or planned, here's what Nela Plumbing & Gas Services covers across Reading, 24 hours a day.</p>
-            <div class="services-grid">
-                
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/8486975/pexels-photo-8486975.jpeg?auto=compress&cs=tinysrgb&w=600" alt="24/7 Emergency Plumbing" class="service-card-img">
-                    <div class="service-card-icon">🚨</div>
-                    <div class="service-card-body">
-                        <h3>24/7 Emergency Plumbing</h3>
-                        <p>Burst pipes, water leaks, and plumbing emergencies don't keep office hours. Nela is available day and night, including weekends and bank holidays, to get to you fast and sort the problem properly.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Boiler Servicing" class="service-card-img">
-                    <div class="service-card-icon">⚙️</div>
-                    <div class="service-card-body">
-                        <h3>Boiler Servicing</h3>
-                        <p>Annual boiler servicing to keep your system running safely and efficiently. Thorough, prompt, and priced fairly — customers consistently note how professionally the work is carried out.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Boiler Repairs" class="service-card-img">
-                    <div class="service-card-icon">🔥</div>
-                    <div class="service-card-body">
-                        <h3>Boiler Repairs</h3>
-                        <p>Boiler breakdowns are stressful. Nela responds quickly, diagnoses the problem efficiently, and resolves it at a fair price. Available 24/7 for urgent breakdown call-outs across Reading.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gas Leak Detection & Repair" class="service-card-img">
-                    <div class="service-card-icon">⛽</div>
-                    <div class="service-card-body">
-                        <h3>Gas Leak Detection & Repair</h3>
-                        <p>If you smell gas or suspect a leak, don't wait. As Gas Safe registered engineers, Nela can detect and repair gas leaks quickly and safely — with emergency response available around the clock.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pipe Replacement" class="service-card-img">
-                    <div class="service-card-icon">🔧</div>
-                    <div class="service-card-body">
-                        <h3>Pipe Replacement</h3>
-                        <p>Corroded or damaged pipes replaced properly — including mains supply work and internal pipework. Customers rate the workmanship and the speed of response, even for complex jobs.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="https://images.pexels.com/photos/8486975/pexels-photo-8486975.jpeg?auto=compress&cs=tinysrgb&w=600" alt="General Plumbing" class="service-card-img">
-                    <div class="service-card-icon">💧</div>
-                    <div class="service-card-body">
-                        <h3>General Plumbing</h3>
-                        <p>From routine plumbing repairs to taps, valves, and general maintenance, Nela provides reliable service across Reading at competitive prices.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
+  <!-- ABOUT — 2-col image / text -->
+  <section class="about-section">
+    <div class="about-image-col">
+      <img
+        src="https://images.pexels.com/photos/1029243/pexels-photo-1029243.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Professional Plumbing tools — Nela Plumbing & Gas Services-247 Emergency"
+        loading="lazy">
+    </div>
+    <div class="about-text-col">
+      <p class="about-eyebrow">About us</p>
+      <h2>Reading, Berkshire's trusted Plumber since </h2>
+      <p>Nela Plumbing & Gas Services is a Gas Safe registered company serving Reading and the surrounding Berkshire area, 24 hours a day, every day of the year. With 105 Google reviews and a 5-star rating, the business has earned its reputation for showing up fast, communicating clearly, and getting the job done at a fair price. Whether it's a burst pipe on Boxing Day, a boiler breakdown in the middle of the night, or an annual service that needs booking — the response is the same: professional, reliable, and genuinely helpful.</p>
+      <a href="tel:" class="about-cta">📞 Call  →</a>
+    </div>
+  </section>
 
-    <!-- REVIEWS -->
-    <section class="reviews">
-        <div class="reviews-inner">
-            <div class="reviews-header">
-                <div class="reviews-header-text">
-                    <span class="section-label">What Our Customers Say</span>
-                    <h2 class="section-heading">Trusted by Reading, Berkshire Customers</h2>
-                    <p class="section-sub">Don't just take our word for it.</p>
-                </div>
-                <img src="https://support655.github.io/tradeboost-previews/images/heroes/plumber-hero.jpg" alt="Our team" class="reviews-photo">
-            </div>
-            
-            
-            <div class="reviews-grid">
-                
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"We sprang a leak on our incoming mains pipe on Boxing Day. Fatri came out straight away and was with us in 20 minutes. He sealed off the incoming pipe straight away with a new tap so that our neighbours could have their"</p>
-                    <div class="review-source">Google Review — Reading, Berkshire</div>
-                </div>
-                
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"I recently had Fetri from Nela Boiler Services out to service our boiler, and the experience was outstanding. He was not only incredibly quick but also worked within our budget. Most importantly, he efficiently got to th"</p>
-                    <div class="review-source">Google Review — Reading, Berkshire</div>
-                </div>
-                
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Nela Plumbing & Gas Services always delivers! He provides great customer service, is very knowledgeable, and offers competitive prices. I have called him many times and on every occasion, he has been reliable and helpful"</p>
-                    <div class="review-source">Google Review — Reading, Berkshire</div>
-                </div>
-                
-            </div>
-            
+  <!-- REVIEWS -->
+  
+  <section class="reviews-section" id="reviews">
+    <div class="section-header">
+      <h2>What customers say</h2>
+      <p>105 five-star reviews on Google</p>
+    </div>
+    <div class="reviews-grid">
+      
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">""</p>
+        <div class="review-footer">
+          <span class="reviewer"></span>
+          <span class="review-source-tag">Google</span>
         </div>
-    </section>
+      </div>
+      
+    </div>
+  </section>
+  
 
-    <!-- ABOUT -->
-    
-    <section class="about">
-        <div class="about-inner">
-            <span class="section-label">About Us</span>
-            <h2 class="section-heading">About Nela Plumbing & Gas Services-247 Emergency</h2>
-            <p class="about-text">Nela Plumbing & Gas Services is a Gas Safe registered company serving Reading and the surrounding Berkshire area, 24 hours a day, every day of the year. With 105 Google reviews and a 5-star rating, the business has earned its reputation for showing up fast, communicating clearly, and getting the job done at a fair price. Whether it's a burst pipe on Boxing Day, a boiler breakdown in the middle of the night, or an annual service that needs booking — the response is the same: professional, reliable, and genuinely helpful.</p>
+  <!-- SERVICES — card grid with images -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <h2>Services</h2>
+      <p>Reading, Berkshire &amp; surrounding area</p>
+    </div>
+    <div class="services-cards-grid">
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/8486975/pexels-photo-8486975.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="24/7 Emergency Plumbing — "
+            loading="lazy">
         </div>
-    </section>
-    
+        <div class="service-img-body">
+          <div class="service-icon-wrap">🚨</div>
+          <div class="service-name">24/7 Emergency Plumbing</div>
+          <div class="service-desc">Burst pipes, water leaks, and plumbing emergencies don't keep office hours. Nela is available day and night, including weekends and bank holidays, to get to you fast and sort the problem properly.</div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Boiler Servicing — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">⚙️</div>
+          <div class="service-name">Boiler Servicing</div>
+          <div class="service-desc">Annual boiler servicing to keep your system running safely and efficiently. Thorough, prompt, and priced fairly — customers consistently note how professionally the work is carried out.</div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Boiler Repairs — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">🔥</div>
+          <div class="service-name">Boiler Repairs</div>
+          <div class="service-desc">Boiler breakdowns are stressful. Nela responds quickly, diagnoses the problem efficiently, and resolves it at a fair price. Available 24/7 for urgent breakdown call-outs across Reading.</div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Gas Leak Detection & Repair — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">⛽</div>
+          <div class="service-name">Gas Leak Detection & Repair</div>
+          <div class="service-desc">If you smell gas or suspect a leak, don't wait. As Gas Safe registered engineers, Nela can detect and repair gas leaks quickly and safely — with emergency response available around the clock.</div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Pipe Replacement — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">🔧</div>
+          <div class="service-name">Pipe Replacement</div>
+          <div class="service-desc">Corroded or damaged pipes replaced properly — including mains supply work and internal pipework. Customers rate the workmanship and the speed of response, even for complex jobs.</div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src="https://images.pexels.com/photos/8486975/pexels-photo-8486975.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="General Plumbing — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap">💧</div>
+          <div class="service-name">General Plumbing</div>
+          <div class="service-desc">From routine plumbing repairs to taps, valves, and general maintenance, Nela provides reliable service across Reading at competitive prices.</div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    
-    <section class="faq">
-        <div class="faq-inner">
-            <span class="section-label">FAQs</span>
-            <h2 class="section-heading">Common Questions</h2>
-            <div class="faq-list">
-                
-                <div class="faq-item">
-                    <div class="faq-question"></div>
-                    <div class="faq-answer"></div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    
+  <!-- AREAS -->
+  
+  <div class="areas-section">
+    <span class="areas-label">Coverage</span>
+    <div class="areas-tags">
+      
+      <span class="area-tag">[object Object]</span>
+      
+    </div>
+  </div>
+  
 
-    <!-- AREAS SERVED -->
-    <section class="areas">
-        <div class="areas-inner">
-            <span class="section-label">Coverage</span>
-            <h2 class="section-heading">Areas We Serve</h2>
-            <div class="areas-list">
-                
-                <span class="area-tag">Reading</span>
-                
-            </div>
-        </div>
-    </section>
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>5 stars. Gas Safe. 24/7. Reading's emergency plumber — always available.</h2>
+    <p>Call directly — no call centres, no waiting lists.</p>
+    <a href="tel:" class="cta-phone"></a>
+    <p class="cta-meta">Mon–Sat, 8am–8pm &nbsp;·&nbsp; Gas Safe RegisteredGas Safe registered &nbsp;·&nbsp; Reading, Berkshire</p>
+  </section>
 
-    <!-- CTA -->
-    <section class="cta">
-        <div class="cta-inner">
-            <h2>5 stars. Gas Safe. 24/7. Reading's emergency plumber — always available.</h2>
-            <p>Whether it's an emergency or a planned job, give us a call. No obligation, no hidden fees — just honest, reliable service.</p>
-            <a href="tel:" class="cta-phone">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                
-            </a>
-            <p class="cta-note">Free quotes • No call-out charge • Available 24/7</p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div>© 2026 Nela Plumbing & Gas Services-247 Emergency. All rights reserved.</div>
-            <div class="footer-links">
-                <span>[Your Registration Number]</span>
-                <span>Reading, Berkshire, UK</span>
-            </div>
-        </div>
-    </footer>
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2024 Nela Plumbing & Gas Services-247 Emergency</span>
+    <span>Gas Safe RegisteredGas Safe registered &nbsp;·&nbsp; Reading, Berkshire</span>
+  </footer>
 
 </body>
 </html>

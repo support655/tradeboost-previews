@@ -1,845 +1,683 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CME Landscape Services — trusted Landscaper in Colchester, Essex. Emergency callouts, repairs, installations. Call today for a free quote.">
-    <title>CME Landscape Services | Trusted Landscaper in Colchester, Essex</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #0f1b2d;
-            --blue: #1a56db;
-            --blue-light: #e8effc;
-            --green: #059669;
-            --green-light: #ecfdf5;
-            --orange: #ea580c;
-            --orange-light: #fff7ed;
-            --grey-50: #f9fafb;
-            --grey-100: #f3f4f6;
-            --grey-200: #e5e7eb;
-            --grey-500: #6b7280;
-            --grey-700: #374151;
-            --grey-900: #111827;
-            --white: #ffffff;
-            --radius: 12px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CME Landscape Services — Colchester, Essex's Local Landscaper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--grey-900);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+    :root {
+      --cream: #faf7f2;
+      --cream-dark: #f0ebe0;
+      --terracotta: #c2612a;
+      --terracotta-light: #f5e8dd;
+      --terracotta-dark: #a3501f;
+      --warm-text: #2d2118;
+      --warm-muted: #8c7b6b;
+      --warm-border: #e4d9ca;
+    }
 
-        /* === TOP BAR === */
-        .topbar {
-            background: var(--navy);
-            color: var(--white);
-            font-size: 0.85rem;
-            padding: 0.5rem 0;
-        }
-        .topbar-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-        .topbar a { color: var(--white); text-decoration: none; }
-        .topbar-badges {
-            display: flex;
-            gap: 1.25rem;
-            align-items: center;
-            font-weight: 500;
-        }
-        .topbar-badges span {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
+    html { font-size: 16px; }
 
-        /* === HEADER === */
-        .header {
-            background: var(--white);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--grey-200);
-            box-shadow: var(--shadow-sm);
-        }
-        .header-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .brand-icon {
-            width: 44px;
-            height: 44px;
-            background: var(--blue);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .brand-icon svg { width: 24px; height: 24px; fill: white; }
-        .brand-name {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--grey-900);
-            line-height: 1.2;
-        }
-        .brand-sub {
-            font-size: 0.8rem;
-            color: var(--grey-500);
-            font-weight: 400;
-        }
-        .header-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--green);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.2s;
-            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
-        }
-        .header-cta:hover {
-            background: #047857;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4);
-        }
+    body {
+      background: var(--cream);
+      color: var(--warm-text);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* === HERO === */
-        .hero {
-            background: linear-gradient(135deg, rgba(15,27,45,0.92) 0%, rgba(30,58,95,0.88) 100%), url('https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover no-repeat;
-            color: var(--white);
-            padding: 5rem 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(26,86,219,0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(5,150,105,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .hero-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-        }
-        .hero-badge .dot {
-            width: 8px;
-            height: 8px;
-            background: #34d399;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-        .hero h1 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-            max-width: 650px;
-        }
-        .hero h1 span {
-            color: #60a5fa;
-        }
-        .hero-sub {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 520px;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--green);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.2s;
-            box-shadow: 0 4px 14px rgba(5,150,105,0.4);
-        }
-        .btn-primary:hover {
-            background: #047857;
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            transition: all 0.2s;
-        }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.15);
-        }
-        .hero-stats {
-            display: flex;
-            gap: 2.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .stat-item strong {
-            display: block;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
-        .stat-item span {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-        }
+    /* NAV */
+    nav {
+      background: var(--cream);
+      padding: 20px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--warm-border);
+    }
 
-        /* === TRUST BAR === */
-        .trust-bar {
-            background: var(--white);
-            border-bottom: 1px solid var(--grey-200);
-            padding: 1.5rem;
-        }
-        .trust-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--grey-700);
-        }
-        .trust-icon {
-            width: 36px;
-            height: 36px;
-            background: var(--blue-light);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-        .trust-icon.green { background: var(--green-light); }
-        .trust-icon.orange { background: var(--orange-light); }
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
 
-        /* === SERVICES === */
-        .services {
-            padding: 5rem 1.5rem;
-            background: var(--grey-50);
-        }
-        .services-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-        .section-label {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--blue);
-            background: var(--blue-light);
-            padding: 0.35rem 0.75rem;
-            border-radius: 50px;
-            margin-bottom: 0.75rem;
-        }
-        .section-heading {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(1.75rem, 3vw, 2.25rem);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--grey-900);
-        }
-        .section-sub {
-            font-size: 1.05rem;
-            color: var(--grey-500);
-            max-width: 550px;
-            margin-bottom: 3rem;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        .service-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            border: 1px solid var(--grey-200);
-            transition: all 0.25s;
-            overflow: hidden;
-        }
-        .service-card:hover {
-            border-color: var(--blue);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
-        }
-        .service-card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .service-card-body {
-            padding: 1.5rem;
-        }
-        .service-card-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--blue-light);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 1.25rem 1.5rem 0;
-            font-size: 1.75rem;
-        }
-        .service-card-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--blue);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .service-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--grey-500);
-            line-height: 1.6;
-        }
+    .nav-badge {
+      background: var(--terracotta);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 8px 16px;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+    }
 
-        /* === REVIEWS === */
-        .reviews {
-            padding: 5rem 1.5rem;
-            background: var(--white);
-        }
-        .reviews-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .reviews-header {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        .reviews-header-text { flex: 1; }
-        .reviews-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: var(--radius);
-            object-fit: cover;
-            box-shadow: var(--shadow-md);
-            display: none;
-        }
-        @media (min-width: 769px) {
-            .reviews-photo { display: block; }
-        }
-        .review-card {
-            background: var(--grey-50);
-            border: 1px solid var(--grey-200);
-            padding: 2rem;
-            border-radius: var(--radius);
-        }
-        .review-stars {
-            color: #f59e0b;
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-            letter-spacing: 2px;
-        }
-        .review-text {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--grey-700);
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-        .review-author {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--grey-900);
-        }
-        .review-source {
-            font-size: 0.8rem;
-            color: var(--grey-500);
-        }
+    .nav-tagline {
+      font-size: 0.82rem;
+      color: var(--warm-muted);
+    }
 
-        /* === PLACEHOLDER SECTIONS === */
-        .placeholder-section {
-            background: var(--blue-light);
-            border: 2px dashed var(--blue);
-            border-radius: var(--radius);
-            padding: 2rem;
-            text-align: center;
-            color: var(--blue);
-            font-weight: 500;
-            margin: 1rem 0;
-        }
+    .nav-phone {
+      font-weight: 600;
+      color: var(--terracotta);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
 
-        /* === AREAS === */
-        .about { padding: 80px 24px; background: #f9fafb; }
-        .about-inner { max-width: 800px; margin: 0 auto; }
-        .about-text { font-size: 1.15rem; color: #374151; line-height: 1.8; margin-top: 16px; }
+    .nav-phone:hover { color: var(--terracotta-dark); }
 
-        .faq { padding: 80px 24px; background: white; }
-        .faq-inner { max-width: 800px; margin: 0 auto; }
-        .faq-list { margin-top: 32px; }
-        .faq-item { border-bottom: 1px solid #e5e7eb; padding: 24px 0; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-question { font-size: 1.1rem; font-weight: 700; color: #111827; margin-bottom: 10px; }
-        .faq-answer { font-size: 1rem; color: #6b7280; line-height: 1.7; }
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 80px 60px;
+    }
 
-        .areas {
-            padding: 4rem 1.5rem;
-            background: var(--grey-50);
-        }
-        .areas-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .areas-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-        .area-tag {
-            background: var(--white);
-            border: 1px solid var(--grey-200);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--grey-700);
-        }
+    .hero-greeting {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      color: var(--terracotta);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
 
-        /* === CTA === */
-        .cta {
-            background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
-            color: var(--white);
-            padding: 5rem 1.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(5,150,105,0.1) 0%, transparent 60%);
-            border-radius: 50%;
-        }
-        .cta-inner {
-            position: relative;
-            z-index: 1;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .cta h2 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: clamp(1.75rem, 3vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .cta p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.75);
-            margin-bottom: 2rem;
-        }
-        .cta-phone {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--white);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--green);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            transition: all 0.2s;
-            box-shadow: 0 4px 20px rgba(5,150,105,0.4);
-        }
-        .cta-phone:hover {
-            background: #047857;
-            transform: translateY(-2px);
-        }
-        .cta-note {
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-        }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--warm-text);
+      margin-bottom: 20px;
+    }
 
-        /* === FOOTER === */
-        .footer {
-            background: var(--navy);
-            color: rgba(255,255,255,0.6);
-            padding: 2.5rem 1.5rem;
-        }
-        .footer-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-        .footer a:hover { color: white; }
-        .footer-links { display: flex; gap: 1.5rem; font-size: 0.85rem; }
+    .hero-body {
+      font-size: 1rem;
+      color: var(--warm-muted);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      max-width: 420px;
+    }
 
-        @media (max-width: 768px) {
-            .topbar-inner { flex-direction: column; text-align: center; }
-            .topbar-badges { flex-wrap: wrap; justify-content: center; }
-            .header-inner { flex-direction: column; gap: 0.75rem; }
-            .hero { padding: 3.5rem 1.5rem; }
-            .hero-stats { flex-direction: column; gap: 1.25rem; }
-            .hero-actions { flex-direction: column; }
-            .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
-            .trust-inner { gap: 1.5rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .reviews-grid { grid-template-columns: 1fr; }
-            .footer-inner { flex-direction: column; text-align: center; }
-            .cta-phone { font-size: 1.4rem; padding: 0.85rem 2rem; }
-        }
-    </style>
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .stamp-badge {
+      width: 96px;
+      height: 96px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      border: 3px dashed rgba(255,255,255,0.4);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .stamp-badge::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .stamp-score {
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .stamp-stars {
+      font-size: 0.55rem;
+      letter-spacing: 2px;
+      margin: 2px 0;
+    }
+
+    .stamp-count {
+      font-size: 0.6rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    .call-link {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      color: var(--terracotta);
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid var(--terracotta-light);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .call-link:hover { border-color: var(--terracotta); }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      filter: sepia(15%) saturate(1.15) brightness(0.92);
+      display: block;
+    }
+
+    .hero-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(194,97,42,0.10) 0%, rgba(0,0,0,0) 60%);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    /* TRUST BADGES */
+    .trust-bar {
+      background: var(--cream-dark);
+      padding: 20px 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--warm-border);
+      border-bottom: 1px solid var(--warm-border);
+    }
+
+    .trust-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--warm-muted);
+      margin-right: 8px;
+    }
+
+    .trust-pill {
+      background: var(--cream);
+      border: 1.5px solid var(--warm-border);
+      color: var(--warm-text);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .trust-pill .icon { font-size: 0.9rem; }
+
+    /* SERVICES */
+    .services-section {
+      padding: 80px 60px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--warm-text);
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      color: var(--warm-muted);
+      margin-bottom: 40px;
+      font-size: 0.95rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1.5px solid var(--warm-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+
+    .service-card:hover {
+      border-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .service-icon-bg {
+      width: 48px;
+      height: 48px;
+      background: var(--terracotta-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .service-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--warm-text);
+      margin-bottom: 8px;
+    }
+
+    .service-desc {
+      font-size: 0.87rem;
+      color: var(--warm-muted);
+      line-height: 1.6;
+    }
+
+    /* BATHROOM SHOWCASE */
+    .bathroom-showcase {
+      padding: 80px 60px;
+      background: var(--cream-dark);
+      border-top: 1px solid var(--warm-border);
+      border-bottom: 1px solid var(--warm-border);
+    }
+
+    .showcase-header {
+      margin-bottom: 36px;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .showcase-img-wrap {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .showcase-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Warm tone to match cream/terracotta palette */
+      filter: sepia(28%) saturate(1.25) brightness(0.92) hue-rotate(-8deg);
+      transition: filter 0.4s ease, transform 0.5s ease;
+      display: block;
+    }
+
+    .showcase-img-wrap:hover img {
+      filter: sepia(15%) saturate(1.4) brightness(1.0) hue-rotate(-5deg);
+      transform: scale(1.04);
+    }
+
+    .showcase-label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      background: rgba(45,33,24,0.72);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 6px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .showcase-img-wrap:hover .showcase-label {
+      opacity: 1;
+    }
+
+    /* REVIEWS */
+    .reviews-section {
+      background: var(--cream-dark);
+      padding: 80px 60px;
+      border-top: 1px solid var(--warm-border);
+      border-bottom: 1px solid var(--warm-border);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .review-card {
+      position: relative;
+      padding-top: 20px;
+    }
+
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--terracotta);
+      line-height: 1;
+      margin-bottom: -20px;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .review-text {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--warm-text);
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .review-stars {
+      color: var(--terracotta);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .review-source {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--warm-muted);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--terracotta);
+      padding: 90px 60px;
+      text-align: center;
+    }
+
+    .cta-pre {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      margin-bottom: 36px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .cta-phone-num {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      padding: 16px 40px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: background 0.2s;
+    }
+
+    .cta-phone-num:hover { background: rgba(255,255,255,0.25); }
+
+    .cta-hours {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .cta-sign {
+      margin-top: 28px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--warm-text);
+      color: rgba(255,255,255,0.5);
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav, .hero, .services-section, .bathroom-showcase, .reviews-section, .cta-section, footer {
+        padding-left: 28px;
+        padding-right: 28px;
+      }
+
+      .trust-bar { padding: 16px 28px; }
+      .hero { grid-template-columns: 1fr; gap: 40px; }
+      .hero-right { order: -1; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .showcase-grid { grid-template-columns: 1fr 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .hero { padding: 52px 20px; }
+      .services-section, .bathroom-showcase, .reviews-section, .cta-section { padding: 60px 20px; }
+      .trust-bar { padding: 16px 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .showcase-grid { grid-template-columns: 1fr 1fr; }
+      footer { padding: 20px; flex-direction: column; gap: 6px; text-align: center; }
+      .hero-image-wrap { aspect-ratio: 16/9; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="topbar">
-        <div class="topbar-inner">
-            <a href="tel:07919 542 992">📞 07919 542 992 — Available 24/7</a>
-            <div class="topbar-badges">
-                <span>✓ Fully Insured</span>
-                <span>⚡ Fast Response</span>
-            </div>
-        </div>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">
+      <span class="nav-badge">CME Landscape Services</span>
+      <span class="nav-tagline">Colchester, Essex's own</span>
     </div>
+    <a href="tel:07919 542 992" class="nav-phone">☎ 07919 542 992</a>
+  </nav>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-inner">
-            <div class="brand">
-                <div class="brand-icon">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h-1v-4h1v4zm3 0h-1v-6h1v6zm3 0h-1v-2h1v2z"/></svg>
-                </div>
-                <div>
-                    <div class="brand-name">CME Landscape Services</div>
-                    <div class="brand-sub">Colchester, Essex's Trusted Local Landscaper</div>
-                </div>
-            </div>
-            <a href="tel:07919 542 992" class="header-cta">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                Get a Free Quote
-            </a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-greeting">Hi, I'm .</p>
+      <h1>Colchester's Hard-Working Landscaping Team.</h1>
+      <p class="hero-body">CME Garden & Landscape Services is a Colchester-based company covering all aspects of soft and hard landscaping across Essex and Suffolk. We've built our reputation the same way we build our gardens — on honest and sound foundations. From patio installations and driveways to regular garden maintenance and astroturf, we take the time to understand what each customer wants and deliver work to a high standard. Our team brings practical experience and genuine care to every job, whether it's a small garden tidy or a full landscaping project.</p>
+      <div class="hero-actions">
+        <div class="stamp-badge">
+          <span class="stamp-score">★</span>
+          <span class="stamp-stars">★★★★★</span>
+          <span class="stamp-count"> Reviews</span>
         </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Accepting new customers in Colchester, Essex
-            </div>
-            <h1>Colchester's Hard-Working Landscaping Team.</h1>
-            <p class="hero-sub">CME Garden & Landscape Services carry out all soft and hard landscaping across Colchester, Essex, and Suffolk. Patios, driveways, fencing, turfing, and more — built on honest foundations and delivered to a high standard.</p>
-            <div class="hero-actions">
-                <a href="tel:07919 542 992" class="btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    Call Now — Free Quote
-                </a>
-                <a href="#services" class="btn-secondary">
-                    View Our Services ↓
-                </a>
-            </div>
-            <div class="hero-stats">
-                
-                
-                
-                <div class="stat-item">
-                    <strong>24/7</strong>
-                    <span>Emergency Callouts</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST BAR -->
-    <div class="trust-bar">
-        <div class="trust-inner">
-            <div class="trust-item">
-                <div class="trust-icon green">✓</div>
-                Fully Insured
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon orange">⚡</div>
-                Fast Response
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon green">✓</div>
-                No Hidden Fees
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">📍</div>
-                Local to Colchester, Essex
-            </div>
-        </div>
+        <a href="tel:07919 542 992" class="call-link">
+          <span>📞</span> Give me a call
+        </a>
+      </div>
     </div>
+    <div class="hero-right">
+      <div class="hero-image-wrap">
+        <img
+          src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Landscaper work by CME Landscape Services, Colchester, Essex"
+          loading="lazy">
+      </div>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="services">
-        <div class="services-inner">
-            <span class="section-label">What We Do</span>
-            <h2 class="section-heading">Our Services</h2>
-            <p class="section-sub">From patios and driveways to regular maintenance, here's what CME covers across Colchester, Essex, and Suffolk.</p>
-            <div class="services-grid">
-                
-                <div class="service-card">
-                    <img src="" alt="Patio Installation" class="service-card-img">
-                    <div class="service-card-icon">🧱</div>
-                    <div class="service-card-body">
-                        <h3>Patio Installation</h3>
-                        <p>We design and install patios to suit your garden, budget, and lifestyle — from simple slabbed areas to more intricate layouts. Clean, professional installation with lasting results.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="" alt="Driveways & Block Paving" class="service-card-img">
-                    <div class="service-card-icon">🏠</div>
-                    <div class="service-card-body">
-                        <h3>Driveways & Block Paving</h3>
-                        <p>A new driveway can transform the front of your property. We install block paving and driveways across Colchester and Essex, built to last and properly finished.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="" alt="Fencing" class="service-card-img">
-                    <div class="service-card-icon">🌿</div>
-                    <div class="service-card-body">
-                        <h3>Fencing</h3>
-                        <p>From panel fencing to post-and-rail and everything in between, we supply and install fencing to suit your property. We also carry out repairs and replacements.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="" alt="Turfing & Astroturf" class="service-card-img">
-                    <div class="service-card-icon">🌱</div>
-                    <div class="service-card-body">
-                        <h3>Turfing & Astroturf</h3>
-                        <p>Whether you want a natural lawn or the low-maintenance look of artificial grass, we handle the full installation — preparation, groundwork, and laying — to give you a lawn you'll actually use.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="" alt="Garden Maintenance" class="service-card-img">
-                    <div class="service-card-icon">✂️</div>
-                    <div class="service-card-body">
-                        <h3>Garden Maintenance</h3>
-                        <p>Regular grass cutting, weeding, and seasonal maintenance to keep your garden looking its best year-round. We work across Colchester and can tailor a maintenance schedule to suit you.</p>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <img src="" alt="Garden Refurbishments" class="service-card-img">
-                    <div class="service-card-icon">🌳</div>
-                    <div class="service-card-body">
-                        <h3>Garden Refurbishments</h3>
-                        <p>Full garden makeovers — from planning and design through to completion. We'll work with you on ideas and solutions, and deliver a space you'll enjoy for years to come.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section class="reviews">
-        <div class="reviews-inner">
-            <div class="reviews-header">
-                <div class="reviews-header-text">
-                    <span class="section-label">What Our Customers Say</span>
-                    <h2 class="section-heading">Trusted by Colchester, Essex Customers</h2>
-                    <p class="section-sub">Don't just take our word for it.</p>
-                </div>
-                <img src="https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Our team" class="reviews-photo">
-            </div>
-            
-            
-            <div class="reviews-grid">
-                
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Cannot recommend CME highly enough. Carl and Stuart were fantastic. They came up with some great suggestions and solutions during the planning stage and the work itself is of a really high standard."</p>
-                    <div class="review-source">Google Review — Colchester, Essex</div>
-                </div>
-                
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- ABOUT -->
+  <!-- TRUST BADGES -->
+  <div class="trust-bar">
+    <span class="trust-label">Why choose me</span>
     
-    <section class="about">
-        <div class="about-inner">
-            <span class="section-label">About Us</span>
-            <h2 class="section-heading">About CME Landscape Services</h2>
-            <p class="about-text">CME Garden & Landscape Services is a Colchester-based company covering all aspects of soft and hard landscaping across Essex and Suffolk. We've built our reputation the same way we build our gardens — on honest and sound foundations. From patio installations and driveways to regular garden maintenance and astroturf, we take the time to understand what each customer wants and deliver work to a high standard. Our team brings practical experience and genuine care to every job, whether it's a small garden tidy or a full landscaping project.</p>
-        </div>
-    </section>
-    
+    <span class="trust-pill"><span class="icon">📅</span> Est. 2018</span>
+    <span class="trust-pill"><span class="icon">📍</span> Colchester, Essex born and based</span>
+    <span class="trust-pill"><span class="icon">💷</span> Fair pricing, always</span>
+    <span class="trust-pill"><span class="icon">⭐</span>  Google rating</span>
+  </div>
 
-    <!-- FAQ -->
-    
-    <section class="faq">
-        <div class="faq-inner">
-            <span class="section-label">FAQs</span>
-            <h2 class="section-heading">Common Questions</h2>
-            <div class="faq-list">
-                
-                <div class="faq-item">
-                    <div class="faq-question"></div>
-                    <div class="faq-answer"></div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-    
+  <!-- SERVICES -->
+  <section class="services-section">
+    <h2 class="section-title">What I can help with</h2>
+    <p class="section-sub">From patios and driveways to regular maintenance, here's what CME covers across Colchester, Essex, and Suffolk.</p>
+    <div class="services-grid">
+      
+      <div class="service-card">
+        <div class="service-icon-bg">🧱</div>
+        <div class="service-name">Patio Installation</div>
+        <p class="service-desc">We design and install patios to suit your garden, budget, and lifestyle — from simple slabbed areas to more intricate layouts. Clean, professional installation with lasting results.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon-bg">🏠</div>
+        <div class="service-name">Driveways & Block Paving</div>
+        <p class="service-desc">A new driveway can transform the front of your property. We install block paving and driveways across Colchester and Essex, built to last and properly finished.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon-bg">🌿</div>
+        <div class="service-name">Fencing</div>
+        <p class="service-desc">From panel fencing to post-and-rail and everything in between, we supply and install fencing to suit your property. We also carry out repairs and replacements.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon-bg">🌱</div>
+        <div class="service-name">Turfing & Astroturf</div>
+        <p class="service-desc">Whether you want a natural lawn or the low-maintenance look of artificial grass, we handle the full installation — preparation, groundwork, and laying — to give you a lawn you'll actually use.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon-bg">✂️</div>
+        <div class="service-name">Garden Maintenance</div>
+        <p class="service-desc">Regular grass cutting, weeding, and seasonal maintenance to keep your garden looking its best year-round. We work across Colchester and can tailor a maintenance schedule to suit you.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon-bg">🌳</div>
+        <div class="service-name">Garden Refurbishments</div>
+        <p class="service-desc">Full garden makeovers — from planning and design through to completion. We'll work with you on ideas and solutions, and deliver a space you'll enjoy for years to come.</p>
+      </div>
+      
+    </div>
+  </section>
 
-    <!-- AREAS SERVED -->
-    <section class="areas">
-        <div class="areas-inner">
-            <span class="section-label">Coverage</span>
-            <h2 class="section-heading">Areas We Serve</h2>
-            <div class="areas-list">
-                
-                <span class="area-tag">Colchester</span>
-                
-            </div>
-        </div>
-    </section>
+  <!-- BATHROOM SHOWCASE — warm-filtered gallery -->
+  <section class="bathroom-showcase">
+    <div class="showcase-header">
+      <h2 class="section-title">A look at the work</h2>
+      <p class="section-sub">Installations completed across Colchester, Essex</p>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/7534571/pexels-photo-7534571.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Modern bathroom installation — CME Landscape Services"
+          loading="lazy">
+        <span class="showcase-label">Modern bathroom</span>
+      </div>
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/16249146/pexels-photo-16249146.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Freestanding bath installation — CME Landscape Services"
+          loading="lazy">
+        <span class="showcase-label">Freestanding bath</span>
+      </div>
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/6934184/pexels-photo-6934184.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Shower room installation — CME Landscape Services"
+          loading="lazy">
+        <span class="showcase-label">Shower room</span>
+      </div>
+      <div class="showcase-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Classic bathroom suite — CME Landscape Services"
+          loading="lazy">
+        <span class="showcase-label">Classic suite</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="cta">
-        <div class="cta-inner">
-            <h2>Ready to transform your outdoor space? Call CME today.</h2>
-            <p>Whether it's an emergency or a planned job, give us a call. No obligation, no hidden fees — just honest, reliable service.</p>
-            <a href="tel:07919 542 992" class="cta-phone">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                07919 542 992
-            </a>
-            <p class="cta-note">Free quotes • No call-out charge • Available 24/7</p>
-        </div>
-    </section>
+  <!-- REVIEWS -->
+  
+  <section class="reviews-section">
+    <h2 class="section-title" style="margin-bottom: 8px;">Don't take my word for it</h2>
+    <p class="section-sub"> five-star reviews from real Colchester, Essex customers</p>
+    <div class="reviews-grid">
+      
+      <div class="review-card">
+        <span class="quote-mark">"</span>
+        <p class="review-text"></p>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-source">— Google Review</p>
+      </div>
+      
+    </div>
+  </section>
+  
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div>© 2026 CME Landscape Services. All rights reserved.</div>
-            <div class="footer-links">
-                <span>[Your Registration Number]</span>
-                <span>Colchester, Essex, UK</span>
-            </div>
-        </div>
-    </footer>
+  <!-- CTA -->
+  <section class="cta-section">
+    <p class="cta-pre">Get in touch</p>
+    <h2>Ready to transform your outdoor space? Call CME today.</h2>
+    <p>No call centres, no automated systems. Call me directly and we'll sort out a time that works for you.</p>
+    <a href="tel:07919 542 992" class="cta-phone-num">07919 542 992</a>
+    <p class="cta-hours">Mon–Sat, 8am–8pm &nbsp;·&nbsp; Colchester, Essex &amp; surrounding area</p>
+    <p class="cta-sign">— , </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2024 CME Landscape Services</span>
+    <span>Colchester, Essex &nbsp;·&nbsp;  &nbsp;·&nbsp; Est. 2018</span>
+  </footer>
 
 </body>
 </html>
