@@ -509,6 +509,29 @@
 </head>
 <body>
 
+<style>
+  #tb-preview-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    background: #1a1a1a; color: #fff;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px; font-weight: 500;
+    padding: 8px 16px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    border-bottom: 3px solid #FFD000;
+  }
+  #tb-preview-banner span.badge {
+    background: #FFD000; color: #1a1a1a;
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 2px 7px;
+  }
+  #tb-preview-banner span.msg { opacity: 0.85; }
+  body { padding-top: 42px !important; }
+</style>
+<div id="tb-preview-banner">
+  <span class="badge">Preview only</span>
+  <span class="msg">This site isn't live yet. Links and forms are disabled.</span>
+</div>
+
   <!-- TOP RULE -->
   <div class="top-rule"></div>
 
@@ -536,7 +559,7 @@
         <h2>About KJW Painting and Decorating</h2>
         <p>Painter decorator services — serving Crawley, West Sussex and surrounding areas with quality you can rely on.</p>
         <p></p>
-        <a href="tel:West Sussex"" class="hero-intro-cta">Call West Sussex" →</a>
+        <a href="#" onclick="return false;"" class="hero-intro-cta">Call West Sussex" →</a>
       </div>
       <div class="hero-stats">
         <div class="stat-row">
@@ -604,7 +627,7 @@
     </div>
     <div class="classified-block">
       <div class="classified-tag">Contact &nbsp;/&nbsp; KJW Painting and Decorating</div>
-      <a href="tel:West Sussex"" class="classified-phone">West Sussex"</a>
+      <a href="#" onclick="return false;"" class="classified-phone">West Sussex"</a>
       <div class="classified-details">
         <span>📍 </span>
         <span>🕐 Mon–Sat, 8:00am – 8:00pm</span>

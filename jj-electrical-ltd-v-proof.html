@@ -535,13 +535,36 @@
 </head>
 <body>
 
+<style>
+  #tb-preview-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    background: #1a1a1a; color: #fff;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px; font-weight: 500;
+    padding: 8px 16px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    border-bottom: 3px solid #FFD000;
+  }
+  #tb-preview-banner span.badge {
+    background: #FFD000; color: #1a1a1a;
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 2px 7px;
+  }
+  #tb-preview-banner span.msg { opacity: 0.85; }
+  body { padding-top: 42px !important; }
+</style>
+<div id="tb-preview-banner">
+  <span class="badge">Preview only</span>
+  <span class="msg">This site isn't live yet. Links and forms are disabled.</span>
+</div>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-brand">JJ Electrical LTD</a>
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#reviews">Reviews</a>
-      <a href="tel:West Sussex"" class="nav-cta">West Sussex"</a>
+      <a href="#" onclick="return false;"" class="nav-cta">West Sussex"</a>
     </div>
   </nav>
 
@@ -559,7 +582,7 @@
     <div class="hero-right">
       <h1></h1>
       <p>Rewires, fault-finding, and installations — serving Crawley, West Sussex and surrounding areas with quality you can rely on.</p>
-      <a href="tel:West Sussex"" class="hero-cta">📞 Call for a free quote</a>
+      <a href="#" onclick="return false;"" class="hero-cta">📞 Call for a free quote</a>
       <div class="hero-meta">
         
         <span>✓ Mon–Sat 8am–8pm</span>
@@ -580,7 +603,7 @@
       <p class="about-eyebrow">About us</p>
       <h2>Crawley, West Sussex's trusted Electrician since </h2>
       <p></p>
-      <a href="tel:West Sussex"" class="about-cta">📞 Call West Sussex" →</a>
+      <a href="#" onclick="return false;"" class="about-cta">📞 Call West Sussex" →</a>
     </div>
   </section>
 
@@ -614,7 +637,7 @@
   <section class="cta-section">
     <h2></h2>
     <p>Call directly — no call centres, no waiting lists.</p>
-    <a href="tel:West Sussex"" class="cta-phone">West Sussex"</a>
+    <a href="#" onclick="return false;"" class="cta-phone">West Sussex"</a>
     <p class="cta-meta">Mon–Sat, 8am–8pm &nbsp;·&nbsp;  &nbsp;·&nbsp; Crawley, West Sussex</p>
   </section>
 

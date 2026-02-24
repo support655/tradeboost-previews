@@ -535,13 +535,36 @@
 </head>
 <body>
 
+<style>
+  #tb-preview-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
+    background: #1a1a1a; color: #fff;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 13px; font-weight: 500;
+    padding: 8px 16px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    border-bottom: 3px solid #FFD000;
+  }
+  #tb-preview-banner span.badge {
+    background: #FFD000; color: #1a1a1a;
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 2px 7px;
+  }
+  #tb-preview-banner span.msg { opacity: 0.85; }
+  body { padding-top: 42px !important; }
+</style>
+<div id="tb-preview-banner">
+  <span class="badge">Preview only</span>
+  <span class="msg">This site isn't live yet. Links and forms are disabled.</span>
+</div>
+
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-brand">Plumbing Boss Ltd | Plumber In Medway, Maidstone, Kent</a>
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#reviews">Reviews</a>
-      <a href="tel:plumber" class="nav-cta">plumber</a>
+      <a href="#" onclick="return false;" class="nav-cta">plumber</a>
     </div>
   </nav>
 
@@ -559,7 +582,7 @@
     <div class="hero-right">
       <h1></h1>
       <p>Emergency callouts, repairs, and installations — serving Maidstone, Kent and surrounding areas with quality service you can rely on.</p>
-      <a href="tel:plumber" class="hero-cta">📞 Call for a free quote</a>
+      <a href="#" onclick="return false;" class="hero-cta">📞 Call for a free quote</a>
       <div class="hero-meta">
         
         <span>✓ Mon–Sat 8am–8pm</span>
@@ -580,7 +603,7 @@
       <p class="about-eyebrow">About us</p>
       <h2>Maidstone, Kent's trusted Plumber since </h2>
       <p></p>
-      <a href="tel:plumber" class="about-cta">📞 Call plumber →</a>
+      <a href="#" onclick="return false;" class="about-cta">📞 Call plumber →</a>
     </div>
   </section>
 
@@ -614,7 +637,7 @@
   <section class="cta-section">
     <h2></h2>
     <p>Call directly — no call centres, no waiting lists.</p>
-    <a href="tel:plumber" class="cta-phone">plumber</a>
+    <a href="#" onclick="return false;" class="cta-phone">plumber</a>
     <p class="cta-meta">Mon–Sat, 8am–8pm &nbsp;·&nbsp;  &nbsp;·&nbsp; Maidstone, Kent</p>
   </section>
 
