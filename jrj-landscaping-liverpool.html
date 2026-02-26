@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JRJ Landscaping — Liverpool</title>
+  <title>JRJ Landscaping — 5★ Google Rating</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #c9a96e;
-      --gold-light: #dfc08e;
-      --bg: #0d0d0d;
-      --bg-card: #141414;
-      --bg-mid: #111111;
-      --text: #e8e2d9;
-      --muted: #7a7168;
-      --border: #1e1e1e;
+      --green: #1a7f4b;
+      --green-light: #e8f5ee;
+      --green-dark: #166040;
+      --amber: #f59e0b;
+      --dark: #111827;
+      --grey-bg: #f3f4f6;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
     }
 
     html { font-size: 16px; }
 
     body {
-      background: var(--bg);
+      background: #fff;
       color: var(--text);
       font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -37,538 +36,663 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 28px 60px;
-      border-bottom: 1px solid #1e1e1e;
+      padding: 20px 60px;
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
+      font-weight: 700;
+      font-size: 1.05rem;
       color: var(--text);
       text-decoration: none;
     }
 
-    .nav-brand span { color: var(--gold); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
 
-    .nav-phone {
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
+    .nav-links a {
       text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 400;
       transition: color 0.2s;
     }
 
-    .nav-phone:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--text); }
 
-    .gold-line {
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-      margin-right: 16px;
+    .nav-cta {
+      background: var(--green) !important;
+      color: #fff !important;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600 !important;
     }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-    }
-
-    /* HERO — full-bleed background image */
+    /* HERO — dark background with overlay image */
     .hero {
       position: relative;
-      min-height: 620px;
-      overflow: hidden;
-      background-image: url('https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1200');
-      background-size: cover;
-      background-position: center 40%;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
+      gap: 80px;
+      padding: 80px 60px;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--dark);
     }
 
-    /* Dark overlay so text stays readable */
+    /* Background image layer */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.80);
+      background-image: url('https://images.pexels.com/photos/1072824/pexels-photo-1072824.jpeg?auto=compress&cs=tinysrgb&w=1200');
+      background-size: cover;
+      background-position: center right;
+      opacity: 0.18;
       z-index: 0;
     }
 
-    .hero-content {
-      position: relative;
+    /* Dark gradient overlay */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(17,24,39,0.92) 35%, rgba(17,24,39,0.72) 100%);
       z-index: 1;
-      padding: 110px 60px 100px;
-      max-width: 700px;
     }
 
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 28px;
-      font-weight: 400;
+    .hero > * {
+      position: relative;
+      z-index: 2;
     }
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 5vw, 5rem);
-      font-weight: 400;
-      line-height: 1.08;
-      color: var(--text);
-      margin-bottom: 32px;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-
-    .hero-body {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 480px;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    /* STATS */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: #1a1a1a;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-
-    .stat {
-      background: var(--bg);
-      padding: 52px 40px;
+    .hero-left {
       text-align: center;
     }
 
-    .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 4vw, 3.8rem);
-      font-weight: 400;
-      color: var(--gold);
+    .hero-score {
+      font-size: clamp(7rem, 14vw, 11rem);
+      font-weight: 900;
+      color: var(--green);
       line-height: 1;
-      margin-bottom: 12px;
+      letter-spacing: -0.04em;
     }
 
-    .stat-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
+    .hero-stars {
+      font-size: 2rem;
+      color: var(--amber);
+      margin: 8px 0 10px;
+      letter-spacing: 4px;
+    }
+
+    .hero-reviews-count {
+      font-size: 0.95rem;
+      color: #d1d5db;
       font-weight: 400;
     }
 
-    /* BATHROOM SHOWCASE */
-    .showcase {
-      padding: 90px 60px;
-      background: var(--bg-mid);
+    .hero-reviews-count strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.1);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .google-g {
+      width: 18px;
+      height: 18px;
+      background: #4285f4;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 0.7rem;
+    }
+
+    .hero-right h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+
+    .hero-right p {
+      color: #9ca3af;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #fff;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: #6b7280;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ABOUT — 2-col image/text */
+    .about-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 440px;
       border-bottom: 1px solid var(--border);
     }
 
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-    }
-
-    .showcase-item {
-      position: relative;
-      aspect-ratio: 4/3;
+    .about-image-col {
       overflow: hidden;
+      position: relative;
     }
 
-    .showcase-item img {
+    .about-image-col img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.6) saturate(0.75) sepia(0.1);
-      transition: filter 0.5s ease, transform 0.6s ease;
+      object-position: center 20%;
       display: block;
     }
 
-    .showcase-item:hover img {
-      filter: brightness(0.8) saturate(1.05);
-      transform: scale(1.04);
-    }
-
-    .showcase-caption {
-      position: absolute;
-      bottom: 14px;
-      left: 18px;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .showcase-item:hover .showcase-caption {
-      opacity: 1;
-    }
-
-    /* SERVICES */
-    .section {
-      padding: 90px 60px;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 48px;
+    .about-text-col {
+      padding: 64px 60px;
       display: flex;
-      align-items: center;
-      gap: 16px;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--grey-bg);
     }
 
-    .section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
+    .about-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: #181818;
-    }
-
-    .service-card {
-      background: var(--bg-card);
-      padding: 40px 36px;
-    }
-
-    .service-icon {
-      font-size: 1.4rem;
-      margin-bottom: 18px;
-      display: block;
-      opacity: 0.8;
-    }
-
-    .service-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 400;
+    .about-text-col h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1.25;
       color: var(--text);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
-    .service-desc {
-      font-size: 0.87rem;
+    .about-text-col p {
       color: var(--muted);
-      line-height: 1.7;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
     }
 
-    /* REVIEWS */
+    .about-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+      font-size: 0.95rem;
+      border-bottom: 2px solid var(--green-light);
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+      align-self: flex-start;
+    }
+
+    .about-cta:hover { border-color: var(--green); }
+
+    /* REVIEWS SECTION */
     .reviews-section {
-      padding: 90px 60px;
-      background: var(--bg-mid);
+      background: var(--grey-bg);
+      padding: 80px 60px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      gap: 20px;
     }
 
     .review-card {
-      border-top: 1px solid var(--gold);
-      padding-top: 28px;
-    }
-
-    .review-quote {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1rem;
-      line-height: 1.75;
-      color: #b8b0a4;
-      margin-bottom: 20px;
-    }
-
-    .review-source {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid var(--border);
     }
 
     .review-stars {
-      color: var(--gold);
-      font-size: 0.75rem;
-      margin-bottom: 6px;
+      color: var(--amber);
+      font-size: 0.9rem;
       letter-spacing: 2px;
+      margin-bottom: 14px;
     }
 
-    /* CTA */
+    .review-text {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+
+    .review-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .reviewer {
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .review-source-tag {
+      font-size: 0.75rem;
+      background: var(--green-light);
+      color: var(--green);
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    /* SERVICES — card grid with images */
+    .services-section {
+      padding: 80px 60px;
+    }
+
+    .services-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-img-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .service-img-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .service-img-wrap {
+      height: 170px;
+      overflow: hidden;
+    }
+
+    .service-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .service-img-card:hover .service-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .service-img-body {
+      padding: 20px 22px 24px;
+    }
+
+    .service-icon-wrap {
+      width: 40px;
+      height: 40px;
+      background: var(--green-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .service-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .service-desc {
+      font-size: 0.87rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* AREAS */
+    .areas-section {
+      background: var(--grey-bg);
+      padding: 56px 60px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .areas-label {
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .areas-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .area-tag {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* CTA SECTION */
     .cta-section {
-      padding: 120px 60px;
+      background: var(--dark);
+      color: #fff;
+      padding: 90px 60px;
       text-align: center;
     }
 
-    .cta-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 24px;
+    .cta-section h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
-    .cta h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      margin-bottom: 40px;
+    .cta-section p {
+      color: #9ca3af;
+      margin-bottom: 36px;
+      font-size: 1rem;
     }
 
     .cta-phone {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 4vw, 3.5rem);
-      color: var(--gold);
-      font-weight: 400;
-      text-decoration: none;
       display: block;
-      margin-bottom: 36px;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
       transition: color 0.2s;
     }
 
-    .cta-phone:hover { color: var(--gold-light); }
+    .cta-phone:hover { color: #4ade80; }
 
-    .cta-button {
-      display: inline-block;
-      padding: 14px 40px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.78rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      transition: all 0.25s;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-    }
-
-    .cta-button:hover {
-      background: var(--gold);
-      color: var(--bg);
-    }
-
-    .cta-smallprint {
-      margin-top: 28px;
-      font-size: 0.78rem;
-      color: var(--muted);
+    .cta-meta {
+      font-size: 0.85rem;
+      color: #6b7280;
     }
 
     /* FOOTER */
     footer {
-      padding: 32px 60px;
+      padding: 28px 60px;
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--muted);
     }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav, .section, .showcase, .reviews-section, .cta-section, footer {
+      nav, .reviews-section, .services-section, .areas-section, .cta-section, footer {
         padding-left: 28px;
         padding-right: 28px;
       }
 
-      .hero { min-height: 480px; }
-      .hero-content { padding: 70px 28px 60px; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .showcase-grid { grid-template-columns: 1fr 1fr; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .reviews-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero { grid-template-columns: 1fr; gap: 48px; text-align: center; padding: 60px 28px; }
+      .hero-meta { justify-content: center; }
+      .about-section { grid-template-columns: 1fr; }
+      .about-image-col { height: 320px; }
+      .about-text-col { padding: 48px 28px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .services-cards-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 600px) {
-      nav { padding: 20px; }
-      .hero-content { padding: 60px 20px 50px; }
-      .hero { min-height: 380px; }
-      .section { padding: 60px 20px; }
-      .showcase { padding: 60px 20px; }
-      .reviews-section { padding: 60px 20px; }
-      .cta-section { padding: 80px 20px; }
-      footer { padding: 24px 20px; flex-direction: column; gap: 8px; text-align: center; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
-      .stat { padding: 36px 20px; }
-      .showcase-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .reviews-grid { grid-template-columns: 1fr; }
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 48px 20px; gap: 32px; }
+      .about-text-col { padding: 40px 20px; }
+      .reviews-section, .services-section, .cta-section { padding-left: 20px; padding-right: 20px; }
+      .areas-section { padding: 40px 20px; }
+      footer { padding: 20px; flex-direction: column; gap: 6px; }
+      .section-header { flex-direction: column; gap: 4px; }
+      .services-cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
-<style>
-  #tb-preview-banner {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 99999;
-    background: #1a1a1a; color: #fff;
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 13px; font-weight: 500;
-    padding: 8px 16px;
-    display: flex; align-items: center; justify-content: center; gap: 12px;
-    border-bottom: 3px solid #FFD000;
-  }
-  #tb-preview-banner span.badge {
-    background: #FFD000; color: #1a1a1a;
-    font-size: 10px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.08em; padding: 2px 7px;
-  }
-  #tb-preview-banner span.msg { opacity: 0.85; }
-  body { padding-top: 42px !important; }
-</style>
-<div id="tb-preview-banner">
-  <span class="badge">Preview only</span>
-  <span class="msg">This site isn't live yet. Links and forms are disabled.</span>
-</div>
+<style>#tb-preview-banner{position:fixed;top:0;left:0;right:0;z-index:99999;background:#1a1a1a;color:#fff;font-family:"Inter",-apple-system,sans-serif;font-size:13px;font-weight:500;padding:8px 16px;display:flex;align-items:center;justify-content:center;gap:12px;border-bottom:3px solid #FFD000;}#tb-preview-banner span.badge{background:#FFD000;color:#1a1a1a;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:2px 7px;}body{padding-top:42px!important;}</style><div id="tb-preview-banner"><span class="badge">Preview only</span><span class="msg">This site isn't live yet. Links and forms are disabled.</span></div>
 
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-brand">JRJ Landscaping</a>
-    <div class="nav-right">
-      <span class="gold-line"></span>
-      <a href="#" onclick="return false;" class="nav-phone">0151 515 6599</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#" onclick="return false;" class="nav-cta">0151 515 6599</a>
     </div>
   </nav>
 
-  <!-- HERO — full-bleed background, text over dark overlay -->
+  <!-- HERO — dark background image with overlay -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow"> &nbsp;·&nbsp; Liverpool</p>
-      <h1>Liverpool's <em>finest</em><br>Landscaper.</h1>
-      <p class="hero-body">Garden design, landscaping, and outdoor transformations — serving {{location}} and surrounding areas.</p>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-number">+</div>
-      <div class="stat-label">Years established</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">5</div>
-      <div class="stat-label">Google rating</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">21</div>
-      <div class="stat-label">Five-star reviews</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">6</div>
-      <div class="stat-label">Days a week, 8–8</div>
-    </div>
-  </div>
-
-  <!-- WORK SHOWCASE -->
-  <section class="showcase">
-    <div class="section-label">Our work</div>
-    <div class="showcase-grid">
-      <div class="showcase-item">
-        <img
-          src="https://images.pexels.com/photos/7534571/pexels-photo-7534571.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Landscaping work by JRJ Landscaping"
-          loading="lazy">
-        <span class="showcase-caption">Bathroom fitting</span>
+    <div class="hero-left">
+      <div class="hero-score">5</div>
+      <div class="hero-stars">★★★★★</div>
+      <p class="hero-reviews-count"><strong>21 verified</strong> Google reviews</p>
+      <div class="google-badge">
+        <span class="google-g">G</span>
+        Verified on Google Maps
       </div>
-      <div class="showcase-item">
-        <img
-          src="https://images.pexels.com/photos/16249146/pexels-photo-16249146.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Premium suite installation — JRJ Landscaping"
-          loading="lazy">
-        <span class="showcase-caption">Premium suite</span>
-      </div>
-      <div class="showcase-item">
-        <img
-          src="https://images.pexels.com/photos/6934184/pexels-photo-6934184.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Shower installation by JRJ Landscaping"
-          loading="lazy">
-        <span class="showcase-caption">Shower installation</span>
-      </div>
-      <div class="showcase-item">
-        <img
-          src="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800"
-          alt="Classic bathroom suite — JRJ Landscaping"
-          loading="lazy">
-        <span class="showcase-caption">Classic suite</span>
+    </div>
+    <div class="hero-right">
+      <h1></h1>
+      <p>Garden design, landscaping, and outdoor transformations — serving Liverpool and surrounding areas.</p>
+      <a href="#" onclick="return false;" class="hero-cta">📞 Call for a free quote</a>
+      <div class="hero-meta">
+        
+        <span>✓ Mon–Sat 8am–8pm</span>
+        <span>✓ No call centres</span>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section">
-    <div class="section-label">What I do</div>
-    <div class="services-grid">
-      
-      <div class="service-card">
-        <span class="service-icon"></span>
-        <h3 class="service-title"></h3>
-        <p class="service-desc"></p>
-      </div>
-      
-      <div class="service-card">
-        <span class="service-icon"></span>
-        <h3 class="service-title"></h3>
-        <p class="service-desc"></p>
-      </div>
-      
-      <div class="service-card">
-        <span class="service-icon"></span>
-        <h3 class="service-title"></h3>
-        <p class="service-desc"></p>
-      </div>
-      
-      <div class="service-card">
-        <span class="service-icon"></span>
-        <h3 class="service-title"></h3>
-        <p class="service-desc"></p>
-      </div>
-      
-      <div class="service-card">
-        <span class="service-icon"></span>
-        <h3 class="service-title"></h3>
-        <p class="service-desc"></p>
-      </div>
-      
+  <!-- ABOUT — 2-col image / text -->
+  <section class="about-section">
+    <div class="about-image-col">
+      <img
+        src="https://images.pexels.com/photos/1029243/pexels-photo-1029243.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        alt="Professional Landscaping tools — JRJ Landscaping"
+        loading="lazy">
+    </div>
+    <div class="about-text-col">
+      <p class="about-eyebrow">About us</p>
+      <h2>Liverpool's trusted Landscaper since </h2>
+      <p></p>
+      <a href="#" onclick="return false;" class="about-cta">📞 Call 0151 515 6599 →</a>
     </div>
   </section>
 
   <!-- REVIEWS -->
   
 
+  <!-- SERVICES — card grid with images -->
+  <section class="services-section" id="services">
+    <div class="section-header">
+      <h2>Services</h2>
+      <p>Liverpool &amp; surrounding area</p>
+    </div>
+    <div class="services-cards-grid">
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src=""
+            alt=" — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap"></div>
+          <div class="service-name"></div>
+          <div class="service-desc"></div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src=""
+            alt=" — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap"></div>
+          <div class="service-name"></div>
+          <div class="service-desc"></div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src=""
+            alt=" — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap"></div>
+          <div class="service-name"></div>
+          <div class="service-desc"></div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src=""
+            alt=" — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap"></div>
+          <div class="service-name"></div>
+          <div class="service-desc"></div>
+        </div>
+      </div>
+      
+      <div class="service-img-card">
+        <div class="service-img-wrap">
+          <img
+            src=""
+            alt=" — "
+            loading="lazy">
+        </div>
+        <div class="service-img-body">
+          <div class="service-icon-wrap"></div>
+          <div class="service-name"></div>
+          <div class="service-desc"></div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  
+  <div class="areas-section">
+    <span class="areas-label">Coverage</span>
+    <div class="areas-tags">
+      
+      <span class="area-tag">[object Object]</span>
+      
+    </div>
+  </div>
+  
+
   <!-- CTA -->
-  <section class="cta-section cta">
-    <p class="cta-label">Get in touch</p>
+  <section class="cta-section">
     <h2></h2>
+    <p>Call directly — no call centres, no waiting lists.</p>
     <a href="#" onclick="return false;" class="cta-phone">0151 515 6599</a>
-    <a href="#" onclick="return false;" class="cta-button">Request a quote</a>
-    <p class="cta-smallprint">Mon–Sat, 8am–8pm &nbsp;·&nbsp; Liverpool &nbsp;·&nbsp; </p>
+    <p class="cta-meta">Mon–Sat, 8am–8pm &nbsp;·&nbsp;  &nbsp;·&nbsp; Liverpool</p>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <span>© 2024 JRJ Landscaping</span>
-    <span>Liverpool &nbsp;·&nbsp; </span>
+    <span> &nbsp;·&nbsp; Liverpool</span>
   </footer>
 
 </body>
